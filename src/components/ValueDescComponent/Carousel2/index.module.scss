@@ -1,0 +1,256 @@
+@import '../_variables.scss';
+
+// 响应式布局临界值：小于此宽度时强制使用bottom布局
+$carousel-breakpoint: 799px;
+
+.container {
+  width: 100%;
+  padding: 100px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  background: transparent;
+  position: relative;
+  box-sizing: border-box;
+
+  @media (max-width: 1720px) {
+    padding: 100px 0;
+  }
+
+  @media (max-width: 800px) {
+    padding: 56px 0 40px;
+  }
+}
+
+.titleContainer {
+  width: 100%;
+  padding-bottom: 107px;
+  box-sizing: border-box;
+  @media (max-width: 1024px) and (min-width: 769px) {
+    padding-bottom: 88px;
+  }
+  @media (max-width: 768px) {
+    padding-bottom: 56px;
+  }
+  @media (max-width: 480px) {
+    padding-bottom: 36px;
+  }
+  .partLabel {
+    margin-bottom: 25px;
+  }
+
+  .title {
+    @include NormalBlockTitle();
+    white-space: pre-line;
+  }
+
+  .description {
+    padding-top: 64px;
+    @include BlockContent();
+  }
+}
+
+.carouselLeftContainer {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+
+  // 小屏幕时，强制隐藏left布局（因为要使用bottom布局）
+  @media (max-width: $carousel-breakpoint) {
+    display: none;
+  }
+
+  .rightBox {
+    position: relative;
+    min-width: 0; // 修复 flex 容器中的宽度计算问题
+    flex: 4; // 如果需要占满剩余空间
+  }
+
+  .title {
+    @include SecondaryContentTitle(1rem);
+    @media (max-width: 768px) {
+      @include SecondaryContentTitle(2rem);
+    }
+  }
+
+  .description {
+    margin-top: 8px;
+    margin-bottom: 24px;
+    @include BlockContent();
+  }
+}
+
+.carouselContainer {
+  width: 100%;
+
+  // 小屏幕时，强制显示bottom布局的轮播容器
+  @media (max-width: $carousel-breakpoint) {
+    display: block;
+  }
+
+  // 大屏幕时，只有当navigationPalce为bottom时才显示
+  .leftLayout & {
+    @media (min-width: calc($carousel-breakpoint + 1px)) {
+      display: none;
+    }
+  }
+}
+
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+
+  .bgSvg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+}
+
+.slideWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.navigationLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  min-width: 150px;
+  max-width: 300px;
+
+  .navItem {
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    border-bottom: 2px solid #c3c2be;
+
+    &.active {
+      font-weight: bold;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background-color: #f78aff;
+        // 当元素重新渲染时，动画会自动从 0 开始
+        animation: progressAnimation var(--animation-duration, 3000ms) linear forwards;
+      }
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.navigationBottom {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 20px;
+  width: 100%;
+  padding-top: 20px;
+  position: relative;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding-top: 12px;
+    margin-top: 12px;
+  }
+
+  // 小屏幕时，强制显示bottom布局的导航
+  @media (max-width: $carousel-breakpoint) {
+    display: flex;
+  }
+
+  // 大屏幕时，只有当navigationPalce为bottom时才显示
+  .leftLayout & {
+    @media (min-width: calc($carousel-breakpoint + 1px)) {
+      display: none;
+    }
+  }
+
+  .navItem {
+    flex: 1;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    border-top: 2px solid #c3c2be;
+
+    @media (max-width: 800px) {
+      padding: 12px 14px;
+    }
+
+    &.active {
+      font-weight: bold;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background-color: #f78aff;
+        // 当元素重新渲染时，动画会自动从 0 开始
+        animation: progressAnimation var(--animation-duration, 3000ms) linear forwards;
+      }
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .title {
+    @include SecondaryContentTitle(1rem);
+    @media (max-width: 768px) {
+      @include SecondaryContentTitle(2rem);
+    }
+
+    @media (max-width: 800px) {
+      line-height: 1.3;
+    }
+  }
+
+  .description {
+    margin-top: 8px;
+    @include BlockContent();
+
+    @media (max-width: 800px) {
+      margin-top: 4px;
+    }
+  }
+}
+
+@keyframes progressAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

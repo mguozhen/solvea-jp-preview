@@ -1,0 +1,148 @@
+@import '../_variables.scss';
+
+.container {
+  width: 100%;
+  padding: 120px 30px 40px;
+  box-sizing: border-box;
+  border-bottom: 0.5px solid #000000;
+  background: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 1720px) {
+    position: relative;
+    left: -14px;
+    width: calc(100% + 28px);
+  }
+
+  @media (max-width: 1280px) {
+    padding: 80px 20px 30px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 60px 20px 30px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 20px 30px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 16px 20px;
+  }
+
+  .title {
+    @include NormalBlockTitle();
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin-bottom: 24px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 480px) {
+      margin-bottom: 16px;
+    }
+  }
+  .description {
+    @include BlockContent();
+    width: 100%;
+    text-align: center;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 100px;
+
+    @media (max-width: 1280px) {
+      margin-bottom: 80px;
+    }
+
+    @media (max-width: 1024px) {
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 480px) {
+      margin-bottom: 40px;
+    }
+  }
+  .cardList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-bottom: 49px;
+    width: 100%;
+
+    @media (max-width: 1280px) {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 480px) {
+      margin-bottom: 24px;
+    }
+
+    .cardItem {
+      display: flex;
+      flex-direction: column;
+      width: 33.33%;
+      min-height: 172px;
+      border: 0.5px solid #fff;
+      padding: 28px 20px 23px 28px;
+      box-sizing: border-box;
+
+      @media (max-width: 1024px) {
+        width: 50%;
+        min-height: 160px;
+        padding: 24px 16px 20px 24px;
+      }
+
+      @media (max-width: 768px) {
+        width: 50%;
+        min-height: 150px;
+        padding: 20px 16px 18px 20px;
+      }
+
+      @media (max-width: 480px) {
+        width: 100%;
+        min-height: auto;
+        padding: 20px 16px 18px 20px;
+      }
+
+      .cardTitle {
+        @include SecondaryContentTitle(1.11rem);
+        margin-bottom: 24px;
+        color: white;
+
+        @media (max-width: 1024px) {
+          margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+          margin-bottom: 16px;
+        }
+
+        @media (max-width: 480px) {
+          margin-bottom: 12px;
+        }
+      }
+      .cardDescription {
+        @include SecondaryContentText(0.776rem);
+        color: white;
+        font-weight: 400;
+      }
+    }
+  }
+  .button {
+    height: 51px;
+    width: 197px;
+  }
+}

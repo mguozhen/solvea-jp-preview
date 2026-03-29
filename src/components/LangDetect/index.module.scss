@@ -1,0 +1,51 @@
+@import 'theme/index.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  font-weight: 400;
+  width: 100%;
+  min-height: 28px;
+  padding: 8px 20px;
+  box-sizing: border-box;
+  background-color: #000;
+  font-size: 14px;
+  z-index: 9999;
+
+  .text {
+    color: #fff;
+  }
+
+  .a {
+    color: #4080ff;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .close {
+    position: absolute;
+    right: 10px;
+    color: #fff;
+
+    .icon {
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+    }
+  }
+}
+
+.none {
+  display: none;
+}
+
+@media only screen and (max-width: $small-device-width) {
+  .container {
+    flex-direction: column;
+  }
+}

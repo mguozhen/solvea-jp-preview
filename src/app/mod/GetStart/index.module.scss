@@ -1,0 +1,132 @@
+@import 'theme/index.scss';
+.container {
+  border-bottom: 1px solid #353535;
+  padding-bottom: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  gap: 100px;
+  padding-top: 60px;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  z-index: 9;
+  .left {
+    flex: 1;
+    text-align: left;
+    .title {
+      font-size: 70px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+    }
+    .desc {
+      margin: 24px 0;
+      font-size: 20px;
+      font-weight: 500;
+      color: #afafaf;
+    }
+
+    .blockList {
+      display: flex;
+      flex-wrap: wrap;
+      .blockItem {
+        width: 50%;
+        margin-top: 56px;
+        padding-right: 20px;
+        box-sizing: border-box;
+      }
+      .itemTitle {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .itemContent {
+        margin-top: 12px;
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .itemLink {
+        margin-top: 12px;
+        font-size: 12px;
+        font-weight: 400;
+        height: 32px;
+        color: #fff;
+        border-radius: 100px;
+        border: 1px solid #fff;
+        text-decoration: none;
+        display: inline-flex;
+        padding: 0 16px;
+        align-items: center;
+        margin-bottom: 16px;
+        gap: 6px;
+      }
+      .chromeItem {
+        width: 100%;
+      }
+      .chromeLink {
+        height: 40px;
+      }
+      .chromeIcon {
+        width: 20px;
+      }
+    }
+  }
+
+  .right {
+    width: 540px;
+    border-radius: 40px;
+    padding: 40px;
+    background: #e7eaf1;
+    margin-bottom: 100px;
+  }
+  .submitedWrap {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    .left {
+      .title {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .left {
+      text-align: center;
+      .title {
+        font-size: 36px;
+        margin-top: 20px;
+        text-align: center;
+      }
+      .desc {
+        // display: none;
+        text-align: center;
+      }
+      .bookDemo {
+        // display: none;
+        margin: 0 auto;
+      }
+      .blockList {
+        display: none;
+      }
+    }
+  }
+}
+@media only screen and (max-width: $small-device-width) {
+  .container {
+    .right {
+      margin: 20px;
+      max-width: calc(100vw - 20px);
+      box-sizing: border-box;
+    }
+  }
+}

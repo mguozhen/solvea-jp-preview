@@ -1,0 +1,66 @@
+@import '../_variables.scss';
+
+.sectionBack {
+  background: $page-background;
+  padding: 0;
+  margin: -1px auto;
+  width: 100%;
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 47px;
+    span {
+      background: linear-gradient(
+        94.78deg,
+        #ffffff 1.7%,
+        rgba(255, 255, 255, 0.44) 100.26%
+      );
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  .cards {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1440px;
+  }
+
+  .secSubTitle {
+    color: #ffffff;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .cards {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: $small-device-width) {
+  .sectionBack {
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 32px;
+    }
+  }
+  .changeBtn {
+    display: flex;
+  }
+  .title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .content {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .btn {
+    height: 40px;
+    padding: 8px 16px;
+  }
+}

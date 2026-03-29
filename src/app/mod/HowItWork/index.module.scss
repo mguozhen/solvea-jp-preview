@@ -1,0 +1,244 @@
+.container {
+  padding: 80px var(--insight-padding-x) 60px;
+  background: #000;
+  color: #eee;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  &:global(.side-fade) {
+    &::before {
+      background: linear-gradient(
+        to right,
+        #000 50%,
+        transparent 100%
+      ) !important;
+    }
+    &::after {
+      background: linear-gradient(
+        to left,
+        #000 50%,
+        transparent 100%
+      ) !important;
+    }
+  }
+  .header {
+    text-align: center;
+    width: 955px;
+    margin: 0 auto;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 13px;
+    line-height: 20px;
+    vertical-align: middle;
+    color: #f07af9;
+    .title {
+      font-family: var(--font-family-title);
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 64px;
+      line-height: 1em;
+      margin-top: 12px;
+      color: #eee;
+    }
+  }
+  .ci {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(8rem);
+    * {
+      flex-shrink: 0;
+    }
+    .line1 {
+      font-size: 28rem;
+      animation: lineFlow 3s ease-in-out infinite;
+    }
+    .f2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      width: 109px;
+      .line2 {
+        font-size: 162px;
+        flex-shrink: 0;
+        animation: lineFlow 3s ease-in-out infinite 0.5s;
+      }
+    }
+    .line3 {
+      font-size: 40rem;
+      margin-left: -1rem;
+      animation: lineFlow 3s ease-in-out infinite 1s;
+    }
+  }
+  .box {
+    flex-shrink: 0;
+    border: 0.38px solid #303030;
+    .first {
+      padding: 16px 16px;
+      gap: 8px;
+      // font-family: var(--font-family2);
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 28px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #303030;
+      .iconContainer {
+        display: flex;
+        align-items: start;
+        gap: 8px;
+        .icon {
+          height: 28px;
+        }
+        span {
+          flex: 1;
+          width: 0;
+        }
+      }
+    }
+    .item {
+      padding: 8px 16px;
+      .title {
+        height: 21px;
+        top: 268px;
+        left: 39px;
+        opacity: 1;
+        gap: 20px;
+      }
+      .desc {
+        margin-top: 4px;
+        // font-family: var(--font-family);
+        font-family: 'Helvetica Neue', sans-serif;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 14px;
+        line-height: 22px;
+        vertical-align: middle;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+  .f1 {
+    position: relative;
+    max-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .box1 {
+    border: 1px solid #4a4a4a;
+    // font-family: var(--font-family);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 100%;
+    color: #eee;
+    padding: 16px;
+    position: absolute;
+    top: 50%;
+    right: 90px;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: #000;
+  }
+  .box2 {
+    width: 272px;
+    .item {
+      padding: 25px 15px 39px;
+      .desc {
+        margin-top: 0;
+      }
+    }
+  }
+  .box3 {
+    width: 304px;
+    .item {
+      padding: 32px 18px;
+      .desc {
+        padding-left: 1rem;
+        > div {
+          text-indent: -1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .container {
+    .ci {
+      transform: translateX(12.6rem);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-bottom: 0;
+    .header {
+      width: 100%;
+      .title {
+        font-size: 40px;
+        padding: 0 10px;
+      }
+    }
+    .ci {
+      flex-direction: column;
+      margin: 0 auto;
+      transform: translateX(0);
+      .line1 {
+        font-size: 26rem;
+        margin-left: 0;
+        transform: rotate(90deg);
+      }
+      .f2 {
+        transform: rotate(90deg);
+      }
+      .l3crop {
+        height: 270px;
+        overflow: hidden;
+      }
+      .line3 {
+        font-size: 40rem;
+        margin-left: 1rem;
+        transform: rotate(90deg);
+        margin-top: -1rem;
+      }
+    }
+    .box1 {
+      transform: translate(-50%, -50%);
+      margin-top: 60px;
+      left: 50%;
+      right: auto;
+    }
+    .box2 {
+      margin-bottom: -26px;
+      margin-top: 0;
+    }
+    .box3 {
+      margin-top: -26px;
+    }
+  }
+}
+
+// 线条流动动画
+@keyframes lineFlow {
+  0% {
+    filter: brightness(0.3) saturate(0.5);
+    // transform: translateX(-10px);
+  }
+  50% {
+    filter: brightness(1) saturate(1);
+    // transform: translateX(0);
+  }
+  100% {
+    filter: brightness(0.3) saturate(0.5);
+    // transform: translateX(10px);
+  }
+}

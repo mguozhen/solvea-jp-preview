@@ -1,0 +1,111 @@
+export default {
+  insTagGenerator: {
+    seoDesc: "Espalhe um pouco de magia viral em suas postagens do Instagram com este gerador de hashtag AI gratuito da Shulex! Melhore sua presença nas redes sociais.",
+    seoTitle: "Gerador de hashtag grátis para Instagram - Shulex VOC",
+    title: "Gerador de hashtag grátis para Instagram",
+    titleText1: {
+      subtitle: "Hashtags são uma ferramenta essencial para aumentar a visibilidade e o alcance do seu conteúdo nas plataformas de mídia social, especialmente nas principais plataformas de conteúdo como Instagram, Youtube. Ao editar estrategicamente hashtags alinhadas ao seu conteúdo, você pode aumentar exponencialmente suas chances de criar uma sensação viral. Hashtags virais, como #SidhuMoosewala, #SidhuMoosewalaFans, #MooseTape e #MoosewalaArmy, podem atrair fãs do respectivo artista e fazer com que o conteúdo gerado pelo usuário se espalhe amplamente. Portanto, criar uma ótima hashtag parece muito importante. O gerador de hashtag pode tornar menos doloroso quando a hashtag produz efeitos.",
+      title: "O que é gerador de hashtag?"
+    },
+    titleText2: {
+      subtitle: "Nosso gerador de hashtags do Instagram baseado em IA aproveita a inteligência artificial (IA) para criar hashtags do Instagram adaptadas às suas necessidades exclusivas. Semelhante a várias outras ferramentas de IA que oferecemos gratuitamente, ele é impulsionado pelo ChatGPT 4, um modelo de linguagem grande e altamente inteligente (também conhecido como chatbots) capaz de participar de conversas que se assemelham à interação humana. Além disso, nosso gerador de legendas de mídia social, desenvolvido por ChatGPT, é um recurso valioso que você definitivamente deve guardar para uso futuro.",
+      title: "Como funciona este gerador de hashtag do Instagram?"
+    },
+    videoTitle: "Como usar nosso gerador de hashtag do Instagram"
+  },
+  shopifyStores: {
+    cards: "Marcas de cartões habilitadas",
+    country: "País",
+    description: "descricao",
+    domain: "Domínio",
+    name: "Name",
+    province: "Província",
+    search: "Pesquisar nome",
+    seoDesc: "Espie concorrentes do Shopify, produtos mais vendidos, tendências e vencedores, temas do Shopify, aplicativos, lojas de crescimento mais rápido, produtos recém-lançados, dropship e muito mais pela Shulex VOC.",
+    seoTitle: "Lista de lojas do Shopify - Melhor ferramenta de IA de comércio eletrônico da Shulex VOC",
+    title: "Lista de lojas do Shopify",
+    total: "Registros totais"
+  },
+  socialMediaGenerator: {
+    seoDesc: "Crie facilmente legendas perfeitas para Facebook, Instagram, Twitter e Linkedin em segundos com este gerador gratuito de legendas AI para mídia social da Shulex.",
+    seoTitle: "Gerador de legendas AI gratuito para mídias sociais - Shulex VOC",
+    title: "Gerador gratuito de legendas para mídias sociais",
+    titleText: {
+      subtitle: "Como um player de mídia social, muitas vezes você precisa criar uma legenda para uma postagem nas redes sociais, o que pode ser irritante, pois você nem sempre pode estar tão inspirado para realizar o trabalho. Este incrível gerador de postagens em mídias sociais revolucionará seu processo de criação de calendário de conteúdo. Isso não apenas agilizará o aspecto de redação do seu trabalho, mas também o ajudará a gerar ideias de hashtags e palavras-chave, aumentando a visibilidade de suas postagens para um público mais amplo. Além disso, você pode utilizar esta ferramenta para reformular e aprimorar suas legendas existentes sem esforço. Basta inserir sua legenda atual e observar como a ferramenta a transforma sem esforço em um conteúdo cativante. Com esta ferramenta ao seu lado, é como ter um assistente de redação competente, versado em algoritmos, que trabalha em ritmo acelerado e está sempre disponível para apoiá-lo sempre que necessário. Aproveite esta ferramenta revolucionária e eleve seu calendário de mídia social com uma infinidade de postagens geradas por IA.",
+      title: "Sente difícil criar legendas?"
+    }
+  },
+  tipChatbot: {
+    check: "Verificar isto",
+    content: "Experimente o nosso Chatbot com IA que pode resolver automaticamente 80% dos feedbacks dos seus clientes",
+    title: "Sente-se exausto com o Serviço de Apoio ao Cliente?"
+  },
+  ttCaptionGenerator: {
+    seoDesc: "Crie facilmente legendas perfeitas para Tiktok em segundos com este gerador gratuito de legendas Tiktok AI da Shulex.",
+    seoTitle: "Gerador de legendas AI grátis para Tiktok - Shulex VOC",
+    title: "Gerador de legendas Tiktok grátis",
+    titleText: {
+      subtitle: "Como um player de mídia social, muitas vezes você precisa criar uma legenda para uma postagem nas redes sociais, o que pode ser irritante, pois você nem sempre pode estar tão inspirado para realizar o trabalho. Este incrível gerador de postagens em mídias sociais revolucionará seu processo de criação de calendário de conteúdo. Isso não apenas agilizará o aspecto de redação do seu trabalho, mas também o ajudará a gerar ideias de hashtags e palavras-chave, aumentando a visibilidade de suas postagens para um público mais amplo. Além disso, você pode utilizar esta ferramenta para reformular e aprimorar suas legendas existentes sem esforço. Basta inserir sua legenda atual e observar como a ferramenta a transforma sem esforço em um conteúdo cativante. Com esta ferramenta ao seu lado, é como ter um assistente de redação competente, versado em algoritmos, que trabalha em ritmo acelerado e está sempre disponível para apoiá-lo sempre que necessário. Aproveite esta ferramenta revolucionária e eleve seu calendário de mídia social com uma infinidade de postagens geradas por IA.",
+      title: "Sente difícil criar legendas?"
+    }
+  },
+  ttHashtag: {
+    seoDesc: "Polvilhe um pouco de magia viral em suas postagens do Tiktok com este gerador de hashtag AI gratuito da Shulex! Melhore sua presença nas redes sociais.",
+    seoTitle: "Gerador de hashtag Tiktok grátis - Shulex VOC",
+    title: "Gerador de hashtag Tiktok grátis",
+    titleText1: {
+      subtitle: "Hashtags são uma ferramenta essencial para aumentar a visibilidade e o alcance do seu conteúdo nas plataformas de mídia social, especialmente nas principais plataformas de conteúdo como Tiktok e Youtube. Ao editar estrategicamente hashtags alinhadas ao seu conteúdo, você pode aumentar exponencialmente suas chances de criar uma sensação viral. Hashtags virais, como #SidhuMoosewala, #SidhuMoosewalaFans, #MooseTape e #MoosewalaArmy, podem atrair fãs do respectivo artista e fazer com que o conteúdo gerado pelo usuário se espalhe amplamente. Portanto, criar uma ótima hashtag parece muito importante. O gerador de hashtag pode tornar menos doloroso quando a hashtag produz efeitos.",
+      sybtitle: "Hashtags são uma ferramenta essencial para aumentar a visibilidade e o alcance do seu conteúdo nas plataformas de mídia social, especialmente nas principais plataformas de conteúdo como Tiktok e Youtube. Ao editar estrategicamente hashtags alinhadas ao seu conteúdo, você pode aumentar exponencialmente suas chances de criar uma sensação viral. Hashtags virais, como #SidhuMoosewala, #SidhuMoosewalaFans, #MooseTape e #MoosewalaArmy, podem atrair fãs do respectivo artista e fazer com que o conteúdo gerado pelo usuário se espalhe amplamente. Portanto, criar uma ótima hashtag parece muito importante. O gerador de hashtag pode tornar menos doloroso quando a hashtag produz efeitos.",
+      title: "O que é gerador de hashtag?"
+    },
+    titleText2: {
+      subtitle: "Nosso gerador de hashtag Tiktok baseado em IA aproveita a inteligência artificial (IA) para criar hashtags Tiktok adaptadas às suas necessidades exclusivas. Semelhante a várias outras ferramentas de IA que oferecemos gratuitamente, ele é impulsionado pelo ChatGPT 4, um modelo de linguagem grande e altamente inteligente (também conhecido como chatbots) capaz de participar de conversas que se assemelham à interação humana. Além disso, nosso gerador de legendas de mídia social, desenvolvido por ChatGPT, é um recurso valioso que você definitivamente deve guardar para uso futuro.",
+      title: "Como funciona este gerador de hashtag Tiktok?"
+    }
+  },
+  ttUsername: {
+    seoDesc: "Crie uma identidade online exclusiva com o gerador de nome de usuário Tiktok da Shulex VOC. Encontre seu nome de usuário ideal e aumente sua presença online hoje mesmo!",
+    seoTitle: "Gerador gratuito de nome de usuário Tiktok - Shulex VOC",
+    title: "Gerador de nome de usuário Tiktok grátis",
+    titleText1: {
+      subtitle: "Um gerador de nome de usuário é uma ferramenta que gera rapidamente uma compilação de identificadores de mídia social, utilizando os detalhes fornecidos pelos usuários. Nossa ferramenta incorpora o poder da inteligência artificial (IA) com a ajuda dos usuários para produzir inúmeras alças criativas e divertidas em segundos. Obtenha uma lista abrangente de identificadores para várias plataformas, como Instagram, TikTok, YouTube, Pinterest, Roblox e muito mais. Quando os usuários inserem alguns termos descritivos que refletem sua identidade e paixões, o gerador irá gerar uma gama de opções que realmente capturam sua personalidade única.",
+      title: "O que é um gerador de nome de usuário?"
+    },
+    titleText2: {
+      subtitle: "Este gerador de nome de usuário AI foi criado especificamente para eliminar a incerteza quando se trata de criar nomes de usuário para várias plataformas online. Esteja você participando de fóruns online ou plataformas de jogos, esta ferramenta economizará tempo e esforço mental valiosos, fornecendo nomes de usuário exclusivos e personalizados. Chega de se esforçar para encontrar nomes de usuário atraentes e memoráveis ao se inscrever em novos sites ou renovar sua personalidade online.<h3 style=\"color:#1d2129\"> Plataformas de mídia social</h3> O aspecto mais notável do nosso gerador de nomes de usuário é sua capacidade de gerar rapidamente ideias para nomes de usuário nas redes sociais. Em questão de segundos, você pode encontrar um novo identificador para uma variedade de plataformas, incluindo Instagram, Twitter, TikTok, Tumblr, YouTube, BeReal, Snapchat, Mastodon, Twitch e vários outros sites que exigem registros de gerenciamento. Aproveite a conveniência de encontrar rapidamente o identificador perfeito para suas plataformas online preferidas.",
+      title: "Para que posso usar este gerador de nome de usuário?"
+    }
+  },
+  unitConverter: {
+    articles: {
+      content1: "Procurando uma ferramenta confiável de conversão de unidades para o seu negócio de comércio eletrônico? Não procure mais, Unit Convert! Nossa ferramenta facilita a conversão entre diferentes unidades de medida, incluindo comprimento, peso, volume e muito mais. Com o Unit Convert, você pode garantir que suas listagens de produtos sejam precisas e consistentes, o que pode ajudar a aumentar a satisfação do cliente e reduzir devoluções. Além disso, nossa interface amigável e conversões precisas facilitam o uso, mesmo para aqueles que não estão familiarizados com conversões de unidades. Então, por que esperar? Experimente o Unit Convert hoje e veja como ele pode ajudar a agilizar suas operações de comércio eletrônico e melhorar seus resultados financeiros! Se você precisar converter unidades de medida, existem muitas ferramentas disponíveis para ajudá-lo. Uma opção popular é o Unit Convert Pro, que pode lidar com tudo, desde comprimento até peso e conversão de unidades de viscosidade. Com esta ferramenta, você pode converter facilmente medidas unitárias com apenas alguns cliques. Se você precisa converter medidas unitárias para trabalho ou apenas para diversão, é fácil converter medidas unitárias com as ferramentas certas. Então, por que não experimentar a conversão de unidades hoje e ver como ela pode ajudá-lo a converter medidas de unidades de forma rápida e fácil? Encontre nosso conversor de unidades no Google.",
+      content2: "Você pode: converter 150 g na unidade kg. converta 0,15 m para a unidade cm. converta 30 ml para a unidade l.",
+      content3: "<a href=\"https://www.voc.ai\" target=\"_blank\">VOC AI INC.</a> Impulsione seus negócios com a ferramenta ChatGPT nº 1. Analisamos avaliações para ajudar a construir produtos vencedores no e-commerce. Se quiser saber mais acesse:<a href=\"https://www.voc.ai\" target=\"_blank\"> https://www.voc.ai</a> Nossa extensão do navegador:<a href=\"https://www.voc.ai/tools/chatgpt-for-amazon\" target=\"_blank\"> https://www.voc.ai/tools/chatgpt-for-amazon</a>",
+      content4: "No passado, eram utilizados diversos sistemas de unidades, que são definidos como um conjunto de unidades de medida com regulamentos que as conectam entre si. Uma unidade de medida é uma magnitude específica de uma quantidade usada como padrão para medir o mesmo tipo de quantidade, como comprimento, peso e volume. Anteriormente, foram estabelecidos sistemas locais de medição, que podiam basear-se em fatores arbitrários, como o comprimento do polegar de um rei. Embora isto possa funcionar a nível local, torna a interacção difícil quando se considera o comércio e a ciência, uma vez que outras pessoas podem não ser capazes de se relacionar ou compreender as unidades. Portanto, sistemas mais universais e consistentes foram desenvolvidos ao longo do tempo. Hoje, o sistema métrico, o sistema imperial e as unidades habituais dos Estados Unidos são alguns dos sistemas de unidades em uso. O Sistema Internacional de Unidades (SI) é o sistema métrico padrão usado atualmente, consistindo em sete unidades básicas do SI de comprimento, massa, tempo, temperatura, corrente elétrica, intensidade luminosa e quantidade de substância. Embora o SI seja usado quase universalmente na ciência, alguns países como os Estados Unidos ainda usam o seu próprio sistema de unidades. Isto deve-se em parte aos custos financeiros e culturais substanciais envolvidos na mudança de um sistema de medição, em comparação com o benefício potencial da utilização de um sistema padronizado. Como resultado, o uso diário do USC ainda prevalece nos Estados Unidos, e muitos conversores de unidades, incluindo esta calculadora de conversão, existem para garantir que as pessoas em todo o mundo possam comunicar diferentes medidas de forma eficaz.",
+      content5: "Durante os séculos VIII e IX da Era Comum (EC), a civilização árabe prosperou no Oriente Médio e na Espanha. Os árabes usavam moedas como unidade de medida de peso, uma vez que uma moeda cunhada não podia ser facilmente cortada ou raspada para reduzir o seu peso, fornecendo um padrão mensurável. Eles usaram um dirhem de prata como medida básica de peso, que equivalia aproximadamente a 45 grãos de cevada totalmente crescidos. Dez dirhems formavam um Wukryeh, que foi traduzido para o latim como “uncia”, origem da palavra “onça”. O comércio acabou por se espalhar da área do Mediterrâneo para a Europa, incluindo as cidades-estado do norte da Alemanha. Como resultado, uma libra, que equivalia a 16 onças de prata ou 7.200 grãos, tornou-se uma medida comumente usada em muitas regiões. Embora a Inglaterra também tenha adotado esta medida, a escassez de prata fez com que o rei Offa reduzisse a medida da libra para 5.400 grãos para usar moedas menores. Quando Guilherme, o Conquistador, se tornou rei da Inglaterra, ele manteve a libra de 5.400 grãos para cunhar moedas, mas reverteu para a libra de 7.200 grãos para outros fins. Embora muitos países tenham usado a libra daquele ponto em diante, incluindo a Inglaterra (a libra esterlina britânica, ou GBP, era igual a uma libra-peso de prata na época do rei Offa), o sistema de peso avoirdupois foi adotado durante o reinado da rainha Elizabeth em século XVI. Era um sistema baseado no peso do carvão, e seu nome derivava da frase francesa &quot;avoir de pois&quot; (mercadorias de peso ou propriedade). O avoirdupois equivalia a 7.000 grãos, 256 dracmas de 27.344 grãos cada, ou 16 onças de 437 ½ grãos cada. Desde 1959, a libra avoirdupois foi oficialmente definida na maioria dos países de língua inglesa como 0,45359237 quilogramas. Diferentes sistemas de medição também se desenvolveram ao longo do tempo nos países asiáticos. Por exemplo, na Índia antiga, era usada uma medida de peso chamada &quot;Satamana&quot;, que era igual ao peso de 100 bagas de gunja. Na China, o primeiro imperador Shi Huang Di criou um sistema de pesos e medidas no século III aC (Antes da Era Comum). A medição do peso foi baseada no shi, que equivalia a aproximadamente 132 libras. O Chi e o Zhang eram unidades de comprimento equivalentes a aproximadamente 25 centímetros (9,8 polegadas) e 3 metros (9,8 pés), respectivamente. Os chineses também desenvolveram um meio de garantir a precisão através do uso de uma tigela de tamanho especial usada para medições que também emitia um som específico quando atingida - se o som estivesse fora do tom, a medição não era precisa.",
+      content6: "Em 1668, John Wilkins propôs um sistema decimal que ligava comprimento, área, volume e massa entre si com base em um pêndulo que tinha a batida de um segundo como unidade básica de comprimento. Gabriel Mouton propôs um sistema decimal em 1670 baseado na circunferência da Terra, uma ideia apoiada por outros cientistas proeminentes da época, como Jean Picard e Christiaan Huygens, mas que só se consolidou durante aproximadamente mais 100 anos. Em meados do século XVIII, era claro para as nações que comercializavam e trocavam ideias científicas que a padronização de pesos e medidas era necessária. Em 1790, Charles Maurice de Talleyrand-Perigord, o Príncipe de Talleyrand, abordou os britânicos (representados por John Riggs-Miller) e os americanos (representados por Thomas Jefferson) com propostas para definir um padrão comum de comprimento baseado no comprimento de um pêndulo. Nesse mesmo ano, Thomas Jefferson apresentou o &quot;Plano para Estabelecer Uniformidade na Moeda, Pesos e Medidas dos Estados Unidos&quot;, que defendia um sistema decimal em que as unidades fossem relacionadas entre si por potências de dez. Um comitê formado na França, composto por alguns dos cientistas mais proeminentes da época, chegou a uma conclusão semelhante e também propôs um sistema decimal para todos os pesos e medidas. Embora o Congresso tenha considerado o relatório de Jefferson, ele não foi adotado. Na Grã-Bretanha, John Riggs-Miller perdeu seu assento no parlamento britânico nas eleições de 1790. Como tal, o sistema de medição só foi implementado em França e, em 1795, o sistema métrico foi formalmente definido na lei francesa. No entanto, só em 1799 é que o sistema métrico foi oficialmente adoptado em França, embora ainda não fosse universalmente observado em todo o país. A difusão do sistema métrico não foi rápida e as áreas anexadas pela França durante o reinado de Napoleão foram as primeiras a adotar o sistema métrico. Em 1875, dois terços da população europeia e quase metade da população mundial tinham adoptado o sistema métrico. Em 1920, aproximadamente 22% da população mundial usava o sistema imperial ou o sistema consuetudinário dos EUA, com 25% usando principalmente o sistema métrico e 53% não usando nenhum deles. O Sistema Internacional de Unidades, atualmente o sistema de medição mais utilizado, foi publicado em 1960. Foi adotado por todos os países desenvolvidos, exceto pelos Estados Unidos, embora, como mencionado anteriormente, seja utilizado na ciência, bem como fortemente na. militar, mesmo nos EUA.",
+      title1: "O que esta ferramenta pode fazer?",
+      title2: "Exemplos",
+      title3: "Quem somos nós?",
+      title4: "Diferentes Sistemas de Unidades",
+      title5: "História da Libra",
+      title6: "Breve História do Sistema Métrico"
+    },
+    seoDesc: "Esta calculadora gratuita de conversão de unidades converte entre unidades comuns de comprimento e peso por Shulex VOC.",
+    seoTitle: "Ferramenta gratuita de conversão de unidades - Shulex VOC",
+    title: "Ferramenta gratuita de conversão de unidades"
+  },
+  usernameGenerator: {
+    seoDesc: "Crie uma identidade online exclusiva com o gerador de nome de usuário Shulex VOC. Encontre seu nome de usuário ideal e aumente sua presença online hoje mesmo!",
+    seoTitle: "Gerador de nome de usuário gratuito - Shulex VOC",
+    title: "Gerador de nome de usuário gratuito",
+    titleText1: {
+      subtitle: "Um gerador de nome de usuário é uma ferramenta que gera rapidamente uma compilação de identificadores de mídia social, utilizando os detalhes fornecidos pelos usuários. Nossa ferramenta incorpora o poder da inteligência artificial (IA) com a ajuda dos usuários para produzir inúmeras alças criativas e divertidas em segundos. Obtenha uma lista abrangente de identificadores para várias plataformas, como Instagram, TikTok, YouTube, Pinterest, Roblox e muito mais. Quando os usuários inserem alguns termos descritivos que refletem sua identidade e paixões, o gerador irá gerar uma gama de opções que realmente capturam sua personalidade única.",
+      title: "O que é um gerador de nome de usuário?"
+    },
+    titleText2: {
+      subtitle: "Este gerador de nome de usuário AI foi criado especificamente para eliminar a incerteza quando se trata de criar nomes de usuário para várias plataformas online. Esteja você participando de fóruns online ou plataformas de jogos, esta ferramenta economizará tempo e esforço mental valiosos, fornecendo nomes de usuário exclusivos e personalizados. Chega de se esforçar para encontrar nomes de usuário atraentes e memoráveis ao se inscrever em novos sites ou renovar sua personalidade online.<h3 style=\"color:#1d2129\"> Plataformas de mídia social</h3> O aspecto mais notável do nosso gerador de nomes de usuário é sua capacidade de gerar rapidamente ideias para nomes de usuário nas redes sociais. Em questão de segundos, você pode encontrar um novo identificador para uma variedade de plataformas, incluindo Instagram, Twitter, TikTok, Tumblr, YouTube, BeReal, Snapchat, Mastodon, Twitch e vários outros sites que exigem registros de gerenciamento. Aproveite a conveniência de encontrar rapidamente o identificador perfeito para suas plataformas online preferidas.",
+      title: "Para que posso usar este gerador de nome de usuário?"
+    }
+  }
+};

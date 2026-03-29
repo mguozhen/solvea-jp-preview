@@ -1,0 +1,72 @@
+@import './_variables.scss';
+
+.gap {
+  // margin-top: 80px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.light {
+  h1,
+  h2 {
+    font-family: Poppins;
+  }
+}
+
+.start {
+  padding-top: 60px;
+}
+
+.compWrapper {
+  padding: $small-device-component-padding;
+  position: relative;
+}
+
+.compWrapperNoPadding {
+  padding: 0;
+  position: relative;
+}
+
+.marginAuto {
+  margin: 0 auto;
+}
+
+.horizontal {
+  // .gap {
+  //   margin-top: 0;
+  //   margin-left: 12px;
+  // }
+  .compWrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .compWrapper + .compWrapper {
+    margin-left: 16px;
+  }
+}
+
+@media only screen and (max-width: $middle-device-width) {
+  .start {
+    padding-top: 30px;
+  }
+  .compWrapper {
+    padding: $middle-device-component-padding;
+  }
+}
+
+@media only screen and (max-width: $small-device-width) {
+  .start {
+    padding-top: 20px;
+  }
+  .compWrapper {
+    padding: $small-device-component-padding;
+  }
+  .horizontal {
+    .gap {
+      margin-top: 0;
+      margin-top: 12px;
+    }
+  }
+}

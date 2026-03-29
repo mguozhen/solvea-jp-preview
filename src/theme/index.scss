@@ -1,0 +1,37 @@
+$small-device-width: 800px;
+$middle-device-width: 1200px;
+$laptop-device-width: 1510px;
+$mobile-width: 500px;
+
+$text-black: #292a36;
+$text-white-hover: rgb(177, 177, 177);
+
+// 不同gray颜色
+$gray-50: #f9fafb;
+$gray-100: #f2f4f7;
+$gray-200: #eaecf0;
+$gray-300: #d0d5dd;
+$gray-400: #98a2b3;
+$gray-500: #667085;
+$gray-600: #475467;
+$gray-700: #344054;
+
+$primary: #4c6fff;
+$primary-50: #eff8ff;
+$primary-blue: #2a85ff;
+$primary-600: #1570ef;
+
+$text-primary: #1d233f;
+$text-secondary: #535f78;
+$text-dark: #304162;
+$text-black: #101828;
+$text-gray: #667085;
+
+// 多行换行
+@mixin mulitiTextDot($line) {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}

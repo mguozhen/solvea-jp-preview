@@ -1,0 +1,1158 @@
+.header {
+  // background: rgba(238, 238, 238, 0.74);
+  border-bottom: 0.5px solid #7C7C7C;
+  background: #FFF;
+  backdrop-filter: blur(10.6px);
+  padding: 0 var(--insight-padding-x);
+  height: 61px;
+  display: flex;
+  align-items: center;
+  position: -webkit-sticky; // 移动端浏览器兼容
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  // 启用硬件加速，优化移动端性能
+  will-change: transform;
+  // 防止移动端滚动时的抖动
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  // 优化移动端滚动性能
+  -webkit-overflow-scrolling: touch;
+
+  // 移动端适配
+  @media (max-width: 800px) {
+    height: 56px;
+    padding: 0 0 0 16px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    height: 58px;
+    padding: 0 24px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #7c7c7c;
+    z-index: 5;
+  }
+
+  &.menuOpen {
+    background: transparent;
+
+    .logo,
+    .mobileMenuButton svg {
+      color: #fff;
+    }
+
+    .logo {
+      animation: logo-spin 0.3s ease-out;
+    }
+
+    @keyframes logo-spin {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .mobileMenuOverlay {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+.logo {
+  width: 97px;
+  height: 22px;
+  color: #2b2b2b;
+  vertical-align: middle;
+
+  // 移动端适配
+  @media (max-width: 800px) {
+    width: 80px;
+    height: 18px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    width: 88px;
+    height: 20px;
+  }
+}
+
+.navLinks {
+  display: flex;
+  gap: 41px;
+  cursor: pointer;
+
+  // 平板适配 - 缩小间距
+  @media (min-width: 801px) and (max-width: 1024px) {
+    gap: 24px;
+  }
+
+  // 移动端隐藏
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
+.navLink {
+  font-family: var(--font-IBM_Plex_Mono), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #2b2b2b;
+  text-transform: uppercase;
+  letter-spacing: 0.0833em;
+  line-height: 1.4em;
+  text-decoration: none;
+  // 上下居中
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popLinkRoot {
+  :global {
+    .ant-popover-content {
+      font-family: var(--font-IBM_Plex_Mono), monospace;
+      transform: translateY(16px);
+    }
+
+    .ant-popover-inner {
+      background: #fff;
+      padding: 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+  }
+
+  // 平板适配 - 增加触摸区域
+  @media (min-width: 801px) and (max-width: 1024px) {
+    :global {
+      .ant-popover-content {
+        transform: translateY(12px);
+      }
+    }
+  }
+}
+
+// 两列或三列布局
+.popLinkTwoColumn {
+  display: flex;
+  min-width: 180px;
+  max-width: 900px;
+}
+
+// 左侧边栏：二级菜单
+.popLinkSidebar {
+  min-width: 180px;
+  background: #fff;
+  padding: 8px 0;
+  border-right: 1px solid #e9ecef;
+  flex-shrink: 0;
+}
+
+.popLinkSidebarItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+
+  &:hover {
+    background: transparent;
+  }
+
+  &.active {
+    background: transparent;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #2b2b2b;
+    }
+  }
+}
+
+.popLinkSidebarIcon {
+  font-size: 16px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popLinkSidebarText {
+  flex: 1;
+  font-family: var(--font-IBM_Plex_Mono), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #2b2b2b;
+  text-transform: uppercase;
+  letter-spacing: 0.0833em;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.popLinkSidebarArrow {
+  width: 10px;
+  height: 10px;
+  color: #999;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+
+  .popLinkSidebarItem:hover &,
+  .popLinkSidebarItem.active & {
+    opacity: 1;
+  }
+}
+
+// 中间区域：三级菜单（单列显示）
+.popLinkMainContent {
+  min-width: 200px;
+  padding: 8px 0;
+  background: #fff;
+  overflow-y: auto;
+  max-height: 500px;
+  flex-shrink: 0;
+}
+
+.popLinkList {
+  display: flex;
+  flex-direction: column;
+}
+
+.popLinkListWrapper {
+  width: 100%;
+}
+
+.popLinkListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    background: transparent;
+  }
+
+  &.hasChildren {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &.active {
+    background: transparent;
+  }
+}
+
+.popLinkListItemLabel {
+  font-family: var(--font-IBM_Plex_Mono), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #2b2b2b;
+  text-transform: uppercase;
+  letter-spacing: 0.0833em;
+  line-height: 1.4em;
+  transition: color 0.15s ease;
+  flex: 1;
+
+  .popLinkListItem:hover & {
+    color: #000;
+    text-decoration: underline;
+  }
+}
+
+.popLinkListItemArrow {
+  width: 10px;
+  height: 10px;
+  color: #999;
+  margin-left: 8px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+
+  .popLinkListItem:hover &,
+  .popLinkListItem.active & {
+    opacity: 1;
+  }
+}
+
+// 右侧第三列：四级子菜单
+.popLinkThirdColumn {
+  min-width: 200px;
+  padding: 8px 0;
+  background: #fff;
+  border-left: 1px solid #e9ecef;
+  overflow-y: auto;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.2s ease;
+}
+
+.popLinkThirdItem {
+  padding: 10px 16px;
+  font-family: var(--font-IBM_Plex_Mono), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #2b2b2b;
+  text-transform: uppercase;
+  letter-spacing: 0.0833em;
+  line-height: 1.4em;
+  text-decoration: none;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background: transparent;
+    color: #000;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.rightAction {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: var(--font-IBM_Plex_Mono), monospace;
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    gap: 12px;
+  }
+
+  // 移动端适配
+  @media (max-width: 800px) {
+    gap: 6px;
+  }
+
+  .phoneInfo {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    .phoneIcon {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+
+      @media (max-width: 400px) {
+        width: 20px;
+        height: 20px;
+      }
+
+      @media (min-width: 401px) and (max-width: 800px) {
+        width: 24px;
+        height: 24px;
+      }
+
+      @media (min-width: 801px) and (max-width: 1024px) {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    .phoneInfoText {
+      display: flex;
+      flex-direction: column;
+
+      .phoneNumber {
+        color: #0F1724;
+        font-family: "Helvetica Neue", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.8px;
+
+        @media (max-width: 400px) {
+          font-size: 11px;
+          line-height: 13.2px;
+        }
+
+        @media (min-width: 401px) and (max-width: 800px) {
+          font-size: 12px;
+          line-height: 14.4px;
+        }
+
+        @media (min-width: 801px) and (max-width: 1024px) {
+          font-size: 13px;
+          line-height: 15.6px;
+        }
+      }
+
+      .phoneInfoDesc {
+        color: #2B2B2B;
+        text-align: center;
+        font-family: "Helvetica Neue", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 19.5px;
+
+        @media (max-width: 400px) {
+          font-size: 10px;
+          line-height: 12px;
+        }
+
+        @media (min-width: 401px) and (max-width: 800px) {
+          font-size: 11px;
+          line-height: 13.2px;
+        }
+
+        @media (min-width: 801px) and (max-width: 1024px) {
+          font-size: 11px;
+          line-height: 13.2px;
+        }
+      }
+    }
+
+    @media (max-width: 400px) {
+      gap: 4px;
+    }
+
+    @media (min-width: 401px) and (max-width: 800px) {
+      gap: 6px;
+    }
+  }
+
+  // 与 LOGIN + SIGNUP 区域近似同宽同高，鉴权完成前占位避免布局跳动
+  .authCtaPlaceholder {
+    flex: 0 0 auto;
+    min-width: 220px;
+    height: 31px;
+
+    @media (min-width: 801px) and (max-width: 1024px) {
+      min-width: 200px;
+      height: 28px;
+    }
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+
+  .loginButton {
+    color: #6B7280;
+    font-family: var(--font-IBM_Plex_Mono), monospace;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #2B2B2B;
+    }
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+
+
+
+  .tryForFreeButton {
+    display: flex;
+    height: 31px;
+    padding: 7px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #2B2B2B;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFF;
+    font-family: "Helvetica Neue", sans-serif;
+    line-height: 16.8px;
+
+    @media (min-width: 801px) and (max-width: 1024px) {
+      padding: 6px 16px;
+      font-size: 11px;
+      height: 28px;
+      line-height: 16px;
+      gap: 8px;
+    }
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+}
+
+.contactButton {
+  background: #2b2b2b;
+  color: #eeeeee;
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.0833em;
+  line-height: 31px;
+  padding: 0 20px;
+  border: 1px solid #2b2b2b;
+  cursor: pointer;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    padding: 0 16px;
+    font-size: 11px;
+    line-height: 28px;
+  }
+
+  // 移动端隐藏
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
+.contactButton2 {
+  background: transparent;
+  border: 1px solid #2b2b2b;
+  color: #2b2b2b;
+}
+
+.dropMenu {
+  display: flex;
+  align-items: center;
+}
+
+// Wrapper controls desktop visibility — overrides GetStartedBtn's own display:inline-flex
+.mobileTryBtnWrapper {
+  display: none;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
+.mobileTryBtnInner {
+  height: 28px;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  // Very small screens: even tighter
+  @media (max-width: 380px) {
+    padding: 4px 8px;
+  }
+}
+
+// 与两条 mobileAuthBtn 叠放时总高度接近，避免菜单内鉴权前后跳动
+.mobileAuthBtnPlaceholder {
+  display: block;
+  border-radius: 6px;
+  padding: 14px 20px;
+  min-height: 51px;
+  visibility: hidden;
+  pointer-events: none;
+  box-sizing: border-box;
+
+  @media (max-width: 400px) {
+    padding: 12px 16px;
+    min-height: 46px;
+  }
+
+  @media (min-width: 801px) and (max-width: 1024px) {
+    padding: 16px 24px;
+    min-height: 58px;
+  }
+}
+
+// White-bg highlighted auth buttons in mobile menu
+.mobileAuthBtn {
+  display: block;
+  background: #fff;
+  color: #000;
+  border-radius: 6px;
+  padding: 14px 20px;
+  font-family: var(--font-IBM_Plex_Mono), monospace;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.0833em;
+  line-height: 1.4em;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.9;
+    color: #000;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  @media (min-width: 801px) and (max-width: 1024px) {
+    font-size: 24px;
+    padding: 16px 24px;
+  }
+}
+
+.mobileMenuButton {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 11;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+
+  &:focus {
+    outline: none;
+  }
+
+  // 移动端和平板显示
+  @media (max-width: 1024px) {
+    display: flex;
+  }
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 56px;
+  background: #000;
+  z-index: 4;
+  display: flex;
+  justify-content: flex-end;
+  touch-action: none;
+  overscroll-behavior: none;
+  transform: scale(0);
+  opacity: 0;
+  transform-origin: top right;
+  transition: all 0.3s ease-out;
+
+  // 移动端适配
+  @media (max-width: 400px) {
+    padding-top: 56px;
+  }
+
+  @media (min-width: 480px) and (max-width: 800px) {
+    padding-top: 64px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    padding-top: 58px;
+  }
+}
+
+.mobileMenuContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  overflow-y: auto;
+  // 优化移动端滚动
+  -webkit-overflow-scrolling: touch;
+
+  // 移动端适配 - 小屏幕
+  @media (max-width: 400px) {
+    padding: 24px 16px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    padding: 48px 40px;
+  }
+}
+
+.mobileLangSwap {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+
+  // 移动端适配 - 小屏幕
+  @media (max-width: 400px) {
+    gap: 12px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    gap: 20px;
+  }
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  margin-bottom: 40px;
+
+  // 移动端适配 - 小屏幕
+  @media (max-width: 400px) {
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    gap: 52px;
+    margin-bottom: 48px;
+  }
+}
+
+.mobileNavLink {
+  font-family: var(--font-IBM_Plex_Mono), monospace;
+  font-size: 22px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.0833em;
+  line-height: 1.4em;
+  text-decoration: none;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  // 移动端适配 - 小屏幕
+  @media (max-width: 400px) {
+    font-size: 18px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    font-size: 28px;
+  }
+}
+
+.mobileNavLinkTitle {
+  font-family: var(--font-IBM_Plex_Mono), monospace;
+  font-size: 22px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.0833em;
+  line-height: 1.4em;
+  margin-bottom: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  // 移动端适配 - 小屏幕
+  @media (max-width: 400px) {
+    font-size: 18px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    font-size: 28px;
+  }
+}
+
+.mobileNavArrow {
+  width: 14px;
+  height: 14px;
+  color: #fff;
+  transition: transform 0.3s ease;
+
+  &.expanded {
+    transform: rotate(90deg);
+  }
+
+  // 移动端适配 - 小屏幕
+  @media (max-width: 400px) {
+    width: 12px;
+    height: 12px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.mobileSubMenuContent {
+  margin-top: 16px;
+  overflow: hidden;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
+
+.mobileNavLinkSub {
+  font-family: var(--font-IBM_Plex_Mono), monospace;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 0.0833em;
+  line-height: 1.4em;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  display: block;
+  margin: 8px 0 8px 16px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  // 移动端适配 - 小屏幕
+  @media (max-width: 400px) {
+    font-size: 16px;
+    margin: 6px 0 6px 12px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    font-size: 22px;
+    margin: 10px 0 10px 20px;
+  }
+}
+
+.mobileNavLinkChild {
+  font-family: var(--font-IBM_Plex_Mono), monospace;
+  font-size: 16px;
+  font-weight: 400;
+  color: #999;
+  text-transform: none;
+  letter-spacing: 0.05em;
+  line-height: 1.4em;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  display: block;
+  margin: 4px 0 4px 32px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  // 移动端适配 - 小屏幕
+  @media (max-width: 400px) {
+    font-size: 14px;
+    margin: 3px 0 3px 24px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    font-size: 20px;
+    margin: 6px 0 6px 40px;
+  }
+}
+
+.mobileContactButton {
+  background: #fff;
+  color: #000;
+  border: none;
+  font-family: var(--font-IBM_Plex_Mono), monospace;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.0833em;
+  line-height: 50px;
+  padding: 0 30px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  text-align: center;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  .iconText {
+    margin: 0 8px;
+    white-space: nowrap;
+  }
+
+  .arrow {
+    width: 15px;
+    height: 15px;
+
+    path {
+      fill: #000;
+    }
+  }
+
+  // 移动端适配 - 小屏幕
+  @media (max-width: 400px) {
+    font-size: 16px;
+    line-height: 44px;
+    padding: 0 24px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    font-size: 22px;
+    line-height: 56px;
+    padding: 0 36px;
+  }
+}
+
+@media (max-width: 800px) {
+  .navLinks {
+    display: none;
+  }
+
+  .langSwap {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// 平板适配 (801px - 1024px)
+@media (min-width: 801px) and (max-width: 1024px) {
+  .navLinks {
+    display: none;
+  }
+
+  .langSwap {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// 移动端 - 更大屏幕适配 (480px - 800px)
+@media (max-width: 800px) and (min-width: 480px) {
+  .header {
+    height: 64px;
+  }
+
+  .logo {
+    height: 24px;
+    width: 100px;
+  }
+
+  .mobileContactButton {
+    font-size: 20px;
+    line-height: 54px;
+  }
+
+  .mobileNavLink {
+    font-size: 24px;
+  }
+
+  .mobileMenuOverlay {
+    padding-top: 64px;
+  }
+
+  .mobileNavLinkTitle {
+    font-size: 24px;
+  }
+}
+
+// 语言选择页面
+.langSelectPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  z-index: 10001;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+
+  .logo {
+    color: #fff;
+  }
+
+  .langSelectClose {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+.langSelectPageContent {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.langSelectHeader {
+  display: flex;
+  height: 61px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  justify-content: space-between;
+  padding: 0 var(--insight-padding-x);
+
+  // 移动端适配
+  @media (max-width: 800px) {
+    height: 56px;
+    padding: 0 16px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    height: 58px;
+    padding: 0 24px;
+  }
+}
+
+.langSelectTitle {
+  font-family: var(--font-IBM_Plex_Mono), monospace;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2b2b2b;
+  text-transform: uppercase;
+  letter-spacing: 0.0833em;
+}
+
+.langSelectList {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+.langSelectItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: left;
+  font-family: var(--font-IBM_Plex_Mono), monospace;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  &.active {
+    background-color: #2b2b2b;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  // 移动端适配 - 小屏幕
+  @media (max-width: 400px) {
+    padding: 14px 20px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    padding: 20px 32px;
+  }
+}
+
+.langSelectText {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.5;
+
+  // 移动端适配 - 小屏幕
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
+
+  // 平板适配
+  @media (min-width: 801px) and (max-width: 1024px) {
+    font-size: 18px;
+  }
+}
+
+.langSelectArrow {
+  width: 16px;
+  height: 16px;
+  color: #fff;
+}

@@ -1,0 +1,167 @@
+@import '../_variables.scss';
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding-top: 158px;
+  padding-bottom: 227px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #f7f7f7;
+  @media (max-width: 1720px) {
+    position: relative;
+    left: -14px;
+    width: calc(100% + 28px);
+  }
+  .tag {
+    @include Tag();
+    margin-bottom: 16px;
+  }
+  .title {
+    @include NormalBlockTitle();
+    white-space: pre-line;
+    margin-bottom: 32px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .description {
+    @include BlockContent();
+    width: 100%;
+    white-space: pre-line;
+    text-align: center;
+    margin-bottom: 90px;
+    position: relative;
+    z-index: 1;
+  }
+  .btn {
+    position: relative;
+    z-index: 1;
+    .button {
+      height: 51px;
+    }
+  }
+
+  // 平板适配 (1024px - 768px)
+  @media (max-width: 1024px) and (min-width: 769px) {
+    padding: 80px 32px;
+
+    .title {
+      width: 100%;
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+
+    .description {
+      width: 100%;
+      margin-bottom: 60px;
+      line-height: 1.5;
+    }
+
+    .btn .button {
+      height: 48px;
+    }
+  }
+
+  // 移动端适配 (768px 以下)
+  @media (max-width: 768px) {
+    padding: 60px 18px;
+
+    .title {
+      width: 100%;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .description {
+      width: 100%;
+      margin-bottom: 48px;
+      line-height: 1.5;
+    }
+
+    .btn .button {
+      height: 44px;
+    }
+  }
+
+  // 小屏移动端适配 (480px 以下)
+  @media (max-width: 480px) {
+    padding: 48px 14px;
+
+    .title {
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+
+    .description {
+      margin-bottom: 36px;
+      line-height: 1.5;
+    }
+
+    .btn .button {
+      height: 42px;
+    }
+  }
+}
+
+.backgroundSvg {
+  position: absolute;
+  width: 477px;
+  height: 474px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+
+  // 平板适配 (1024px - 768px)
+  @media (max-width: 1024px) and (min-width: 769px) {
+    width: 420px;
+    height: 420px;
+  }
+
+  // 移动端适配 (768px 以下)
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
+
+  // 小屏移动端适配 (480px 以下)
+  @media (max-width: 480px) {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+.brandGridSvg {
+  position: absolute;
+  width: 220px;
+  height: 216px;
+  right: 0px;
+  bottom: 0px;
+
+  // 平板适配 (1024px - 768px)
+  @media (max-width: 1024px) and (min-width: 769px) {
+    width: 200px;
+    height: 196px;
+  }
+
+  // 移动端适配 (768px 以下)
+  @media (max-width: 768px) {
+    width: 160px;
+    height: 156px;
+  }
+
+  // 小屏移动端适配 (480px 以下)
+  @media (max-width: 480px) {
+    width: 110px;
+    height: 108px;
+  }
+}

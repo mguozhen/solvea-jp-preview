@@ -1,0 +1,48 @@
+:root {
+  --font-family-title: var(--font-NeueHelvetica);
+  --font-family: var(--font-Roboto_Mono);
+  --font-family2: var(--font-IBM_Plex_Mono);
+  --font-family3: var(--font-Inter);
+}
+
+/* 预留滚动条宽度，避免内容加载后出现滚动条导致横向跳动 */
+html {
+  overflow-y: scroll;
+}
+
+html[lang='jp'] {
+  --font-family-title: var(--font-NeueHelvetica);
+  --font-family: var(--font-Noto_Sans_JP);
+  --font-family2: var(--font-Noto_Sans_JP);
+  --font-family3: var(--font-Noto_Sans_JP);
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+}
+.wp-embed-responsive .wp-block-embed .wp-block-embed__wrapper:before {
+  position: relative;
+}
+
+.backgroundGray {
+  background: #f3f5f6;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+.imageTextBox {
+  text-align: center;
+}
+.imageTextBox .imageDesc {
+  font-size: 12px;
+  color: #a2a2a2;
+  width: 100%;
+  text-align: center;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}

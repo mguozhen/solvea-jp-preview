@@ -1,0 +1,72 @@
+@import 'theme/index.scss';
+.container {
+  height: 100%;
+  display: flex;
+  // color: #ffffff;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 8px;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  transition-duration: 200ms;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus,
+  &:active,
+  &:hover {
+    // text-decoration: none;
+    text-decoration-color: #fff;
+  }
+
+  &.noClick {
+    cursor: default;
+  }
+
+  &.vertical {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .navLink {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 4px;
+    .title {
+      color: #fff;
+      font-family: Avenir;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 140%;
+    }
+    .desc {
+      color: $gray-500;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+
+  .item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: -2%;
+    margin-left: 52px;
+  }
+}
+
+@media screen and (max-width: $middle-device-width) {
+  .container {
+    .navLink {
+      .title {
+        font-size: 12px;
+      }
+    }
+  }
+}

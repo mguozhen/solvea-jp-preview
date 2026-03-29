@@ -1,0 +1,85 @@
+.container {
+  padding: 0 58px;
+  box-sizing: border-box;
+  position: relative;
+  .tips {
+    color: #afafaf;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+  }
+  .title {
+    font-size: 70px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+
+  .listBox {
+    display: flex;
+    gap: 20px;
+    text-align: left;
+    .listItem {
+      flex: 1;
+      border: 1px solid #c5bfff;
+      padding: 32px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #000;
+      z-index: 9;
+      //   border-image-source: conic-gradient(
+      //     from 180deg at 50% 50%,
+      //     #c5bfff 0deg,
+      //     #c376ff 35.77deg,
+      //     #c9f2fc 153.75deg,
+      //     #9f53ff 258.75deg,
+      //     #c5bfff 360deg
+      //   );
+      .itemContent {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 400;
+      }
+
+      .linkBtn {
+        display: inline-flex;
+        align-items: center;
+        height: 60px;
+        width: fit-content;
+        border-radius: 100px;
+        border: 1px solid #75778b;
+        padding: 0 24px;
+        gap: 16px;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        color: #fff;
+        margin-top: 46px;
+        .arrowIcon {
+          width: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    .title {
+      font-size: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    .title {
+      font-size: 40px;
+    }
+    .listBox {
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.box {
+  border-radius: 40px;
+  padding: 36px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+
+  &.noWrap {
+    padding: 0;
+    border-radius: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .tilte {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    text-align: start;
+  }
+  .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    .desc {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .iconBox {
+        width: 64px;
+        height: 64px;
+        margin-right: 16px;
+        flex-shrink: 0;
+        .icon {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .text {
+        font-size: 20px;
+        color: #000;
+        text-align: start;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.contain {
+  position: relative;
+  width: 100%;
+  padding: 2px 0;
+  // max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  .scrollContainer {
+    display: flex;
+    align-items: center;
+
+    .items {
+      display: flex;
+      align-items: center;
+      animation: scrolling 30s linear infinite;
+      &.delay {
+        animation-delay: 1s;
+      }
+    }
+
+    .brand {
+      // min-height: 80px;
+      margin-left: 12px;
+    }
+  }
+}

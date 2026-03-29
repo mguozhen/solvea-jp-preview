@@ -1,0 +1,354 @@
+@import 'theme/index.scss';
+
+$background-dark: #001c5b;
+$navHeight: 72px;
+.headerNav {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  justify-content: space-between;
+  padding: 0 var(--insight-padding-x);
+}
+.header {
+  background: #000;
+  position: relative;
+  z-index: 99;
+
+  .flexContainer {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+  }
+}
+.topNav {
+  // background-color: $page-background;
+  // background: linear-gradient(
+  //   90deg,
+  //   #04245c 42.75%,
+  //   #045673 80.11%,
+  //   #075e77 91.47%,
+  //   #0d5c70 99.02%
+  // );
+  color: #ffffff;
+  padding: 0px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  height: 80px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 9;
+
+  .fixedHeader {
+    box-sizing: border-box;
+    position: fixed;
+    top: 16px;
+    width: 100%;
+    z-index: 999999;
+    padding: 0px 40px;
+  }
+
+  .none {
+    display: none;
+  }
+  .link {
+    text-decoration: none;
+  }
+  .headerInner {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: 0 auto;
+    align-items: center;
+    height: 64px;
+    gap: 16px;
+    flex: 1;
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+  }
+
+  .mainIndex {
+    height: 32px;
+    .logo {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .navigation {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .mainActions {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+
+    :global {
+      .ant-dropdown-trigger {
+        cursor: pointer;
+      }
+    }
+
+    .headerHref {
+      line-height: 44px;
+      min-width: 28px;
+      transition: all 0.1s ease-in-out;
+      &:hover {
+        color: $text-white-hover;
+      }
+    }
+  }
+
+  .rightBtns {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .rightTopActions {
+    display: flex;
+    align-items: center;
+  }
+
+  .openDrawer {
+    display: none;
+    .menu {
+      display: flex;
+      align-items: center;
+      width: 46px;
+      height: 46px;
+      cursor: pointer;
+      justify-content: center;
+      border-radius: 100px;
+      border: 2px solid var(--light-white-15, rgba(255, 255, 255, 0.15));
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+      &.openMenu {
+        path {
+          stroke: #000;
+        }
+        border-color: #d5d5d5;
+      }
+    }
+  }
+
+  &.sticky {
+    position: sticky;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  &.blackBackground {
+    &.sticky {
+      background: #121721;
+    }
+  }
+
+  .primaryButton {
+    height: 46px !important;
+  }
+  .innerBtn {
+    height: 40px !important;
+  }
+}
+.headPlaceholder {
+  display: none;
+  height: $navHeight;
+  width: 100%;
+
+  &.black {
+    background: #000;
+  }
+}
+// .mobileMenu {
+//   display: none;
+// }
+.menus {
+  :global {
+    .ant-dropdown-menu-item-active {
+      span a {
+        color: #0052ff !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .topNav {
+    .headerInner {
+      max-width: 1200px;
+    }
+  }
+}
+
+@media only screen and (max-width: $middle-device-width) {
+  .topNav {
+    .openDrawer {
+      display: block;
+      .openDrawerIcon {
+        cursor: pointer;
+        height: 22px;
+        width: 22px;
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  .mobileDrawer {
+    // width: calc(100% - 32px);
+    background: #efefef;
+    padding: 20px 16px;
+    .navLinkText {
+      font-size: 12px;
+      color: #1d2129;
+    }
+
+    .mobileLogin {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      max-height: inherit;
+      height: inherit;
+    }
+    .mobileLoginLink {
+      border-radius: 4px !important;
+      height: 44px !important;
+      width: 100% !important;
+      // flex: 1;
+      border: 1px solid $background-dark !important;
+      color: $text-black !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0 !important;
+      background: inherit !important;
+    }
+    .mobileSignUp {
+      border-radius: 4px !important;
+      width: 100% !important;
+      height: 44px !important;
+      // flex: 1;
+      border: 1px solid $background-dark !important;
+      background: $background-dark !important;
+      color: #fff !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    :global {
+      .ant-menu {
+        border-inline-end: none !important;
+      }
+      .ant-menu-submenu-title:active {
+        background-color: #cecece !important;
+      }
+      .ant-menu-submenu-title {
+        transition: border-color 0.3s,
+          padding 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) !important;
+      }
+    }
+  }
+  .mobileMenu {
+    .navLinkTitle {
+      color: #000 !important;
+    }
+  }
+}
+
+@media only screen and (min-width: $small-device-width) and (max-width: $middle-device-width) {
+  .topNav {
+    padding-left: 32px;
+    padding-right: 32px;
+    font-size: 14px;
+    height: 72px;
+    .headerInner {
+      .left {
+        gap: 20px;
+      }
+    }
+    .mainActions {
+      display: none;
+      gap: 48px;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 14px;
+    }
+
+    .mainIndex {
+      .icon {
+        height: 24px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $small-device-width) {
+  .header {
+    display: none;
+  }
+  .headPlaceholder {
+    display: block;
+  }
+  .topNav {
+    border-bottom: 1px solid rgba(233, 237, 244, 0.15);
+    height: 72px;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    // width: calc(100% - 24px);
+    width: 100%;
+    top: 0;
+    // background: $background-dark;
+    z-index: 99;
+    .mainActions {
+      display: none;
+    }
+
+    .headerInner {
+      .left {
+        .mainIndex {
+          display: none;
+        }
+      }
+    }
+
+    .fixedHeader {
+      display: none;
+    }
+
+    &.sticky {
+      position: fixed;
+      z-index: 99;
+      // background: $background-dark;
+    }
+  }
+  .mobileDrawer {
+    padding: 80px 16px 20px;
+  }
+}

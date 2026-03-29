@@ -1,0 +1,116 @@
+// 基础动画样式
+.baseAnimation {
+  opacity: 0;
+  transition: all var(--animation-duration, 600ms) cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--animation-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.animate {
+  opacity: 1;
+}
+
+// 淡入向上动画
+.fadeInUp {
+  @extend .baseAnimation;
+  transform: translateY(30px);
+}
+
+.fadeInUp.animate {
+  transform: translateY(0);
+}
+
+// 淡入向下动画
+.fadeInDown {
+  @extend .baseAnimation;
+  transform: translateY(-30px);
+}
+
+.fadeInDown.animate {
+  transform: translateY(0);
+}
+
+// 淡入向左动画
+.fadeInLeft {
+  @extend .baseAnimation;
+  transform: translateX(30px);
+}
+
+.fadeInLeft.animate {
+  transform: translateX(0);
+}
+
+// 淡入向右动画
+.fadeInRight {
+  @extend .baseAnimation;
+  transform: translateX(-30px);
+}
+
+.fadeInRight.animate {
+  transform: translateX(0);
+}
+
+// 淡入动画
+.fadeIn {
+  @extend .baseAnimation;
+  transform: none;
+}
+
+// 缩放进入动画
+.scaleIn {
+  @extend .baseAnimation;
+  transform: scale(0.9);
+}
+
+.scaleIn.animate {
+  transform: scale(1);
+}
+
+// 响应式动画 - 在小屏幕上减少移动距离
+@media (max-width: 768px) {
+  .fadeInUp {
+    transform: translateY(20px);
+  }
+  
+  .fadeInDown {
+    transform: translateY(-20px);
+  }
+  
+  .fadeInLeft {
+    transform: translateX(20px);
+  }
+  
+  .fadeInRight {
+    transform: translateX(-20px);
+  }
+  
+  .scaleIn {
+    transform: scale(0.95);
+  }
+}
+
+// 减少动画偏好设置的用户
+@media (prefers-reduced-motion: reduce) {
+  .baseAnimation {
+    transition: opacity var(--animation-duration, 300ms) ease;
+    transform: none !important;
+  }
+  
+  .fadeInUp,
+  .fadeInDown,
+  .fadeInLeft,
+  .fadeInRight,
+  .scaleIn {
+    transform: none !important;
+  }
+}
+
+// 高性能模式 - 使用transform3d来启用硬件加速
+.fadeInUp,
+.fadeInDown,
+.fadeInLeft,
+.fadeInRight,
+.scaleIn {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}

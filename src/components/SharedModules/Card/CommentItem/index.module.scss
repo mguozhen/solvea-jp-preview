@@ -1,0 +1,55 @@
+@import '../../../../theme/index.scss';
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+  max-width: 445px;
+  gap: 16px;
+  box-sizing: border-box;
+  // padding: 24px;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    .avatar {
+      width: 48px;
+      height: 48px;
+      margin-right: 12px;
+      .icon {
+        width: 48px;
+        border-radius: 50px;
+        height: 48px;
+      }
+    }
+    .title {
+      .name {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px; /* 150% */
+      }
+      .job {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px; /* 150% */
+      }
+    }
+  }
+
+  .content {
+    color: #fff;
+    font-size: 14px;
+    line-height: 160%; /* 22.4px */
+  }
+}
+
+@media only screen and (max-width: $small-device-width) {
+  .container {
+    max-width: 400px;
+  }
+}

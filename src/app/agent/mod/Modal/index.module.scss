@@ -1,0 +1,61 @@
+.container {
+  :global {
+    .ant-modal-content {
+      color: #fff;
+      position: relative;
+      background: url(https://cdn.shulex-voc.com/shulex/upload/2025-10-17/ffc8399c-bc55-4097-9ca2-784b2978c9b0.png);
+      background-size: contain;
+    }
+    .ant-modal-close-x {
+      color: #fff;
+    }
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .content {
+    padding-left: 18px;
+    margin-top: 42px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .btn {
+    // width: 240px;
+    & > svg {
+      display: none;
+    }
+    height: 36px;
+    background: transparent;
+    margin-top: 124px;
+    border: 1px solid #fff;
+    color: #13120e;
+  }
+  .btnContent {
+    background: #fff !important;
+    span {
+      color: #13120e !important;
+    }
+    svg {
+      rect {
+        fill: #13120e !important;
+      }
+    }
+  }
+  .img {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 318px;
+    object-fit: contain;
+  }
+  .continueText {
+    font-size: 10px;
+    font-weight: 500;
+    margin-top: 12px;
+    color: #6c6c6c;
+    cursor: pointer;
+  }
+}

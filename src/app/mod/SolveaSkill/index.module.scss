@@ -1,0 +1,195 @@
+.block {
+}
+.img {
+  max-width: 100%;
+}
+
+.title {
+  font-size: 70px;
+  color: #fff;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 280px;
+    flex-shrink: 0;
+    .item {
+      height: 141px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 16px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .iconBox {
+        height: 56px;
+        width: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        top: 0;
+        background: #000;
+        border-radius: 50%;
+        box-shadow: 0px 6px 20px 0px #2a2a2a26;
+        &.purple {
+          background: #c5bfff;
+        }
+        .itemIcon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      .itemLabel {
+        color: #2a2a2a;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 0 20px;
+      }
+    }
+  }
+  .center {
+    height: 615px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 40px;
+    margin: 0 16px;
+    padding: 0 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    .topLabelBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #efefef;
+      padding: 0 12px;
+      height: 30px;
+      box-shadow: 0px 8px 16px 0px #2a2a2a0d;
+      margin-bottom: 16px;
+      background: #fff;
+      border-radius: 100px;
+
+      .queenIcon {
+        height: 12px;
+        width: 12px;
+        margin-right: 6px;
+      }
+      .topLabel {
+        color: #686868;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+    .avatar {
+      width: 178px;
+      height: 178px;
+      margin-bottom: 16px;
+    }
+    .name {
+      color: #2a2a2a;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .desc {
+      color: #686868;
+      font-size: 16px;
+      font-weight: 500;
+      max-width: 400px;
+      margin-bottom: 40px;
+    }
+    .inputBox {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 100px;
+      border: 1px solid #2a2a2a0d;
+      background: #2a2a2a08;
+      padding: 0 7px 0 28px;
+      height: 67px;
+      margin-bottom: 20px;
+      max-width: 400px;
+      width: 100%;
+      .inputBoxLabel {
+        color: #878787;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .inputGo {
+        height: 56px;
+        width: 56px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+        .goIcon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+    .userGroup {
+      height: 26px;
+      width: 60px;
+      margin-bottom: 12px;
+    }
+    .userGroupTip {
+      color: #686868;
+      font-weight: 12px;
+      font-weight: 500;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .title {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    flex-direction: column;
+    .column {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 16px;
+      .item {
+        width: calc((100% - 16px) / 2);
+        margin-bottom: 0;
+        padding: 0 20px;
+      }
+    }
+    .center {
+      margin: 16px 0;
+      width: 100%;
+      height: initial;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+  .title {
+    font-size: 34px;
+  }
+}

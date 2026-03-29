@@ -1,0 +1,38 @@
+.content {
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 1200px;
+  h1 {
+    font-family: var(--font-family-title);
+    font-weight: 500;
+    font-size: 68px;
+    line-height: 1;
+    vertical-align: middle;
+    color: #000;
+    margin: 32px 0 !important;
+  }
+  h2 {
+    font-family: var(--font-family-title);
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 1;
+    vertical-align: middle;
+    color: #000;
+    margin-bottom: 32px;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #000;
+  }
+  p {
+    font-family: var(--font-family2);
+    font-size: 17px;
+    flex-shrink: 0;
+    color: #313947;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+}

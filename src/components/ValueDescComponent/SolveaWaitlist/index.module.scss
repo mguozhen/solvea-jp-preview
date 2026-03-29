@@ -1,0 +1,56 @@
+@import '../_variables.scss';
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  padding: 115px 30px 142px;
+
+  @media (max-width: 1720px) {
+    position: relative;
+    left: -14px;
+    width: calc(100% + 28px);
+  }
+
+  @media (max-width: 1280px) {
+    padding: 80px 20px 80px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 60px 20px 60px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 20px 50px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 16px 40px;
+  }
+}
+
+.iframe {
+  width: 52%;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 100px 0px #ff62e0;
+
+  @media (max-width: 1720px) {
+    width: 52%;
+  }
+
+  @media (max-width: 1280px) {
+    width: 52%;
+  }
+
+  @media (max-width: 1024px) {
+    width: 52%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}

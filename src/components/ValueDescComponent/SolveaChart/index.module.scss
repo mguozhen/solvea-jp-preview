@@ -1,0 +1,75 @@
+@import '../_variables.scss';
+
+.container {
+  width: 100%;
+  padding: 78px 30px 113px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+  box-sizing: border-box;
+  @media (max-width: 1720px) {
+    padding: 78px 0 113px;
+  }
+
+  // 平板适配 (768px - 1024px)
+  @media (max-width: 1024px) {
+    padding: 60px 0 80px;
+  }
+
+  // 移动端适配 (最大768px)
+  @media (max-width: 768px) {
+    padding: 40px 0 60px;
+  }
+
+  // 小屏移动端适配 (最大480px)
+  @media (max-width: 480px) {
+    padding: 30px 0 40px;
+  }
+}
+
+.title {
+  @include NormalBlockTitle();
+  width: 100%;
+  min-height: 138px;
+  white-space: pre-line;
+  margin-bottom: 28px;
+
+  // 平板适配
+  @media (max-width: 1024px) {
+    width: 100%;
+    max-width: 600px;
+    min-height: 120px;
+  }
+
+  // 移动端适配
+  @media (max-width: 768px) {
+    width: 100%;
+    min-height: 30px;
+    margin-bottom: 24px;
+  }
+
+  // 小屏移动端适配
+  @media (max-width: 480px) {
+    margin-bottom: 20px;
+  }
+}
+
+.buttonLink {
+  width: fit-content;
+  margin-top: 40px;
+
+  // 移动端适配
+  @media (max-width: 768px) {
+    margin-top: 32px;
+  }
+
+  // 小屏移动端适配
+  @media (max-width: 480px) {
+    margin-top: 24px;
+  }
+
+  .button {
+    height: 51px;
+  }
+}

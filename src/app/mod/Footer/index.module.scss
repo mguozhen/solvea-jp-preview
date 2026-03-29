@@ -1,0 +1,246 @@
+.footer {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 var(--insight-padding-x) 30px;
+  background: #FDFDFD;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #4e4e4e;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 36px;
+
+  .logo {
+    width: 36px;
+    height: 42px;
+  }
+}
+
+.footerLogo {
+  margin-bottom: 48px;
+
+  .solveaLogo {
+    width: 548px;
+    height: 120px;
+  }
+}
+
+.brandText {
+  font-family: 'Mansure', sans-serif;
+  font-size: 4rem;
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
+}
+
+.footerLogo {
+  width: 3rem;
+  height: auto;
+  color: #000000;
+}
+
+.linksContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8rem;
+}
+
+.linkSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-family2);
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 15.2px;
+  leading-trim: NONE;
+  line-height: 22.18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0;
+}
+
+.companyLogoLink {
+  font-family: var(--font-family2), monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #000000;
+  cursor: pointer;
+}
+
+.companyLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+
+  .companyLogoList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .companyLogoItem {
+    display: inline-flex;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+.linksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .socialIcon {
+    margin-right: 6px;
+    width: 21.4px;
+    height: 21.4px;
+    object-fit: contain;
+  }
+}
+
+.link {
+  font-family: var(--font-family2), monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #000000;
+  text-decoration: none;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.legalLinks {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.footerLangSwap {
+  display: flex;
+  align-items: center;
+}
+
+.footerLangSwapInner {
+  height: auto;
+
+  @media (max-width: 800px) {
+    display: flex !important;
+  }
+}
+
+.legalLink {
+  font-family: var(--font-family2), monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #000000;
+  text-decoration: none;
+}
+
+.copyright {
+  font-family: var(--font-family2), monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #000000;
+}
+
+// @media (max-width: 768px) and (min-width: 480px) {
+//   .footer {
+//     padding: 2rem 0;
+//   }
+
+//   .footerContent {
+//     padding: 0 1rem;
+//   }
+
+//   .brandText {
+//     font-size: 3rem;
+//   }
+
+//   .linksContainer {
+//     gap: 70px;
+//     justify-content: flex-start;
+//     transform: scale(1.2);
+//     transform-origin: top right;
+//   }
+// }
+
+@media (max-width: 800px) {
+  .footer {
+    padding: 2rem var(--insight-padding-x);
+  }
+
+  .footerContent {
+    padding: 0 1rem;
+    flex-direction: column;
+
+    .logo {
+      margin-bottom: 52px;
+    }
+  }
+
+  .footerLogo {
+    margin-top: 100px;
+    width: 100%;
+    margin-bottom: 0;
+
+    .solveaLogo {
+      width: 100%;
+    }
+  }
+
+  .linksContainer {
+    gap: 48px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .companyLogo {
+      width: 100%;
+      display: flex;
+      gap: 15px;
+
+      img {
+        height: 55px;
+      }
+    }
+  }
+}

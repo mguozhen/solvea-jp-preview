@@ -1,0 +1,152 @@
+/* 与 solvea-sidebar.html 一致 */
+$sb-hero-bg: #0a1628;
+$sb-orange: #AF6532;
+$sb-orange-hover: #AF6532;
+
+.wrap {
+  width: 100%;
+  max-width: 320px;
+}
+
+.card {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hero {
+  background: $sb-hero-bg;
+  padding: 24px 20px 22px;
+  box-sizing: border-box;
+}
+
+.heroLabel {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: $sb-orange;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.heroTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.45;
+  margin: 0 0 18px;
+}
+
+.channelRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.07);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1;
+}
+
+.chipDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $sb-orange;
+  flex-shrink: 0;
+}
+
+.body {
+  padding: 18px 18px 20px;
+  box-sizing: border-box;
+}
+
+.desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.65;
+  margin: 0 0 16px;
+}
+
+.featList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+}
+
+.featItem {
+  font-size: 13px;
+  color: #555;
+  padding: 6px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  line-height: 1.5;
+  border-bottom: 1px solid #f0f0f0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.featIcon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: #fff1eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.btnTry {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 11px 16px;
+  background: $sb-orange;
+  color: #fff !important;
+
+  border-radius: 90px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: $sb-orange-hover;
+    color: #fff !important;
+  }
+}
+
+.noCardNote {
+  text-align: center;
+  font-size: 11px;
+  color: #aaa;
+  margin: 8px 0 0;
+}
+
+@media (max-width: 920px) {
+  .wrap {
+    max-width: none;
+    width: 100% !important;
+    margin: 12px 0 !important;
+  }
+}

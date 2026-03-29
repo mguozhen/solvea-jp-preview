@@ -1,0 +1,162 @@
+.container {
+  overflow: hidden;
+  .title {
+    font-size: 70px;
+    font-weight: 700;
+    color: #ededed;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .desc {
+    color: #afafaf;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+
+  }
+
+  .content {
+    display: flex;
+    gap: 40px;
+    margin-top: 80px;
+    text-align: left;
+    .subTitle {
+      color: #fff;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 60px;
+      margin: 0;
+    }
+    .left {
+      flex: 1;
+      .isoImg {
+        width: 63px;
+      }
+      .leftBottom {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        align-items: center;
+      }
+    }
+    .right {
+      flex: 1;
+      padding-left: 120px;
+      position: relative;
+      .imgWrap {
+        height: 400px;
+      }
+      .img {
+        position: absolute;
+        height: 380px;
+        right: -60px;
+      }
+      .desc {
+        color: #afafaf;
+        font-size: 16px;
+        font-weight: 300;
+      }
+    }
+    .listBox {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 32px 0;
+      .listItem {
+        display: flex;
+        gap: 22px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+      }
+      .itemIcon {
+        flex-shrink: 0;
+        width: 24px;
+      }
+    }
+  }
+}
+.bookDemoBtn {
+  background: #8056dc;
+  color: #fff;
+  border-radius: 100px;
+  border: none;
+  height: 56px;
+  padding: 0 36px;
+  font-weight: 800;
+  &:hover {
+    background: #8056dc !important;
+    color: #fff !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    .title {
+      font-size: 44px;
+    }
+    .content {
+      flex-direction: column;
+      text-align: center;
+      .right {
+        padding-left: 0;
+        .desc {
+          width: 50%;
+          margin: 20px auto 0;
+        }
+      }
+      .left {
+        .leftBottom {
+          justify-content: center;
+          margin-top: 20px;
+          align-items: center;
+        }
+      }
+
+      .listBox {
+        align-items: center;
+        margin-top: 20px;
+      }
+    }
+    .imgWrap {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    .title {
+      font-size: 30px;
+    }
+    .content {
+      .left,
+      .right {
+        .listBox {
+          align-items: start;
+          .itemContent {
+            text-align: start;
+          }
+        }
+      }
+      .right {
+        .desc {
+          width: 100%;
+          margin: 0;
+          margin-top: 20px;
+          text-align: start;
+        }
+        .img {
+          right: -100px;
+          margin: 20px;
+        }
+      }
+    }
+    .imgWrap {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}

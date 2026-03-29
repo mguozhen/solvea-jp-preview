@@ -1,0 +1,208 @@
+.container {
+  .formContainer {
+    padding: 0 var(--insight-padding-x);
+    .formWrapper {
+      position: relative;
+      padding: 100px 0;
+    }
+    .bgSvg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      max-height: 1000px;
+      top: 0;
+      left: 0;
+    }
+    .contentWrapper {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      width: 1210px;
+      margin: 0 auto;
+    }
+
+    .tallyForm {
+      width: 50%;
+      z-index: 2;
+    }
+
+    .form,
+    .svg {
+      position: relative;
+      z-index: 2;
+    }
+
+    .form {
+      width: 50%;
+      color: #222;
+      .sTitle {
+        font-family: font family/Font 1;
+        font-weight: font weight/500;
+        font-style: Medium;
+        font-size: 10.81px;
+        leading-trim: NONE;
+        line-height: 17.14px;
+        letter-spacing: 0.87px;
+        vertical-align: middle;
+        text-transform: uppercase;
+      }
+      .pTitle {
+        margin: 16px 0 60px;
+        font-family: var(--font-family-title);
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 68px;
+        leading-trim: NONE;
+        line-height: 1.14;
+        letter-spacing: 0%;
+        vertical-align: middle;
+      }
+    }
+    .svg {
+      width: 354px;
+      height: 317px;
+      margin-top: 280px;
+    }
+  }
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px var(--insight-padding-x) 100px;
+    color: #222;
+    .office {
+      // font-family: var(--font-family2);
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: font weight/500;
+      font-style: Medium;
+      font-size: 12.8px;
+      leading-trim: NONE;
+      line-height: line height/19_6;
+      letter-spacing: letter spacing/1;
+      vertical-align: middle;
+      text-transform: uppercase;
+    }
+    .infos {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-family2);
+      font-weight: font weight/400;
+      font-style: Regular;
+      font-size: 18.75px;
+      leading-trim: NONE;
+      line-height: line height/26;
+      letter-spacing: 0%;
+      vertical-align: middle;
+      padding-left: 16px;
+      .title {
+        display: none;
+        font-family: var(--font-family2);
+        font-weight: font weight/400;
+        font-style: Regular;
+        font-size: 18.75px;
+        leading-trim: NONE;
+        line-height: line height/26;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        color: var(--color-grey-13, #222222);
+        margin-bottom: 2px;
+      }
+      .addr {
+        // font-family: var(--font-family2);
+        font-family: 'Helvetica Neue', sans-serif;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 14.75px;
+        leading-trim: NONE;
+        line-height: 120%;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        width: 220px;
+        color: var(--color-grey-1360, #22222299);
+      }
+      .email {
+        // font-family: var(--font-family2);
+        font-family: 'Helvetica Neue', sans-serif;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 12.8px;
+        leading-trim: NONE;
+        line-height: line height/16_8;
+        letter-spacing: letter spacing/1;
+        text-align: center;
+        vertical-align: middle;
+        text-transform: uppercase;
+        color: #222;
+        &:hover {
+          color: #222;
+          opacity: 0.85;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .container {
+    .formContainer {
+      .contentWrapper {
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .form {
+        width: 100%;
+      }
+
+      .svg {
+        margin-top: 0;
+      }
+    }
+
+    .tallyForm {
+      width: 100% !important;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    .formContainer {
+      .contentWrapper {
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+      }
+      .form {
+        width: 100%;
+        .pTitle {
+          font-size: 40px;
+        }
+      }
+      .svg {
+        width: 232px;
+        height: 208px;
+        left: 38px;
+        margin-top: 83px;
+      }
+    }
+
+    .tallyForm {
+      width: 100% !important;
+    }
+
+    .contact {
+      flex-direction: column;
+      gap: 36px;
+      .infos {
+        flex-direction: column;
+        padding-left: 0;
+        gap: 36px;
+        .email {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

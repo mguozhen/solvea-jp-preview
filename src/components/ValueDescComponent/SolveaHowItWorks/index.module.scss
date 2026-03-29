@@ -1,0 +1,120 @@
+@import '../_variables.scss';
+
+.solveaSolutionsOverview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 30px 150px;
+  overflow: hidden;
+
+  @media (max-width: 1720px) {
+    padding: 60px 0 150px;
+  }
+
+  @media (max-width: 800px) {
+    padding: 50px 0px 100px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 0 60px;
+  }
+
+  .title {
+    @include NormalBlockTitle();
+    text-align: center;
+    width: 100%;
+    margin-bottom: 24px;
+    white-space: pre-line;
+  }
+
+  .description {
+    @include BlockContent();
+    text-align: center;
+    width: 100%;
+    margin-bottom: 90px;
+    @media (max-width: 1280px) {
+      margin-bottom: 60px;
+    }
+    @media (max-width: 1024px) {
+      margin-bottom: 40px;
+    }
+    white-space: pre-line;
+  }
+
+  .cardList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    .cardItem {
+      width: 100%;
+      border: 1px solid rgba(48, 48, 48, 1);
+      box-sizing: border-box;
+      padding-top: 23px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .cardIndex {
+        @include BlockTitle();
+        color: rgba(0, 0, 0, 1);
+        margin-bottom: 33px;
+        line-height: 1.2;
+        padding: 0 30px;
+        font-weight: 700;
+        box-sizing: border-box;
+      }
+
+      .cardImage {
+        width: 100%;
+        object-fit: contain;
+        height: 198px;
+      }
+
+      .cardTitle {
+        @include SecondaryContentTitle(1.75rem);
+        padding: 0 30px;
+        box-sizing: border-box;
+        margin-bottom: 14px;
+        font-weight: 700;
+        white-space: pre-line;
+
+        @media (max-width: 768px) {
+          @include SecondaryContentTitle(2rem);
+        }
+        @media (max-width: 480px) {
+          @include SecondaryContentTitle(2.25rem);
+        }
+      }
+      .cardDescription {
+        @include SecondaryContentText(0.875rem);
+        margin-bottom: 33px;
+        padding: 0 30px;
+        font-weight: 400;
+        box-sizing: border-box;
+        white-space: pre-line;
+      }
+    }
+  }
+
+  .buttonLink {
+    width: fit-content;
+    margin-top: 40px;
+
+    // 移动端适配
+    @media (max-width: 768px) {
+      margin-top: 32px;
+    }
+
+    // 小屏移动端适配
+    @media (max-width: 480px) {
+      margin-top: 24px;
+    }
+
+    .button {
+      height: 51px;
+    }
+  }
+}

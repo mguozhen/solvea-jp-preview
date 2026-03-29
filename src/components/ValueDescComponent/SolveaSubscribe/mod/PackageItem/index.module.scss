@@ -1,0 +1,411 @@
+.box {
+  width: 280px;
+  height: 640px;
+  border: 1px solid #e9ebed;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Helvetica Neue", sans-serif;
+
+  .title {
+    color: #131519;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .subTitle {
+    margin-top: 8px;
+    color: #2c323d;
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .price {
+    height: 44px;
+
+    .priceNormal {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      .priceNum {
+        color: #131519;
+        font-weight: 700;
+        font-size: 30px;
+        position: relative;
+        top: -2px;
+      }
+
+      .priceUnit {
+        margin-left: 8px;
+        color: #565c66;
+        font-weight: 500;
+      }
+    }
+
+    .priceText {
+      color: #131519;
+      font-weight: 700;
+      font-size: 30px;
+    }
+  }
+
+  .priceDesc {
+    margin-top: 8px;
+    margin-bottom: 24px;
+
+    .creditsBoxBasic {
+      height: 32px;
+    }
+
+    .creditsBox {
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fafbfc;
+      border: 1px solid #f0f1f2;
+      border-radius: 8px;
+      color: #2c323d;
+      font-weight: 500;
+      font-size: 14px;
+
+      .downIcon {
+        font-size: 16px;
+        margin-left: 10px;
+      }
+    }
+
+    .creditsSelect {
+      cursor: pointer;
+    }
+  }
+
+  .line {
+    margin: 12px 0 28px;
+    height: 1px;
+    width: 100%;
+    background: #f0f1f2;
+  }
+
+  .operation {
+    width: 100%;
+
+    .currentBtn {
+      width: 100%;
+      background: #f5f6f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      border-radius: 8px;
+      color: #131519;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .upgradeBtn {
+      width: 100%;
+      background: #5e51ef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+        background: #5e51ef;
+      }
+    }
+
+    .entBtn {
+      width: 100%;
+      background: #2c323d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .emptyBtn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .noCardHint {
+      margin-top: 8px;
+      text-align: center;
+      color: #88909e;
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+
+  .featureWrap {
+    margin-top: 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .moreFeatureTitle {
+      margin-top: 12px;
+      margin-bottom: 8px;
+      margin-left: 28px;
+      color: #88909e;
+      font-weight: 400;
+    }
+
+    .featureBox {
+      .featureItem {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        margin-bottom: 12px;
+        word-break: break-all;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .checkIcon {
+          margin-right: 8px;
+
+          svg {
+            width: 20px;
+            height: 20px;
+
+            path {
+              fill: #17ae5d;
+            }
+          }
+        }
+
+        .featureText {
+          color: #131519;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  // 平板横向适配
+  @media (max-width: 1280px) {
+    width: 260px;
+    padding: 18px;
+
+    .title {
+      font-size: 19px;
+    }
+
+    .subTitle {
+      font-size: 13px;
+    }
+  }
+
+  // 平板竖向适配
+  @media (max-width: 1024px) {
+    width: 240px;
+    padding: 16px;
+
+    .title {
+      font-size: 18px;
+    }
+
+    .price {
+      .priceNormal {
+        .priceNum {
+          font-size: 28px;
+        }
+      }
+
+      .priceText {
+        font-size: 28px;
+      }
+    }
+  }
+
+  // 移动端适配
+  @media (max-width: 768px) {
+    // width: 100%;
+    max-width: 400px;
+    padding: 16px;
+
+    .title {
+      font-size: 18px;
+    }
+
+    .subTitle {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      height: auto;
+
+      .priceNormal {
+        .priceNum {
+          font-size: 26px;
+        }
+
+        .priceUnit {
+          font-size: 14px;
+        }
+      }
+
+      .priceText {
+        font-size: 26px;
+      }
+    }
+
+    .priceDesc {
+      margin-bottom: 20px;
+
+      .creditsBox {
+        font-size: 13px;
+      }
+    }
+
+    .line {
+      margin: 16px 0 20px;
+    }
+
+    .featureWrap {
+      margin-top: 20px;
+
+      .moreFeatureTitle {
+        font-size: 13px;
+        margin-left: 24px;
+      }
+
+      .featureBox {
+        .featureItem {
+          margin-bottom: 10px;
+
+          .checkIcon svg {
+            width: 18px;
+            height: 18px;
+          }
+
+          .featureText {
+            font-size: 14px;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  // 小屏手机适配
+  @media (max-width: 480px) {
+    max-width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+
+    .title {
+      font-size: 17px;
+    }
+
+    .subTitle {
+      font-size: 12px;
+      margin-bottom: 18px;
+      margin-top: 6px;
+    }
+
+    .price {
+      .priceNormal {
+        .priceNum {
+          font-size: 24px;
+        }
+
+        .priceUnit {
+          font-size: 13px;
+          margin-left: 6px;
+        }
+      }
+
+      .priceText {
+        font-size: 24px;
+      }
+    }
+
+    .priceDesc {
+      margin-top: 6px;
+      margin-bottom: 18px;
+
+      .creditsBox {
+        height: 30px;
+        font-size: 12px;
+
+        .downIcon {
+          font-size: 14px;
+          margin-left: 8px;
+        }
+      }
+    }
+
+    .line {
+      margin: 14px 0 18px;
+    }
+
+    .operation {
+
+      .currentBtn,
+      .upgradeBtn,
+      .entBtn,
+      .emptyBtn {
+        height: 36px;
+        font-size: 13px;
+      }
+    }
+
+    .featureWrap {
+      margin-top: 18px;
+
+      .moreFeatureTitle {
+        font-size: 12px;
+        margin-left: 22px;
+        margin-top: 10px;
+        margin-bottom: 6px;
+      }
+
+      .featureBox {
+        .featureItem {
+          margin-bottom: 8px;
+
+          .checkIcon {
+            margin-right: 6px;
+
+            svg {
+              width: 16px;
+              height: 16px;
+            }
+          }
+
+          .featureText {
+            font-size: 13px;
+            line-height: 16px;
+          }
+        }
+      }
+    }
+  }
+}

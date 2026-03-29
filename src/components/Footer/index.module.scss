@@ -1,0 +1,239 @@
+@import 'theme/index.scss';
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 100px 156px;
+  .qrCode {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  .link {
+    margin-left: 12px;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover,
+    &:active {
+      color: #fff;
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .content {
+    display: flex;
+    .left {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      display: flex;
+      font-size: 18px;
+      font-weight: 400;
+
+      .vocLogo {
+        width: 122px;
+        margin-bottom: 40px;
+      }
+
+      .td {
+        display: flex;
+        flex-direction: row;
+        .tl {
+          flex: 1;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 28px;
+          letter-spacing: 0px;
+        }
+        .tr {
+          flex: 1;
+          margin-left: 12px;
+        }
+      }
+
+      .lb {
+        margin-top: 12px;
+
+        .icon {
+          width: 24px;
+          height: 24px;
+          max-width: 24px;
+          max-height: 24px;
+          min-width: 24px;
+          min-height: 24px;
+          margin-left: 12px;
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    .right {
+      flex: 1;
+      flex-direction: column;
+      margin-left: 60px;
+      margin-top: 72px;
+      justify-content: flex-end;
+
+      .rt,
+      .rm,
+      .rb {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      .rm,
+      .rb {
+        margin-top: 40px;
+      }
+    }
+  }
+  .brandsWrapper {
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 16px;
+    .brand {
+      height: 30px;
+      width: auto;
+      max-width: 100%;
+      &[alt] {
+        color: #fff;
+      }
+    }
+
+    .brands {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+  }
+  .medias {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    a {
+      width: 36px;
+      height: 36px;
+      .icon {
+        rect {
+          fill: $primary-600;
+          fill-opacity: 1;
+        }
+      }
+    }
+
+    .icon,
+    .iconContainer,
+    .iconBig {
+      width: 36px;
+      height: 36px;
+      background: $primary-600;
+      border-radius: 50%;
+    }
+
+    .iconContainer {
+      border-radius: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // background: @primary-600;
+      .iconBig {
+        width: 16px;
+        height: 16px;
+        path {
+          fill: #e5e0ff;
+        }
+      }
+    }
+  }
+  .bottom {
+    text-align: center;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    margin: 40px auto 0 auto;
+    .bt {
+      text-align: center;
+    }
+    .bb {
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: $laptop-device-width) {
+  .footer {
+    padding: 100px 156px;
+  }
+}
+
+@media only screen and (max-width: $middle-device-width) {
+  .footer {
+    padding: 100px 142px;
+  }
+}
+
+@media only screen and (min-width: $small-device-width) and (max-width: $middle-device-width) {
+  .footer {
+    padding: 100px 142px;
+  }
+}
+
+@media only screen and (max-width: $small-device-width) {
+  .footer {
+    padding: 30px 60px;
+    .container {
+      .content {
+        flex-direction: column;
+        .left {
+          .td {
+            flex-direction: column;
+            .tr {
+              margin-left: 0;
+            }
+          }
+        }
+        .right {
+          margin-left: 0;
+          .rt,
+          .rm,
+          .rb,
+          .brandsWrapper {
+            justify-content: flex-start;
+          }
+          .rm {
+            margin-top: 12px;
+          }
+          .rb {
+            margin-top: 12px;
+          }
+        }
+      }
+    }
+  }
+}

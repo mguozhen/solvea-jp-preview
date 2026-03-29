@@ -1,0 +1,57 @@
+@import 'theme/index.scss';
+
+.loginLink {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-height: 40px;
+  height: 40px;
+  cursor: pointer;
+
+  .btn {
+    height: 40px;
+    min-width: 100px;
+    width: fit-content;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding: 0 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    color: #fff;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .btn {
+    &:hover {
+      transform: translateY(-3%);
+      text-decoration: none;
+    }
+  }
+}
+
+@media only screen and (min-width: $small-device-width) and (max-width: $middle-device-width) {
+  .loginLink {
+    gap: 16px;
+    .btn {
+      min-width: 80px;
+      height: 32px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+  }
+}
+
+@media only screen and (max-width: $small-device-width) {
+  .loginLink {
+    .btn {
+      color: $text-black;
+    }
+  }
+}

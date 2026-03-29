@@ -1,0 +1,16 @@
+.container {
+  // flex: 1;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  .productHunt {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: fit-content;
+    img {
+      min-width: 100px;
+      max-height: 100%;
+    }
+  }
+}

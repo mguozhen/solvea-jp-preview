@@ -1,0 +1,140 @@
+@import '../_variables.scss';
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 1720px) {
+    padding: 40px 0;
+  }
+  // 平板端响应式设计 (768px-1024px)
+  @media (max-width: 1024px) and (min-width: 769px) {
+    padding: 30px 0;
+  }
+
+  // 手机端响应式设计 (481px-768px)
+  @media (max-width: 768px) {
+    padding: 24px 0;
+  }
+
+  // 超小屏幕适配 (小于480px)
+  @media (max-width: 480px) {
+    padding: 0;
+  }
+
+  .title {
+    @include NormalBlockTitle();
+    width: 100%;
+    padding: 24px 0;
+    padding-left: 2.25rem;
+    text-align: left;
+    width: 100%;
+    white-space: pre-line;
+    margin-bottom: 2rem;
+
+    // 平板端响应式设计 (768px-1024px)
+    @media (max-width: 1024px) and (min-width: 769px) {
+      margin-bottom: 60px;
+      padding: 20px 0;
+    }
+
+    // 手机端响应式设计 (481px-768px)
+    @media (max-width: 768px) {
+      margin-bottom: 40px;
+      padding: 16px 0;
+    }
+
+    // 超小屏幕适配 (小于480px)
+    @media (max-width: 480px) {
+      margin-bottom: 30px;
+      padding: 12px 0;
+    }
+  }
+  .cardList {
+    width: 100%;
+
+    .cardItemData {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: 300;
+      font-size: 64px;
+      line-height: 64px;
+      color: #000;
+      margin-bottom: 34px;
+      white-space: pre-line;
+      flex-shrink: 0;
+    }
+    .cardItemDescription {
+      @include BlockContent();
+      white-space: pre-line;
+      flex: 1;
+    }
+
+    // 平板端响应式设计 (768px-1024px)
+    @media (max-width: 1024px) and (min-width: 769px) {
+      padding: 0;
+
+      .cardItemData {
+        margin-bottom: 24px;
+      }
+    }
+
+    // 手机端响应式设计 (481px-768px) - 垂直排列
+    @media (max-width: 768px) {
+      padding: 0;
+
+      .cardItem {
+        padding: 14px 12px;
+      }
+
+      .cardItemData {
+        margin-bottom: 16px;
+      }
+    }
+
+    // 超小屏幕适配 (小于480px)
+    @media (max-width: 480px) {
+      padding: 0;
+
+      .cardItem {
+        padding: 12px 10px;
+      }
+
+      .cardItemData {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
+
+.allowIcon {
+  width: 26px;
+  height: 26px;
+  margin-bottom: 64px;
+}
+
+// 手机端响应式设计
+@media (max-width: 768px) {
+  .allowIcon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 30px; // 进一步减少图标下边距
+  }
+}
+
+// 超小屏幕适配 (小于480px)
+@media (max-width: 480px) {
+  .allowIcon {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 25px;
+  }
+}
+
+.themeTwo {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,1 @@
+/* html font-size 已移至 layout 内联脚本 + Responsive 组件统一控制，避免与 CSS 媒体查询冲突导致「先大后小」的跳动 */

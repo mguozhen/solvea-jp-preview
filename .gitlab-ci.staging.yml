@@ -1,0 +1,11 @@
+deploy:staging.01:
+  extends:
+    - .deploy
+  needs:
+    - build
+  variables:
+    server: 10.7.7.120
+  rules:
+    - if: $RUNNER_TAG != "prod" && $CI_PIPELINE_SOURCE == "web"
+      when: on_success
+    - when: never

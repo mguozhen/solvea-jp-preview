@@ -1,0 +1,524 @@
+@import '../_variables.scss';
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  @media (max-width: 1720px) {
+    padding: 40px 0;
+  }
+  .title {
+    @include NormalBlockTitle();
+    white-space: pre-line;
+    width: 100%;
+    margin: 16px 0 40px;
+
+    // 平板适配
+    @media (max-width: 1024px) {
+      width: 100%;
+      min-height: 120px;
+    }
+
+    // 移动端适配
+    @media (max-width: 768px) {
+      width: 100%;
+      min-height: 30px;
+      margin-bottom: 24px;
+    }
+
+    // 小屏移动端适配
+    @media (max-width: 480px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .StepContainer {
+    width: 50%;
+    border-right: 1px solid #e4ebf6;
+    background-color: #f8fbff;
+    padding: 24px 12px 32px 12px;
+    box-sizing: border-box;
+
+    @media (max-width: 800px) {
+      width: 100%;
+    }
+
+    .stepItem {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .stepLine {
+      width: 62px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stepIcon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: blue;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 24px rgba(33, 96, 247, 0.24);
+      img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 54px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: calc(100% + 13px);
+        background: linear-gradient(180deg, #3a7bff 0%, rgba(58, 123, 255, 0.16) 100%);
+        border-radius: 999px;
+        pointer-events: none;
+      }
+    }
+
+    .stepList {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .stepConnector {
+      width: 2px;
+      flex: 1;
+      background: #1b68ff;
+      margin-top: 8px;
+      border-radius: 2px;
+
+      :last-child {
+        .stepIcon::after {
+          display: none !important;
+        }
+      }
+    }
+
+    .stepCard {
+      width: 80%;
+      background: #fff;
+      border: 1px solid #e7ebf3;
+      border-radius: 12px;
+      padding: 18px 18px 18px 18px;
+      box-shadow: 0 12px 28px rgba(16, 24, 40, 0.06);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .stepCardMobile {
+      width: 100%;
+    }
+
+    .stepCardHeader {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .stepNumber {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #e7f0ff;
+      color: #1b68ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      border: 1px solid #d0ddff;
+    }
+
+    .content {
+      gap: 12px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .stepTitle {
+      @include SecondaryContentTitle(1rem);
+      @media (max-width: 768px) {
+        @include SecondaryContentTitle(2rem);
+      }
+      white-space: pre-line;
+      flex-shrink: 0; // 标题固定高度
+    }
+
+    .stepDesc {
+      // color: #4c566d;
+      @include SecondaryContentText(1rem);
+      @media (max-width: 768px) {
+        @include SecondaryContentText(2rem);
+      }
+      white-space: pre-line;
+      flex: 1;
+    }
+  }
+
+  .chatStepContainer {
+    width: 40%;
+  }
+
+  .agentListContent {
+    padding: 0;
+    display: flex;
+    gap: 16px;
+    flex: 1;
+
+    @media (max-width: 1280px) {
+      flex-direction: column;
+      gap: 0px;
+    }
+
+    .agentListContentItem {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid #c4c9d2;
+      background-color: white;
+      flex-shrink: 0;
+      padding: 15px;
+      min-height: 83px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      box-sizing: border-box;
+
+      @media (max-width: 1280px) {
+        min-width: 100%;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      &:hover {
+        border-color: #2b2b2b;
+      }
+      &.agentListContentItemActive {
+        border: 1px solid #2b2b2b;
+        box-shadow: inset 0 0 0 1px #2b2b2b;
+      }
+      .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        background-color: #2f8dff; // 默认颜色
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .agentListContentItemContent {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .agentListContentItemTitle {
+        @include SecondaryContentTitle(1rem);
+        @media (max-width: 768px) {
+          @include SecondaryContentTitle(2rem);
+        }
+        white-space: pre-line;
+        flex-shrink: 0; // 标题固定高度
+      }
+      .agentListContentItemDesc {
+        color: #667383;
+        @include SecondaryContentText(1rem);
+        @media (max-width: 768px) {
+          @include SecondaryContentText(2rem);
+        }
+        white-space: pre-line;
+        flex: 1;
+      }
+      .agentListContentItemTitle,
+      .agentListContentItemDesc {
+        word-break: break-word; // 或 overflow-wrap: anywhere;
+      }
+    }
+  }
+
+  .agentContainer {
+    @media (min-width: 800px) {
+      min-height: 1000px;
+    }
+    @media (max-width: 800px) {
+      display: flex;
+      flex-direction: column;
+    }
+    background-color: #fff;
+    display: flex;
+    font-family: var(--font-family-title);
+    width: 100%;
+    box-sizing: border-box;
+
+    .agentList {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 30px;
+      .agentListTitle {
+        font-size: 24px;
+        font-weight: 500;
+        color: #000;
+        text-align: center;
+        line-height: 1.5;
+      }
+
+      .agentListFooter {
+        font-size: 14px;
+        color: #667383;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .agentListFooterPhone {
+        border: 1px solid #000000;
+        // padding: 0 62px;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        height: 34px;
+        font-size: 16px;
+        line-height: 1;
+        font-weight: 500;
+        color: #000000;
+      }
+    }
+
+    .content {
+      position: relative;
+      flex: 1;
+      overflow: hidden;
+    }
+  }
+
+  .langSelect {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 200px;
+    z-index: 2;
+    :global {
+      .ant-select-selector {
+        box-shadow: none;
+        border-radius: 0;
+        &:hover {
+          border-color: #2b2b2b !important;
+        }
+      }
+    }
+  }
+
+  .langSelectChat {
+    right: 0;
+    top: 0;
+  }
+  .mobileList {
+    display: none;
+  }
+
+  // @media (max-width: 800px) {
+  //   .StepContainer {
+  //     position: fixed;
+  //     top: 0;
+  //     left: 0;
+  //     height: 100vh;
+  //     width: 80vw;
+  //     max-width: 360px;
+  //     z-index: 1100;
+  //     border-right: 1px solid #e4ebf6;
+  //     border-bottom: none;
+  //     box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08);
+  //     transform: translateX(-100%);
+  //     transition: transform 0.2s ease-out;
+  //     padding: calc(12px + env(safe-area-inset-top)) 14px calc(24px + env(safe-area-inset-bottom));
+  //     background: #f8fbff;
+  //     overflow-y: auto;
+  //     -webkit-overflow-scrolling: touch;
+  //     display: flex;
+  //     flex-direction: column;
+  //     gap: 12px;
+  //     .stepList {
+  //       gap: 16px;
+  //     }
+  //     .stepCard {
+  //       width: 100%;
+  //       padding: 16px;
+  //     }
+  //     .stepLine {
+  //       width: 52px;
+  //     }
+  //   }
+  //   .stepClose {
+  //     position: absolute;
+  //     top: 12px;
+  //     right: 12px;
+  //     font-size: 24px;
+  //     color: #2b2b2b;
+  //   }
+  //   .stepDrawer {
+  //     transform: translateX(-100%);
+  //   }
+  //   .mobileStepToggle {
+  //     position: absolute;
+  //     top: 12px;
+  //     left: 12px;
+  //     font-size: 12px;
+  //     color: #2b2b2b;
+  //     background-color: #000;
+  //     width: 30px;
+  //     height: 30px;
+  //     border-radius: 50%;
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  //     cursor: pointer;
+  //     z-index: 1150;
+  //     transition: transform 0.2s ease, box-shadow 0.2s ease;
+  //     &:active {
+  //       transform: scale(0.94);
+  //       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  //     }
+  //     .mobileStepToggleIcon {
+  //       font-size: 12px;
+  //       color: white;
+  //     }
+  //   }
+  //   .stepDrawerOpen {
+  //     transform: translateX(0);
+  //     width: 100%;
+  //     max-width: 100vw;
+  //     min-height: 100vh;
+  //     padding-top: 60px;
+  //   }
+  //   .stepDrawerMask {
+  //     position: fixed;
+  //     inset: 0;
+  //     background: rgba(0, 0, 0, 0.35);
+  //     z-index: 1050;
+  //   }
+  //   .stepToggle {
+  //     position: fixed;
+  //     left: 16px;
+  //     top: calc(12px + env(safe-area-inset-top));
+  //     width: 48px;
+  //     height: 48px;
+  //     border-radius: 50%;
+  //     border: 1px solid #dcdcdc;
+  //     background: #fff;
+  //     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  //     display: inline-flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //     cursor: pointer;
+  //     z-index: 1150;
+  //     transition: transform 0.2s ease, box-shadow 0.2s ease;
+  //     &:active {
+  //       transform: scale(0.94);
+  //       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  //     }
+  //   }
+  //   .stepToggleIcon {
+  //     width: 14px;
+  //     height: 14px;
+  //     border-left: 2px solid #2b2b2b;
+  //     border-bottom: 2px solid #2b2b2b;
+  //     transform: rotate(-45deg);
+  //     display: inline-block;
+  //   }
+  //   .stepToggleOpen .stepToggleIcon {
+  //     transform: rotate(135deg);
+  //   }
+  //   .agentContainer {
+  //     flex-direction: column;
+  //     gap: 12px;
+  //   }
+  // }
+
+  @media (max-width: 480px) {
+    .agentContainer {
+      flex-direction: column;
+      .agentList {
+        display: none;
+      }
+      .mobileList {
+        display: block;
+        .iconBox {
+          width: 24px;
+          height: 24px;
+          border-radius: 6px;
+          background-color: #2f8dff; // 默认颜色
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .icon {
+            width: 16px;
+            height: 16px;
+          }
+        }
+        .agentListAction {
+          height: 44px;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
+        .mobileListHeader {
+          height: 60px;
+          padding: 0 var(--insight-padding-x);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid #dcdcdc;
+          .mobileListHeaderContent {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .iconBox {
+              width: 32px;
+              height: 32px;
+            }
+            .mobileListHeaderTitle {
+              font-size: 14px;
+              font-weight: 500;
+              color: #000;
+              line-height: 1.5;
+            }
+            .mobileListHeaderPhone {
+              font-size: 12px;
+              line-height: 1.5;
+              color: #667383;
+              margin-top: 1px;
+            }
+          }
+        }
+        .agentList {
+          display: flex;
+          background: #fff;
+          position: fixed;
+          top: 60px;
+          width: 100%;
+          bottom: 0;
+          z-index: 1000;
+          padding: 0 16px 24px 16px;
+          .agentListHeader {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import '../_variables.scss';
+
+.dark {
+  color: $text-black;
+}
+.light {
+  color: #fff;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .head {
+    margin-bottom: 40px;
+    .title {
+      font-size: 36px;
+      margin: 0;
+      font-weight: 700;
+      line-height: 47px;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 32px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-gap: 40px;
+  }
+
+  .odd {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .even {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: $small-device-width) {
+  .container {
+    .head {
+      margin-bottom: 24px;
+      .title{
+        font-size: 28px;
+      }
+    }
+    .odd,
+    .even {
+      grid-template-columns: 1fr;
+    }
+  }
+}

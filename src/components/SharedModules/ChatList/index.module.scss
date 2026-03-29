@@ -1,0 +1,75 @@
+@import 'theme/index.scss';
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  .listContainer {
+    display: flex;
+    width: 100%;
+    gap: 48px;
+  }
+}
+.list {
+  display: flex !important;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  max-width: 363px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.carouselContainer {
+  display: none;
+  :global {
+    .slick-dots-bottom {
+      bottom: 0 !important;
+    }
+  }
+  .changeBtn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    position: absolute;
+    margin: 0 auto;
+    bottom: 2px;
+    max-width: 400px;
+    right: 0;
+    left: 0;
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .container {
+    .listContainer {
+      padding: 0 32px;
+    }
+  }
+}
+
+@media only screen and (max-width: $small-device-width) {
+  .container {
+    .listContainer {
+      display: none;
+    }
+  }
+  .carouselContainer {
+    position: relative;
+    display: block;
+  }
+  .carousel {
+    display: block !important;
+    padding-bottom: 40px;
+  }
+}

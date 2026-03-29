@@ -1,0 +1,115 @@
+@import 'theme/index.scss';
+.container {
+  position: relative;
+  z-index: 9;
+  margin-top: 12px;
+  &.noMargin {
+    margin-top: 0;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    display: inline-block;
+    margin-right: 0 !important;
+  }
+
+  .iconText {
+    color: #fff;
+    margin: 0 8px;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .arrow {
+    width: 15px;
+    height: 15px;
+    path {
+      fill: #fff;
+    }
+  }
+
+  .selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+    cursor: pointer;
+    height: 32px;
+    width: fit-content;
+    border-radius: 40px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    &.noBorder {
+      border: none;
+    }
+  }
+
+  .pop {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 99999;
+    right: 0;
+    // opacity: 0;
+    display: none;
+    user-select: none;
+
+    &.show {
+      // opacity: 1;
+      display: block;
+      user-select: auto;
+    }
+
+    .ul {
+      background: #fff;
+      border-radius: 12px;
+      width: 128px;
+      padding: 0 !important;
+
+      li {
+        padding: 0 16px !important;
+        list-style: none;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+        color: #000;
+        gap: 8px;
+        font-size: 14px;
+        line-height: 22px;
+        justify-content: flex-start;
+        a {
+          color: #000;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .showTop {
+    top: -650%;
+  }
+  .topArrow {
+    .arrow {
+      transform: rotate(180deg);
+    }
+  }
+}
+@media screen and (max-width: $small-device-width) {
+  .container {
+    .selector {
+      width: 116px;
+    }
+  }
+}

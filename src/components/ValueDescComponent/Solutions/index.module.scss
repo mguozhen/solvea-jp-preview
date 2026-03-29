@@ -1,0 +1,97 @@
+@import '../_variables.scss';
+
+.container {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 100px 30px;
+  box-sizing: border-box;
+  @media (max-width: 1720px) {
+    padding: 100px 0;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: calc(-50vw + 50%);
+    @media (min-width: 1720px) {
+      left: 30px;
+    }
+    width: 25px;
+    height: 90px;
+    background: #f07af9;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: calc(-50vw + 50%);
+    @media (min-width: 1720px) {
+      right: 30px;
+    }
+    width: 25px;
+    height: 90px;
+    background: #f07af9;
+  }
+
+  @media (max-width: 1720px) {
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+
+  .title {
+    @include NormalBlockTitle();
+    white-space: pre-line;
+    margin-bottom: 40px;
+  }
+
+  .cases {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 两列等分 */
+    gap: 40px;
+  }
+
+  :global {
+    .color-0:hover {
+      background: #fab6ff;
+    }
+    .color-1:hover {
+      background: #b2fdbb;
+    }
+    .color-2:hover {
+      background: #bec4ff;
+    }
+  }
+}
+
+.solutionCard {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+
+  .storyCard {
+    width: 100%;
+  }
+
+  .storyCardDescription {
+    white-space: pre-line;
+    overflow: visible !important;
+    text-overflow: initial !important;
+    -webkit-box-orient: initial !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    .cases {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

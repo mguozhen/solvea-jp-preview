@@ -1,0 +1,61 @@
+@import '../_variables.scss';
+.cardList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  // 当没有gap时，使用负边距来避免边框重叠
+  &.noGap {
+    :global(.ant-col) {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .cardItem {
+      margin-left: -0.5px; // 负边距，让边框重叠
+      margin-bottom: -0.5px; // 垂直方向的负边距
+
+      &:first-child {
+        margin-left: 0; // 第一个卡片不需要负边距
+      }
+
+      // 每行第一个卡片不需要负左边距
+      &:nth-child(3n + 1) {
+        margin-left: 0;
+      }
+    }
+
+    // 手机端无gap时的处理
+    @media (max-width: 768px) {
+      .cardItem {
+        margin-left: 0; // 手机端垂直排列时不需要负边距
+        margin-bottom: -0.5px;
+        margin-top: 0;
+
+        &:first-child {
+          margin-top: 0; // 第一个卡片不需要负上边距
+          margin-bottom: -0.5px;
+        }
+      }
+    }
+  }
+
+  .cardItemTitle {
+    @include SecondaryContentTitle(1rem);
+    @media (max-width: 768px) {
+      @include SecondaryContentTitle(2rem);
+    }
+    white-space: pre-line;
+    margin-bottom: 18px;
+    flex-shrink: 0; // 标题固定高度
+  }
+
+  .cardItemContent {
+    @include SecondaryContentText(1rem);
+    @media (max-width: 768px) {
+      @include SecondaryContentText(2rem);
+    }
+    white-space: pre-line;
+    flex: 1;
+  }
+}

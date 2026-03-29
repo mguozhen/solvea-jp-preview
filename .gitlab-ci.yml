@@ -1,0 +1,213 @@
+# Caches
+.node_modules-cache: &node_modules-cache
+  key:
+    files:
+      - yarn.lock
+  paths:
+    - node_modules
+  policy: pull
+
+.yarn-cache: &yarn-cache
+  key: yarn-$CI_JOB_IMAGE
+  paths:
+    - .yarn
+
+.test-cache: &test-cache
+  key: test-$CI_JOB_IMAGE
+  paths:
+    - .jestcache
+  policy: pull-push
+
+.build-cache: &build-cache
+  key: build-$CI_JOB_IMAGE
+  paths:
+    - .cache
+    - public
+  policy: pull-push
+
+# 配置单个stage的执行顺序，串行
+stages:
+  - show_vars
+  - build
+  - deploy
+  - conclude
+
+.vars:
+  variables:
+    ZIP_FILENAME: next.tar.gz
+    DOCKER_IMAGE: shulex-official-solvea-cx
+    PROJ_DIR: apps/shulex-official-solvea-cx
+    ROLE: ubuntu
+    VERSION: latest-${CI_COMMIT_SHORT_SHA}
+    DEPLOY_SCRIPT: start.sh # for staging only
+    server: 10.7.7.120 # for staging only
+    ECR: 585884298239.dkr.ecr.us-west-2.amazonaws.com
+
+show_vars:
+  only:
+    - web
+  image:
+    name: 585884298239.dkr.ecr.us-west-2.amazonaws.com/ops-gitlab-runner:6.0
+  except:
+    - tags
+  tags:
+    - ${RUNNER_TAG}
+  stage: show_vars
+  extends: .vars
+  script:
+    - echo $RUNNER_TAG
+    - echo $VERSION
+    - echo $SG_ONLY
+    - chmod -R 700 ~/.ssh
+    - echo "$SERVER_PRIVATE_RSA" > ~/.ssh/id_rsa && chmod 700 ~/.ssh/id_rsa && chmod 700 ~/.ssh/config
+
+build:
+  image:
+    name: 585884298239.dkr.ecr.us-west-2.amazonaws.com/ops-gitlab-runner:6.0
+  # node_modules / yarn 缓存不在此配置：yarn install 在 Dockerfile 内执行，
+  # 宿主机 CI 缓存对 Docker 构建无效；真正的缓存由 Dockerfile 的
+  # --mount=type=cache 和 --cache-from ECR:latest 提供。
+  only:
+    - web
+  except:
+    - tags
+  stage: build
+  extends: .vars
+  before_script:
+    - echo 'Prepare git url.'
+    - project_url=$(echo $CI_PROJECT_URL | sed 's/https:\/\///')
+    - git remote set-url origin https://oauth2:$GITLAB_TOKEN@$project_url
+  tags:
+    - ${RUNNER_TAG}
+  script:
+    - echo $GITLAB_TOKEN
+    - tmpBranch="tmp/${CI_JOB_ID}"
+    - echo "Create temp branch ${tmpBranch}"
+    - git checkout -b ${tmpBranch}
+    - echo `git log --pretty=format:'%h' -n 1`
+    - chmod -R 700 ~/.ssh
+    - |
+      echo "$SERVER_PRIVATE_RSA" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa && chmod 600 ~/.ssh/config
+      /bin/bash -c 'source ~/.bashrc'
+
+      echo "Going to build for env< $ROLE@ $RUNNER_TAG >"
+      appEnv=staging
+      if [ "$RUNNER_TAG" = "prod" ]; then
+        appEnv=production
+      fi
+      echo APP_ENV $appEnv
+      AWS_CONF_FILE=$HOME/.aws/credentials
+      if [[ ! -f $AWS_CONF_FILE ]]; then
+        mkdir -p $HOME/.aws
+        touch $AWS_CONF_FILE;
+      fi
+    - |
+      aws configure --profile default <<EOF
+      $AWS_ACCESS_KEY_ID
+      $AWS_SECRET_ACCESS_KEY
+      $AWS_DEFAULT_REGION
+
+      EOF
+      echo '[cicd] #指定 gitlab runner 上的 role_session_name' >> $AWS_CONF_FILE
+      echo 'role_session_name =  arn:aws:sts::585884298239:assumed-role/aws-ops-prod-ec2-role-gitlab-runner-0620/i-00a68d81175573fb1' >> $AWS_CONF_FILE
+      cat $AWS_CONF_FILE
+      cp $AWS_CONF_FILE ./
+      # push docker image
+      echo "pushing <${appEnv}> docker image..."
+      aws ecr get-login-password --region us-west-2 --profile cicd | docker login --username AWS --password-stdin ${ECR}
+      aws sts get-caller-identity --profile cicd
+      search_ret=`aws ecr describe-images --repository-name ${DOCKER_IMAGE} --filter tagStatus=TAGGED --image-id "{\"imageTag\": \"$VERSION\"}" 2>&1  | grep 'ImageNotFoundException' || true`
+      if [ ! -z "$search_ret" ]; then
+        echo "docker image ${DOCKER_IMAGE}:${VERSION} not found. Building..."
+        # Pull latest tag for layer cache reuse (ignore failure on first build)
+        docker pull ${ECR}/${DOCKER_IMAGE}:latest || true
+        DOCKER_BUILDKIT=1 docker build \
+          --cache-from ${ECR}/${DOCKER_IMAGE}:latest \
+          --build-arg BUILDKIT_INLINE_CACHE=1 \
+          --build-arg app_env_arg=$appEnv \
+          --build-arg runner_tag=${RUNNER_TAG} \
+          --build-arg profound_api_key=${PROFOUND_API_KEY} \
+          -t ${DOCKER_IMAGE}:${VERSION} ./
+        docker tag ${DOCKER_IMAGE}:${VERSION} ${ECR}/${DOCKER_IMAGE}:${VERSION}
+        docker tag ${DOCKER_IMAGE}:${VERSION} ${ECR}/${DOCKER_IMAGE}:latest
+        echo docker push ${ECR}/${DOCKER_IMAGE}:${VERSION}
+        docker push ${ECR}/${DOCKER_IMAGE}:${VERSION}
+        docker push ${ECR}/${DOCKER_IMAGE}:latest
+        docker image rm ${DOCKER_IMAGE}:${VERSION} ${ECR}/${DOCKER_IMAGE}:${VERSION} ${ECR}/${DOCKER_IMAGE}:latest || true
+      else
+        echo "docker image ${DOCKER_IMAGE}:${VERSION} already exists. Skipping building."
+      fi
+
+.deploy:
+  image:
+    name: 585884298239.dkr.ecr.us-west-2.amazonaws.com/ops-gitlab-runner:6.0
+  tags:
+    - ${RUNNER_TAG}
+  stage: deploy
+  extends: .vars
+  script:
+    - |
+      # ssh linking
+      echo ssh linking ${ROLE}@${server}...
+      rm -rf ~/.ssh/known_hosts
+      touch ~/.ssh/known_hosts
+      chmod -R 700 ~/.ssh
+      echo "$SERVER_PRIVATE_RSA" > ~/.ssh/id_rsa
+
+      ssh-keygen -R ${server}
+      ssh-keyscan -H ${server} >> ~/.ssh/known_hosts
+      chmod 700 ~/.ssh/id_rsa && chmod 700 ~/.ssh/config
+      if [ "$RUNNER_TAG" = "prod" ]; then
+        echo "deploy for server< $ROLE@$server >"
+        ssh ${ROLE}@${server} <<EOF
+          aws ecr get-login-password --region us-west-2 | sudo docker login --username AWS --password-stdin ${ECR}
+          sudo docker pull ${ECR}/${DOCKER_IMAGE}:${VERSION}
+          sudo docker stop ${DOCKER_IMAGE}-prod || true
+          sudo docker rm ${DOCKER_IMAGE}-prod || true
+          mkdir -p /home/ubuntu/logs/shulex-official-solvea-cx/
+          sudo docker run -d --restart unless-stopped -p 3001:3000 --memory=1g --cpus=0.5 --name ${DOCKER_IMAGE}-prod ${ECR}/${DOCKER_IMAGE}:${VERSION}
+      EOF
+      else
+        # create an folder(if not exist)
+        ssh ${ROLE}@${server} "mkdir -p $PROJ_DIR"
+        # start to deploy from cicd runner to staging server.
+        echo "Going to deploy on server< ${ROLE}@${server} >"
+        ssh ${ROLE}@${server} <<EOF
+          aws ecr get-login-password --region us-west-2 | sudo docker login --username AWS --password-stdin ${ECR}
+          sudo docker pull ${ECR}/${DOCKER_IMAGE}:${VERSION}
+          sudo docker stop ${DOCKER_IMAGE}-staging || true
+          sudo docker rm ${DOCKER_IMAGE}-staging || true
+          mkdir -p /home/ubuntu/logs/shulex-official-solvea-cx/
+          sudo docker run -d --restart unless-stopped --memory=1g --cpus=0.5 -p 3001:3000 --name ${DOCKER_IMAGE}-staging ${ECR}/${DOCKER_IMAGE}:${VERSION}
+      EOF
+      fi
+
+conclude:
+  stage: conclude
+  only:
+    - web
+  except:
+    - tags
+  tags:
+    - ${RUNNER_TAG}
+  before_script:
+    - echo 'Prepare git url.'
+    - project_url=$(echo $CI_PROJECT_URL | sed 's/https:\/\///')
+    - git remote set-url origin https://oauth2:$GITLAB_TOKEN@$project_url
+    - export GIT_URL=https://oauth2:$GITLAB_TOKEN@$project_url
+  script: |
+    if [ "$RUNNER_TAG" = "prod" ]; then
+      echo "production merge master & create tag"
+      if git rev-parse "publish/${VERSION}" >/dev/null 2>&1; then
+        echo "Tag publish/${VERSION} already exists, skipping"
+      else
+        git tag publish/${VERSION}
+        git push -u origin publish/${VERSION}
+      fi
+      echo "You have built for production"
+    else
+      echo "You have built for staging"
+    fi
+
+include:
+  - local: '.gitlab-ci.*.yml'

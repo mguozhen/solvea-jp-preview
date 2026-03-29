@@ -1,0 +1,121 @@
+@import '../_variables.scss';
+
+.numberCardItemWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  flex: 1; // 让卡片填充父容器的可用空间
+  min-height: 0; // 防止内容溢出
+  .cardItemIndex {
+    @include ExplanationText();
+    width: 100%;
+    border-left: 1px dashed #00000033;
+    border-right: 1px dashed #00000033;
+    padding: 12px;
+    box-sizing: border-box;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+    flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 8px;
+    }
+  }
+
+  .cardItem {
+    padding: 17px;
+    box-sizing: border-box;
+    border: 1px solid #00000033;
+    border-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1; // 让卡片填充剩余高度，实现等高效果
+    min-height: 0; // 防止内容溢出
+    overflow: hidden;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      padding: 14px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 12px;
+    }
+  }
+}
+
+.textCardItemWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex: 1; // 让卡片填充父容器的可用空间
+  min-height: 0; // 防止内容溢出
+  flex-direction: column;
+  .cardItem {
+    border-bottom: 1px solid #00000033;
+    padding: 25px 17px;
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+
+    @media (max-width: 768px) {
+      padding: 16px 12px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 12px 10px;
+    }
+  }
+  .cardItemIndexBottom {
+    flex-shrink: 0;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 30%);
+    mask-image: linear-gradient(to top, transparent 0%, black 30%);
+
+    @media (max-width: 768px) {
+      padding-bottom: 30px;
+    }
+
+    @media (max-width: 480px) {
+      padding-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: 480px) {
+    padding-bottom: 20px;
+  }
+}
+
+.defaultCardItemWrapper {
+  padding: 17px 14px 17px 20px;
+  box-sizing: border-box;
+  border: 0.5px solid #151515;
+  display: flex;
+  flex-direction: column;
+  flex: 1; // 让卡片填充父容器的可用空间
+  min-height: 0; // 防止内容溢出
+  height: 100%;
+  width: 100%;
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+    padding: 15px 12px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 14px 12px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px 10px;
+  }
+}

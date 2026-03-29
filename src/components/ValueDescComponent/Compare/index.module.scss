@@ -1,0 +1,158 @@
+//.dark {
+//  .table {
+//    border: 2px solid #2b2b2b;
+//  }
+//  .head {
+//    .title,
+//    .subTitle {
+//      color: #2b2b2b;
+//    }
+//  }
+//  .table {
+//    .feature,
+//    .item {
+//      color: #2b2b2b;
+//    }
+//    .gray {
+//      background-color: #2b2b2b;
+//    }
+//  }
+//}
+.light,
+.dark {
+  .table {
+    border: 2px solid #2b2b2b;
+    color: #2b2b2b;
+
+    .gray {
+      background: #2b2b2b;
+      color: #eeeeee;
+    }
+  }
+  .head {
+    .title,
+    .subTitle {
+      color: #2b2b2b;
+      font-family: var(--font-family-title);
+    }
+  }
+}
+.container {
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+
+  .head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 130%;
+      text-align: center;
+      margin: 0;
+    }
+    .subTitle {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 32px;
+      letter-spacing: -0.4px;
+    }
+  }
+
+  .table {
+    max-width: 1200px;
+    color: #2b2b2b;
+    margin: 0 auto;
+    font-family: var(--font-family2);
+
+    .tableItem {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 140%;
+      .feature,
+      .item {
+        display: flex;
+        align-items: center;
+        padding: 16px 24px;
+        width: 100%;
+        gap: 8px;
+      }
+
+      .feature {
+        flex: 1;
+        max-width: 640px;
+        min-width: 75px;
+        word-break: break-word;
+      }
+
+      .item {
+        max-width: 280px;
+        .icon {
+          width: 24px;
+          height: 24px;
+          min-width: 24px;
+        }
+      }
+    }
+
+    .header {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    .table {
+      .tableItem {
+        .item {
+          max-width: 160px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    .head {
+      margin-bottom: 24px;
+      .title {
+        font-size: 28px;
+      }
+      .subTitle {
+        font-size: 16px;
+      }
+    }
+    .table {
+      .tableItem {
+        .feature {
+          padding: 8px 12px;
+          font-size: 12px;
+        }
+        .item {
+          max-width: 120px;
+          font-size: 12px;
+          flex: 1;
+          padding: 8px 12px;
+          .icon {
+            width: 16px;
+            min-width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@import 'theme/index.scss';
+
+.container {
+  text-align: center;
+}
+
+.title {
+  font-size: 70px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.img {
+  width: 100%;
+}
+
+.subTitle {
+  margin: 40px auto 0;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.desc {
+  font-size: 20px;
+  font-weight: 500;
+  color: #909aa8;
+  width: 80%;
+  margin: auto;
+}
+.actionBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 40px auto ;
+}
+
+.content {
+  background: url('https://cdn.shulex-voc.com/shulex/upload/2025-04-17/b701c744-5fd1-41d3-a93b-cf1ecd46f405.png');
+  background-size: cover;
+  padding: 60px 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 48px;
+  box-sizing: border-box;
+  gap: 20px;
+  .item {
+    max-width: 350px;
+    width: 100%;
+    flex-shrink: 0;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius: 12px;
+    padding: 24px;
+    padding-bottom: 0;
+    height: 230px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    .itemValue {
+      font-size: 36px;
+      font-weight: 700;
+      color: #000;
+      text-align: start;
+    }
+    .itemTitle {
+      font-weight: 500;
+      font-size: 18px;
+      text-align: start;
+    }
+    .itemDesc {
+      margin-top: 8px;
+      font-size: 16px;
+      font-weight: 300;
+      color: #909aa8;
+      text-align: start;
+      @include mulitiTextDot(4);
+    }
+  }
+}
+
+@media only screen and (max-width: 12000px) {
+  .container {
+    .title {
+      font-size: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    .title {
+      font-size: 36px;
+    }
+  }
+}

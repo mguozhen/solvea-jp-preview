@@ -1,0 +1,132 @@
+.container {
+  position: relative;
+  padding: 60px var(--insight-padding-x);
+  overflow: hidden;
+  z-index: 1;
+  .title {
+    font-family: var(--font-family-title);
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 68px;
+    leading-trim: NONE;
+    line-height: 101%;
+    letter-spacing: 0%;
+    color: #252525;
+    position: absolute;
+    top: 200px;
+    width: 680px;
+  }
+  .brandGridSvgContainer {
+    position: relative;
+  }
+  .brandGridSvg {
+    position: absolute;
+    width: 578px;
+    height: 487px;
+    left: -86px;
+    bottom: -192px;
+  }
+}
+.brandGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 132px);
+  grid-template-rows: repeat(5, 132px);
+  gap: 14px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  padding: 1px;
+  justify-content: flex-end;
+
+  .brandCard {
+    border: 0.5px solid #282828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    &.none {
+      border: none;
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    &:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+      background: #F07AF9;
+      .svg {
+        color: #000;
+      }
+      &:global(.tiktok), &:global(.whatsapp), &:global(.facebook), &:global(.amazon) {
+        background: #656ECE;
+        .svg {
+          color: #fff;
+        }
+      }
+      &:global(.zendesk), &:global(.servicenow), &:global(.outlook), &:global(.shopify), &:global(.microsoft) {
+        background: #57C564;
+      }
+    }
+
+    .svg {
+      font-size: 70px;
+      color: #575757;
+    }
+
+    .emptyCard {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .container {
+    .title {
+      position: relative;
+      top: 0;
+      width: 100%;
+      margin-bottom: 140px;
+    }
+    .brandGridSvg {
+      width: 42vw;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    .title {
+      position: relative;
+      top: 0;
+      width: 100%;
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+    .brandGridSvgContainer {
+      position: relative;
+      margin-top: 113px;
+    }
+    .brandGridSvg {
+      position: relative;
+      top: 0;
+      width: 110%;
+      left: -5%;
+      height: auto;
+    }
+  }
+  .brandGrid {
+    width: 100%;
+    margin-left: 0;
+    gap: 1.5vw;
+    grid-template-columns: repeat(5, 17vw);
+    grid-template-rows: repeat(5, 17vw);
+    .brandCard {
+      .svg {
+        font-size: 50px;
+      }
+    }
+  }
+}

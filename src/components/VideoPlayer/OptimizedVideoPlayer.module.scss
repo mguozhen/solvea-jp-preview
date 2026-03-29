@@ -1,0 +1,147 @@
+@import '../ValueDescComponent/_variables.scss';
+
+.container {
+  position: relative;
+  width: 100%;
+  padding: 0 var(--insight-padding-x);
+  overflow: hidden;
+
+  .newhero_slogan_container {
+    display: flex;
+    flex-direction: column;
+    margin: 82px 0 24px;
+  }
+  .newhero_desc_container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    @media (max-width: 480px) {
+      margin-bottom: 24px;
+    }
+  }
+  .btnLink {
+    margin: 0 auto 48px;
+    width: fit-content;
+    display: block;
+
+    .btn {
+      min-width: 197px;
+      height: 51px;
+      @media (max-width: 480px) {
+        width: 100%;
+        height: 51px;
+      }
+    }
+  }
+  .newhero_slogan {
+    @include NormalBlockTitle();
+    text-align: center;
+    font-size: calc(3.5rem * var(--font-scale, 1));
+
+    @media (max-width: 768px) {
+      font-weight: 400;
+      font-size: calc(2.5rem * var(--font-scale, 1));
+    }
+    @media (max-width: 480px) {
+      font-size: calc(1.5rem * var(--font-scale, 1));
+    }
+    // white-space: nowrap;
+  }
+  .newhero_desc {
+    @include BlockSubTitle();
+    font-size: calc(1.25rem * var(--font-scale, 1));
+    @media (max-width: 768px) {
+      font-weight: 400;
+      font-size: calc(1.4rem * var(--font-scale, 1));
+    }
+    @media (max-width: 480px) {
+      font-size: calc(0.7rem * var(--font-scale, 1));
+    }
+    text-align: center;
+    // white-space: nowrap;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  // 桌面端使用16:9比例
+  // aspect-ratio: 16 / 9;
+  // background: #000;
+
+  // 移动端让视频自适应，减少黑边但保持内容完整
+  @media (max-width: 768px) {
+    aspect-ratio: unset;
+    // background: transparent; // 移除黑色背景
+    min-height: auto;
+  }
+}
+
+.video_container {
+  position: relative;
+  width: 100%;
+  // padding: 0 var(--insight-padding-x);
+
+  .video {
+    width: calc(100% - 100px);
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    margin-bottom: 100px;
+
+    min-height: 500px;
+    display: block;
+
+    // 移动端保持视频完整显示
+    @media (max-width: 768px) {
+      height: auto; // 让视频根据自身比例自适应高度
+      object-fit: contain;
+      min-height: 0;
+      margin-bottom: 60px;
+      width: 100%;
+    }
+    @media (max-width: 480px) {
+      min-width: 250px;
+    }
+  }
+
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    z-index: 10;
+  }
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff5252;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 12px 24px;
+  border-radius: 4px;
+  z-index: 10;
+}

@@ -1,0 +1,61 @@
+/* Siri动画组件样式 */
+.siriAnimation {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  /* background: conic-gradient(from 45deg, #2a0000 0deg, #0a0000 90deg, #001a00 180deg, #000000 270deg, #2a0000 360deg); */
+  transition: transform 0.15s ease-out;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #000000 0%, #1a0033 50%, #330066 100%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.back .red {
+  position: absolute;
+  top: -42%;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff2727 0%, #6d0000 50%, #000000 100%);
+  filter: blur(50px);
+}
+
+.back .purple {
+  position: absolute;
+  bottom: -30%;
+  right: -20%;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #003366 0%, #29ffda 50%, #000000 100%);
+  filter: blur(50px);
+}
+
+.back .blue {
+  position: absolute;
+  bottom: -30%;
+  left: -20%;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #330066 0%, #5400a5 50%, #000000 100%);
+  filter: blur(50px);
+}

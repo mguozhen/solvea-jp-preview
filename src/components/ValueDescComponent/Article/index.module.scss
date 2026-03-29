@@ -1,0 +1,40 @@
+@import '../_variables.scss';
+
+.container {
+  max-width: 1200px;
+  // padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  a {
+    color: #4080ff;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .title {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .content {
+    // width: 100%;
+    line-height: 30px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: $small-device-width) {
+  .container {
+    gap: 16px;
+  }
+}

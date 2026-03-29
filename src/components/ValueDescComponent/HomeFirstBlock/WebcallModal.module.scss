@@ -1,0 +1,92 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    @media (min-width: 769px) {
+        align-items: center;
+    }
+}
+
+.modal {
+    background: #fff;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 520px;
+    max-height: 85vh;
+
+    @media (min-width: 769px) {
+        border-radius: 16px;
+        height: 520px;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #F0F1F2;
+    flex-shrink: 0;
+}
+
+.headerTitle {
+    color: #0F1720;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6B7280;
+    font-size: 18px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+
+    &:hover {
+        background: #F3F4F6;
+    }
+}
+
+.voiceWrapper {
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.footer {
+    padding: 12px 20px;
+    border-top: 1px solid #F0F1F2;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.footerText {
+    color: #9CA3AF;
+    font-family: "Helvetica Neue";
+    font-size: 13px;
+}
+
+.footerPhone {
+    color: #0F1720;
+    font-family: "Helvetica Neue";
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

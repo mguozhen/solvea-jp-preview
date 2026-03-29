@@ -1,0 +1,148 @@
+@import 'theme/index.scss';
+
+.block {
+  width: 100%;
+  background-color: #0e0d17;
+  background-image: url(https://cdn.shulex-voc.com/shulex/upload/2025-04-16/bd6d2e65-a516-4e1d-a8b3-00ebf79eeeab.svg);
+  background-size: cover;
+}
+
+.container {
+  padding: 120px 0;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  .title {
+    text-align: center;
+    color: #fff;
+    font-size: 70px;
+    font-weight: 700;
+    max-width: 80%;
+    margin: auto;
+  }
+  .subTitle {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #fff;
+    margin: 34px auto 110px;
+    max-width: 80%;
+  }
+  .content {
+    display: flex;
+  }
+  .livechatBox {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    padding-right: 170px;
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+    &.livechatBoxMax {
+      width: 100%;
+      justify-content: center;
+      padding-right: 0;
+      .livechatFrame {
+        width: 350px;
+      }
+    }
+  }
+  .livechatFrame {
+    width: 300px;
+    height: 560px;
+    border-radius: 16px;
+    background-color: #fff;
+  }
+
+  .infoBox {
+    width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // padding-left: 80px;
+
+    .desc {
+      list-style-position: inside;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .descItem {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 24px;
+      color: #909aa8;
+    }
+
+    .abiltyTitle {
+      font-size: 40px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .recommendHead {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      .link {
+        color: rgb(21, 112, 239);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+    .recommendDesc {
+      color: #ffffff;
+    }
+    .recommendList {
+      // display: flex;
+      // flex-direction: column;
+      // gap: 20px;
+      // padding-bottom: 32px;
+      cursor: pointer;
+      padding-right: 32px;
+    }
+    .recommendItem {
+      display: flex;
+      cursor: pointer;
+      background: #e7eaf1;
+      border-radius: 16px;
+      color: #000;
+      font-size: 18px;
+      font-weight: 400;
+      padding: 16px 24px;
+      margin-top: 20px;
+      align-items: end;
+    }
+    .recommendTitle {
+      flex: 1;
+    }
+    .tipIcon {
+      width: 24px;
+      margin-left: 32px;
+    }
+  }
+}
+@media only screen and (max-width: $small-device-width) {
+  .container {
+    .content {
+      flex-direction: column;
+      align-items: center;
+    }
+    .livechatBox {
+      width: 100%;
+      padding: 32px;
+    }
+    .livechatFrame {
+      width: 100%;
+    }
+    .infoBox {
+      width: 100%;
+      padding: 32px;
+    }
+  }
+}

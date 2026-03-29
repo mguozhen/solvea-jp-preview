@@ -1,0 +1,221 @@
+.wrap {
+  padding: 0 80px;
+}
+.box {
+  padding: 120px 0;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  .title {
+    text-align: center;
+    color: #0e0d17;
+    font-size: 70px;
+    font-weight: 700;
+    margin-bottom: 100px;
+  }
+  .list {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    .itemColumn {
+      flex: 1;
+      flex-shrink: 0;
+      margin-right: 50px;
+      &:last-child {
+        margin-right: 0;
+      }
+      .index {
+        height: 70px;
+        width: 70px;
+        background: #0e0d17;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 40px;
+        margin-bottom: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        .checkIcon {
+          position: absolute;
+          right: -12px;
+          top: -12px;
+          height: 24px;
+          width: 24px;
+        }
+      }
+      .item {
+        margin-bottom: 60px;
+        color: #000;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .itemTitle {
+          font-size: 32px;
+          font-weight: 700;
+          margin-bottom: 32px;
+          line-height: 1.1;
+        }
+        .itemDesc {
+          font-size: 18px;
+          .point {
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 12px;
+            line-height: 150%;
+            &:last-child {
+              margin-bottom: 0;
+            }
+            &::before {
+              content: '';
+              position: absolute;
+              width: 6px;
+              height: 6px;
+              border-radius: 50%;
+              background: #000;
+              left: 3px;
+              top: 11px;
+            }
+            &.isSub {
+              margin-bottom: 4px;
+              &::before {
+                content: '';
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                border: 1px solid #000;
+                background: #fff;
+                left: 3px;
+                top: 11px;
+              }
+            }
+          }
+          .check {
+            margin-bottom: 4px;
+            &:last-child {
+              margin-bottom: 0;
+            }
+            .checkIcon {
+              width: 16px;
+              height: 16px;
+              margin-right: 4px;
+              position: relative;
+              bottom: -1px;
+              path {
+                fill: #09a719;
+              }
+            }
+          }
+          .sub {
+            padding-left: 30px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .wrap {
+    padding: 0 40px;
+  }
+  .box {
+    max-width: 800px;
+    .title {
+      font-size: 60px;
+    }
+    .list {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      .itemColumn {
+        margin-right: 0;
+        margin-bottom: 50px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .index {
+          margin: 0 auto;
+          margin-bottom: 20px;
+        }
+        .itemTitle {
+          text-align: center;
+        }
+        .itemDesc {
+          text-align: center;
+          .point {
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .wrap {
+  }
+  .box {
+    .title {
+      font-size: 60px;
+    }
+    .list {
+      .itemColumn {
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .index {
+          height: 60px;
+          width: 60px;
+          font-size: 36px;
+        }
+        .item {
+          .itemTitle {
+            font-size: 28px;
+          }
+          .itemDesc {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1512px) {
+  .wrap {
+  }
+  .box {
+    padding: 120px 100px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .box {
+    .title {
+      font-size: 50px;
+    }
+    .list {
+      .itemColumn {
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .index {
+          height: 50px;
+          width: 50px;
+          font-size: 33px;
+        }
+        .item {
+          .itemTitle {
+            font-size: 26px;
+          }
+          .itemDesc {
+          }
+        }
+      }
+    }
+  }
+}

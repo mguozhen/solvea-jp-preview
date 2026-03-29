@@ -1,0 +1,415 @@
+/* 与 .content 左右栏宽一致，保证标题区与正文列对齐 */
+$glossary-col-left: 256px;
+$glossary-col-right: 256px;
+$glossary-content-gap: 16px;
+/* 与 layout 固定横幅高度一致，用于 sticky 侧栏的 top 偏移 */
+$glossary-banner-height: 32px;
+
+.wrap {
+  position: relative;
+}
+
+.container {
+  .main {
+    width: 100%;
+    margin: 0 auto;
+
+    /* ── Article header — 与下方 content 三栏左侧对齐（padding-x + 左栏 + gap） ── */
+    .header {
+      padding: 48px calc(var(--insight-padding-x) + #{$glossary-col-right} + #{$glossary-content-gap}) 40px calc(var(--insight-padding-x) + #{$glossary-col-left} + #{$glossary-content-gap});
+
+      .breadcrumbs {
+        margin-bottom: 20px;
+      }
+
+      .articleCrumb {
+        :global(ol) {
+          display: flex;
+          align-items: center;
+          gap: 0;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+        }
+
+        :global(li) {
+          display: flex;
+          align-items: center;
+          color: #6b7280 !important;
+          font-size: 14px;
+          font-weight: 400 !important;
+          line-height: 1.5;
+        }
+
+        :global(li.last) {
+          color: #374151 !important;
+          font-weight: 500 !important;
+        }
+
+        :global(li a) {
+          color: #6b7280 !important;
+          text-decoration: none;
+          font-weight: 400;
+          transition: color 0.15s ease;
+
+          &:hover {
+            color: #374151 !important;
+            text-decoration: underline;
+          }
+        }
+
+        :global(li a ~ span),
+        :global(li span.sep) {
+          margin: 0 8px;
+          color: #d1d5db;
+          font-size: 12px;
+          user-select: none;
+        }
+      }
+
+      .title {
+        font-family: var(--font-family-title);
+        font-weight: 700;
+        font-size: clamp(28px, 4vw, 44px);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        color: #0f0f0f;
+        max-width: 860px;
+        margin: 0 0 28px;
+      }
+
+      .glossaryMeta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0;
+      }
+
+      .glossaryMetaAuthor {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: inherit;
+
+        &:hover .glossaryMetaName {
+          text-decoration: underline;
+        }
+      }
+
+      .glossaryTitleAvatar {
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #f3f4f6;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          scale: 1.2;
+        }
+      }
+
+      .glossaryMetaContent {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+
+      .glossaryMetaLabel {
+        font-size: 13px;
+        font-weight: 400;
+        color: #9ca3af;
+        line-height: 1.35;
+      }
+
+      .glossaryMetaName {
+        font-size: 15px;
+        font-weight: 600;
+        color: #111827;
+        line-height: 1.35;
+      }
+
+      .glossaryMetaDivider {
+        width: 1px;
+        align-self: stretch;
+        min-height: 40px;
+        background: #e5e7eb;
+        margin: 0 24px;
+        flex-shrink: 0;
+      }
+
+      .glossaryMetaAside {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+
+      .glossaryVerifiedRow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .glossaryVerifiedText {
+        font-size: 15px;
+        font-weight: 600;
+        color: #111827;
+        line-height: 1.35;
+      }
+
+      .glossaryVerifiedBadge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #AF6532;
+      }
+    }
+
+    /* ── Three-column body: TOC | article | CTA ── */
+    .content {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 0 var(--insight-padding-x) 64px;
+
+      /* Left: TOC sidebar（top 含横幅高度，避免被遮挡） */
+      .left {
+        width: $glossary-col-left;
+        flex-shrink: 0;
+        position: sticky;
+        top: calc(80px + #{$glossary-banner-height});
+        height: fit-content;
+      }
+
+      /* Center: article body — white card with warm border */
+      .postContent {
+        flex: 1;
+        min-width: 0;
+        background: #ffffff;
+        border: 1px solid #e8e3d5;
+        border-radius: 12px;
+        padding: 40px;
+      }
+
+      /* Right: StartNowBtn CTA card（top 含横幅高度，避免被遮挡） */
+      > :last-child {
+        width: $glossary-col-right;
+        flex-shrink: 0;
+        position: sticky;
+        top: calc(80px + #{$glossary-banner-height});
+        height: fit-content;
+      }
+    }
+
+    /* ── Related articles (Blog) ── */
+    .lastStories {
+      margin-top: 40px;
+      padding: 0 var(--insight-padding-x) 80px;
+    }
+
+    .relatedHeader {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px 24px;
+      margin-bottom: 40px;
+    }
+
+    .relatedHeaderLeft {
+      min-width: 0;
+    }
+
+
+
+
+    .relatedTitle {
+      font-family: var(--font-family-title);
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: #0f0f0f;
+      margin: 0;
+    }
+
+    .btn {
+      display: block;
+
+      button {
+        width: 100%;
+        height: 44px;
+        font-size: 14px;
+      }
+    }
+
+    .seeAllArrow {
+      font-size: 16px;
+      line-height: 1;
+      margin-top: 1px;
+    }
+
+    .relatedArticlesGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+  }
+}
+
+/* Class names exported for SidePanel's [class*='active'] selector */
+.active {}
+
+.item {}
+
+/* ── Responsive: tablet (481px – 920px) ── */
+@media (max-width: 920px) and (min-width: 481px) {
+  .container .main {
+    .header {
+      padding: 40px var(--insight-padding-x) 32px;
+
+      .title {
+        font-size: clamp(26px, 4vw, 38px);
+      }
+    }
+
+    .content {
+      flex-wrap: wrap;
+      gap: 24px;
+
+      .left {
+        width: 100%;
+        position: static;
+        order: 1;
+      }
+
+      .postContent {
+        order: 2;
+        width: 100%;
+        flex: none;
+        padding: 32px;
+      }
+
+      > :last-child {
+        width: 100%;
+        position: static;
+        order: 3;
+      }
+    }
+
+    .relatedArticlesGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .relatedHeader {
+      margin-bottom: 28px;
+    }
+  }
+}
+
+/* ── Responsive: mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  .container .main {
+    .header {
+      padding: 24px var(--insight-padding-x) 20px;
+
+      .breadcrumbs {
+        margin-bottom: 12px;
+      }
+
+      .title {
+        font-size: 24px;
+        letter-spacing: -0.01em;
+        margin-bottom: 16px;
+      }
+
+      .glossaryMeta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .glossaryMetaDivider {
+        width: 100%;
+        min-height: 0;
+        height: 1px;
+        margin: 0;
+      }
+
+      .glossaryTitleAvatar {
+        width: 36px;
+        height: 36px;
+      }
+
+      .glossaryMetaLabel {
+        font-size: 12px;
+      }
+
+      .glossaryMetaName,
+      .glossaryVerifiedText {
+        font-size: 14px;
+      }
+
+      .glossaryVerifiedBadge {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .content {
+      flex-direction: column;
+      gap: 0;
+      padding-bottom: 48px;
+
+      /* Hide TOC on mobile — matches Lindy.ai behavior */
+      .left {
+        display: none;
+      }
+
+      .postContent {
+        width: 100%;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        padding: 28px var(--insight-padding-x);
+      }
+
+      > :last-child {
+        width: calc(100% - var(--insight-padding-x) * 2);
+        margin: 20px var(--insight-padding-x) 0;
+        position: static;
+        border-radius: 10px;
+      }
+    }
+
+    .lastStories {
+      padding: 0 var(--insight-padding-x) 48px;
+    }
+
+    .relatedArticlesGrid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .relatedHeader {
+      flex-direction: column;
+      align-items: stretch;
+      margin-bottom: 24px;
+    }
+
+    .seeAllArticles {
+      align-self: flex-start;
+    }
+  }
+}

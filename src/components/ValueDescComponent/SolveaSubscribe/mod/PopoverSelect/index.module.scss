@@ -1,0 +1,98 @@
+.popoverClass {
+  z-index: 999;
+
+  :global {
+    .ant-popover-inner {
+      padding: 0 !important;
+    }
+
+    .slx-popover-container {
+      padding: 0 !important;
+    }
+  }
+}
+
+.list {
+  max-height: 250px;
+  overflow: auto;
+  padding: 4px;
+
+  .dropItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &.selected {
+
+      .dropItemLabel,
+      .dropItemStatus {
+        color: #3278df !important;
+      }
+    }
+
+    &:hover {
+      background: #efefef;
+    }
+
+    .dropItemLabel {
+      color: #0f1629;
+      font-size: 13px;
+    }
+
+    .dropItemStatus {
+      margin-left: 4px;
+      color: #949da9;
+      font-size: 13px;
+    }
+
+    .loadingSpinner {
+      width: 14px;
+      height: 14px;
+      margin-left: 4px;
+      border: 2px solid #e0e0e0;
+      border-top-color: #2b72fd;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+  }
+
+  // 移动端适配
+  @media (max-width: 768px) {
+    max-height: 200px;
+    padding: 3px;
+
+    .dropItem {
+      height: 36px;
+      padding: 0 14px;
+
+      .dropItemLabel {
+        font-size: 14px;
+      }
+
+      .dropItemStatus {
+        font-size: 13px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    max-height: 180px;
+
+    .dropItem {
+      height: 34px;
+      padding: 0 12px;
+
+      .dropItemLabel {
+        font-size: 13px;
+      }
+
+      .dropItemStatus {
+        font-size: 12px;
+      }
+    }
+  }
+}

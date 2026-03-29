@@ -1,0 +1,23 @@
+deploy:prod.uw01:
+  extends:
+    - .deploy
+  needs:
+    - build
+  variables:
+    server: 10.161.3.84
+  rules:
+    - if: $RUNNER_TAG == "prod" && $CI_PIPELINE_SOURCE == "web"
+      when: manual
+    - when: never
+
+deploy:prod.uw02:
+  extends:
+    - .deploy
+  needs:
+    - build
+  variables:
+    server: 10.161.3.175
+  rules:
+    - if: $RUNNER_TAG == "prod" && $CI_PIPELINE_SOURCE == "web"
+      when: manual
+    - when: never

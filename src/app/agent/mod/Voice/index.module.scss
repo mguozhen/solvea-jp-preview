@@ -1,0 +1,195 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: url('https://cdn.shulex-voc.com/shulex/upload/2025-09-12/2b82584f-33be-4d13-8bab-2a291df256f2.png')
+    no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+.content {
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+  padding: 48px 0 20px 0;
+  margin: 0 auto;
+}
+.contentInner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.calling {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #0073ff;
+  background: #e7f2ff;
+  padding: 12px 16px;
+  border-radius: 0 16px 16px 16px;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding-bottom: 32px;
+  position: relative;
+  width: 100%;
+}
+.hangup {
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease-in-out;
+  box-shadow: 0px 4px 12px 0px #00000014;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  .hangupIcon {
+    width: 28px;
+    height: 28px;
+  }
+}
+.callingBtn {
+  // width: 375px;
+  height: 62px;
+  border: 1px solid #000;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-family: var(--font-family2);
+  .callingBtnCon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    height: 100%;
+    padding: 0 64px;
+    .hangupIcon {
+      width: 24px;
+      height: 24px;
+      path {
+        stroke: #fff;
+      }
+    }
+  }
+
+  &.chatBtn {
+    .callingBtnCon {
+      background: #e0e0e0;
+      color: #2b2b2b;
+      padding: 0 24px;
+      .hangupIcon {
+        path {
+          stroke: #2b2b2b;
+        }
+      }
+    }
+  }
+}
+.tipText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  line-height: 1.5;
+  background: #f0f0f0;
+  font-size: 12px;
+  padding: 12px 24px 8px;
+  color: #999;
+  font-family: var(--font-family2);
+  white-space: pre-wrap;
+  word-break: break-all;
+
+  border-bottom: 1px solid #dcdcdc;
+  span {
+    font-weight: 600;
+    color: #000;
+  }
+}
+.audioBtn {
+  width: auto;
+  padding: 0 20px 0 10px;
+  border-radius: 32px;
+}
+.audioIcon {
+  font-size: 22px;
+}
+
+.callingBtnLoading {
+  display: inline-block;
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    text-align: left;
+    /* 3 dots, each 0.2em wide, spaced 0.2em apart */
+    letter-spacing: 0.2em;
+    animation: callingBtnLoadingDots 1.4s steps(3, end) infinite;
+  }
+}
+
+@keyframes callingBtnLoadingDots {
+  0% {
+    content: '';
+  }
+  20% {
+    content: '.';
+  }
+  40% {
+    content: '..';
+  }
+  60%,
+  100% {
+    content: '...';
+  }
+}
+@media (min-width: 480px) and (max-width: 800px) {
+  .content {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    background-image: url('https://cdn.shulex-voc.com/shulex/upload/2025-09-15/03676c21-f0fa-4c95-9fc6-dfa2093883e4.png');
+  }
+  .content {
+    overflow-x: hidden;
+    padding: 88px 16px 16px;
+    video {
+      max-width: 80%;
+      margin: auto;
+    }
+    &.contentNoPadding {
+      padding-top: 20px;
+      video {
+        margin-top: 20px !important;
+      }
+    }
+  }
+  .callingBtn {
+    .callingBtnCon {
+      padding: 0 12px;
+    }
+  }
+}

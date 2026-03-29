@@ -1,0 +1,121 @@
+@import '../_variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 100px 30px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  @media (max-width: 1720px) {
+    position: relative;
+    left: -14px;
+    width: calc(100% + 28px);
+    padding: 100px 0;
+  }
+
+  .main {
+    padding: 0 24px;
+    width: 100%;
+  }
+
+  .title {
+    @include FirstBlockTitle();
+    margin-top: 200px;
+    margin-bottom: 12px;
+    color: #ffffff;
+    white-space: pre-line;
+  }
+
+  .subTitle {
+    @include BlockContent();
+    white-space: pre-line;
+    color: #ffffff;
+  }
+
+  .buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+  }
+}
+
+.button {
+  height: 51px;
+  // &:hover {
+  //   .buttonSvg {
+  //     color: #2b2b2b !important;
+  //   }
+  //   .buttonContent {
+  //     background: #2b2b2b !important;
+  //   }
+  //   .buttonText {
+  //     color: white !important;
+  //   }
+  //   .buttonArrow {
+  //     color: white !important;
+  //   }
+  // }
+}
+
+// .buttonSvg {
+//   color: #f78aff !important;
+// }
+
+// .buttonContent {
+//   background: #f78aff !important;
+// }
+
+// .buttonText {
+//   color: #2b2b2b !important;
+// }
+
+// .buttonArrow {
+//   color: #2b2b2b !important;
+// }
+
+@media (min-width: $middle-device-width) {
+  .container .main {
+    max-width: $middle-device-width;
+  }
+}
+
+@media (min-width: $large-device-width) {
+  .container .main {
+    max-width: $large-device-width;
+  }
+}
+
+@media (max-width: $large-device-width) {
+  .container .main {
+    padding: $large-device-component-padding;
+    padding-left: 24px;
+  }
+}
+
+@media (max-width: $middle-device-width) {
+  .container .main {
+    padding: $middle-device-component-padding;
+    padding-left: 24px;
+  }
+}
+
+@media (max-width: $small-device-width) {
+  .container .main {
+    padding: $small-device-component-padding;
+    padding-left: 12px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .container {
+    align-items: center;
+    padding: 100px 0 40px;
+    background-size: cover;
+
+    .title {
+      margin-top: 0;
+    }
+  }
+}

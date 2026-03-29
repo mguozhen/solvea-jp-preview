@@ -1,0 +1,130 @@
+@import '../../../_variables.scss';
+
+.container {
+  max-width: 440px;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 32px;
+  background-color: #323660;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  gap: 24px;
+  color: #fff;
+  flex: 1;
+
+  .icon2 {
+    width: 40px;
+    height: 40px;
+  }
+  .icon3 {
+    font-size: 30px;
+    color: #000;
+  }
+
+  .contentsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+
+    .item {
+      .title {
+        gap: 8px;
+        line-height: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        .check {
+          width: 16px;
+          height: 14px;
+          min-width: 16px;
+          margin-right: 8px;
+        }
+        .icon {
+          width: 8px;
+          height: 8px;
+          circle {
+            fill: #fff;
+          }
+        }
+      }
+      .text {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0.28px;
+      }
+    }
+  }
+
+  .icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 36px;
+  }
+  .content {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+  }
+
+  .btn {
+    margin-top: 16px;
+    height: 54px;
+    width: fit-content;
+    box-sizing: border-box;
+    border-radius: 100px;
+    padding: 15px 40px;
+    background: linear-gradient(
+      93.11deg,
+      #2a85ff 3.68%,
+      #6c48ff 52%,
+      #5b49b6 97.38%
+    );
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    transition-duration: 200ms;
+    &:hover {
+      transform: translateY(-2.5%);
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    .title {
+      font-size: 22px;
+    }
+    .content {
+      font-size: 16px;
+      line-height: 28px;
+    }
+    .btn {
+      height: 40px;
+      padding: 8px 16px;
+    }
+  }
+}

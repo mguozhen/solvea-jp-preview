@@ -1,0 +1,44 @@
+@import '../_variables.scss';
+
+.partLabel {
+  @include BlockLabel();
+  color: #222222;
+  padding-left: 13px;
+  position: relative;
+  margin-bottom: 30px;
+
+  // 移动端适配
+  @media (max-width: 768px) {
+    padding-left: 12px;
+    margin-bottom: 24px;
+  }
+
+  // 小屏移动端适配
+  @media (max-width: 480px) {
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    background-color: #f07af9;
+  }
+}
+
+.themeOne {
+  width: 100%;
+  padding-left: 14px;
+  margin-bottom: 17px;
+
+  &::before {
+    width: 6px;
+    height: 6px;
+  }
+}

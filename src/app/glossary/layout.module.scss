@@ -1,0 +1,45 @@
+/* 固定横幅：滚动时停留在页顶（位于站点 Header 下方） */
+.banner {
+  --glossary-banner-height: 32px;
+  --glossary-header-offset: 61px;
+
+  position: fixed;
+  top: var(--glossary-header-offset);
+  left: 0;
+  right: 0;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--glossary-banner-height);
+  padding: 0 16px;
+  background: #af6532;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: #8f5228;
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 800px) {
+    top: 56px;
+    font-size: 13px;
+    padding: 0 12px;
+  }
+}
+
+.bannerText {
+  max-width: 640px;
+}
+
+.contentWrap {
+  /* 为固定横幅留出高度，避免首屏内容被遮挡 */
+}

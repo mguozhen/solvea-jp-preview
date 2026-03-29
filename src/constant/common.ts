@@ -1,0 +1,201 @@
+// 客户品牌列表
+export const brandImageListOld = [
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/ab37e2db-f1b0-4f55-9470-d1e5ece7c9c1.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/d0b0933a-6ddc-4829-97ea-6e3527aa74c9.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/bbe6e2d0-f6f6-486b-89a2-8d534828bf6e.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/4dff6c10-8f18-4314-91d0-f66878457441.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/47ce908e-4af0-408e-9aef-2cbae6420682.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/34b5730d-f815-42a4-91e2-366af30c84f0.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/189b8d5f-efd8-48fb-9585-66c866eb1e8f.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/f208eb58-e1b1-41b5-bd6d-6f0d8f4f3507.png',
+
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/22675998-5425-4349-a5c3-8e8348f97ea4.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/7ce4e551-ec81-4199-8b0d-5f42fa3a7e98.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/1d8904f2-bcab-4560-bac7-6256646e9e35.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/1c378d32-0d90-4619-9ccc-03882b710526.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/1f0cdfee-0638-474b-bf30-3f92148c4605.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/a0613570-d473-4642-8139-5612435749ce.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/70363e0f-609f-42f1-b166-8027ce8df346.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/30299847-008d-4bc5-a525-18a5f4a01cfb.png',
+
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/90d34711-c9c9-4158-a3d5-dcde8410d0f9.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/8e997d02-ed0c-44c0-98a6-6544381eea78.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/d10fd115-1cee-4c4e-ac9d-8aff4286afae.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/dc42ca38-bfe0-426f-8d7b-c2fc695bf0d7.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/c5a7d356-a77a-429c-a5b6-0e97bbb0a007.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/0651c066-12d6-4a78-84b2-7da228fd1828.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/a9a18268-dd00-4c73-b368-fb63603eae48.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/3333171c-47aa-49e3-ba93-71beb20e7e51.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2024-08-16/72d1b07a-ab68-4b43-899e-6e22dbb0211c.png',
+];
+
+// 客户品牌列表
+export const brandImageList = [
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/2ab24765-7250-433c-8d65-c34e1655504c.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/73a02e4b-4efd-42de-b70f-57c2868a4d62.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/0e074674-bbe0-4f19-8397-d72fbcbeb632.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/9aacaf05-7cac-4370-be82-0271ca248e8a.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/b3fda592-0ef8-4dd4-ade4-d064de12894b.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/11502def-78e7-44fd-8740-2bb70beffd00.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/8ffe987b-7e91-40d1-9346-4491488fa4a2.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/8daccce4-62c2-408e-8b51-ac4a0e90d088.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/63f2de5b-eb42-4017-9c09-ef36daa82bf6.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/1a411b2a-aa45-49f9-9616-54466b5d7887.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/740bcc56-549f-4b80-a9c3-02fde515a6cb.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/3b4eda3f-4699-4a88-8ee1-90d72f30d99f.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/471ccc07-5c92-461f-b6f4-5ce596121e33.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/0f721d6b-cf22-4568-ac54-c576c3416e74.png',
+
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/0d981c8f-316b-4ad8-acfa-55aa0355b0ff.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/60e1c6d4-b532-4a36-b882-b34926c5249e.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/37cbc61b-62c8-43b0-9930-0bde52a7f695.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/1d9ed59f-f0cd-4325-8c6d-e6e8ae6a2257.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/bd97e33e-27e8-4ec4-a09e-508cec075384.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/0e6cd60b-78c7-459a-9830-e05aed84ffa3.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/3c1f01eb-a6c6-46c0-8dfa-1ff30dfd088c.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/a07defe8-0442-4291-846d-f9f91a89a191.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/ee81791a-2b10-482b-a121-d91df942506a.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/d5412ba6-1499-4b81-bbfd-1286411dc843.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/af3c0a07-eb4c-43b5-8cb6-05f4466ff607.png',
+
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/f9aab691-bfa6-4a69-acbb-709c3d177d9a.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/d814e571-a539-46bf-bc3e-eae65f98aaca.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/9491093b-dcbd-4102-a552-3e9a2e672009.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/f6a6f59d-f154-4445-9940-08a634f88cc0.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/a14ea416-e574-45f6-9f5f-a90b2b72c1ed.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/d5f4565d-7432-4a86-a7b4-2c572178bead.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/1487e7bf-ad16-49a6-8047-f2a8d29f4706.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/7ec4565c-a779-4fb0-ac84-9c9cd5ed6633.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/69c9a946-390f-404a-b0d9-536744de0547.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/a6b7aed2-9daf-4be5-be1f-f8482bd14603.png',
+  'https://cdn.shulex-voc.com/shulex/upload/2025-04-16/046e342a-e208-40d0-b43e-a061008292e1.png',
+];
+
+// 品牌墙
+export const brandBlackList = [
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/89f9e980-1197-4faa-bca1-52120270f0cd.png',
+    alt: 'Anker',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/1ddbae5e-8140-4cff-93fe-f36f9816648e.png',
+    alt: 'Aosom',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/1457a3cf-a72b-4901-837b-875690305abf.png',
+    alt: 'Panasonic',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/e00bc356-e163-4c10-99b1-16085ffea390.png',
+    alt: 'Segway',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/c9f503c1-72cb-4c0e-a6c2-2e6643f562f8.png',
+    alt: 'Aiper',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/771d0419-af2d-470e-b9ce-266ea3f12500.png',
+    alt: 'Songmics',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/295f0dbd-37e6-424b-8659-f60fa5cca031.png',
+    alt: 'Aftershokz',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/4b557dc8-30df-41dc-92bf-77407a7e4f34.png',
+    alt: 'Gyroor',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/102ec14a-9921-4086-884f-300e7f220ce3.png',
+    alt: 'Dreame',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/8ff39b8c-8da4-4c26-adac-d52ae50500d0.png',
+    alt: 'Tineco',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/91ea0c01-bc1a-4daa-8e91-dc75b69484d9.png',
+    alt: 'AolsteCell',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/03084a0a-2515-4676-b308-c7e7b799f223.png',
+    alt: 'maxpeedingrods',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/f36a90dd-d61a-4b2a-8960-873e9320b524.png',
+    alt: 'Jsyard',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/5b4c7347-b12b-4ee0-8bfc-5970c18337b0.png',
+    alt: 'ESR',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/e132ef8b-8697-4b39-bfbc-13090ed8256a.png',
+    alt: 'Engwe',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/fdc49051-ac78-4bb3-8b8f-1b88bf71667f.png',
+    alt: 'Oceania',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/c22a71b5-07b7-41e3-8607-cef4425128b0.png',
+    alt: 'NAVIMOW',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/a3cc0dd6-50d1-4648-b934-a8143be0088d.png',
+    alt: 'ROOT',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/9df40b73-c1b1-4331-a755-75a46d6a1e8f.png',
+    alt: 'DJI',
+  },
+  {
+    src: 'https://cdn.shulex-voc.com/shulex/upload/2025-05-07/21e15fb1-56dc-424e-b25c-3bc114647fbc.png',
+    alt: 'baseus',
+  },
+];
+
+// 不需要边距的组件
+export const noMarginComponentList = [
+  'SolveaBottomCTA',
+  'SolveaHero',
+  'SolveaPoster',
+  'SolveaBlock',
+  'SolveaCard',
+  'SolveaChart',
+  'SolveaLtdPricing',
+  'SolveaValueProposition',
+  'MediaReports',
+  'SolveaAudio',
+  'SolveaComparisonTable',
+  'SolveaComparisionHighlight',
+  'SolveaCustomerTestimonial',
+  'SolveaHighlightIndices',
+  'Solutions',
+  'SolveaSmallBrands',
+  'Carousel2',
+  'SolveaAgent',
+  'SolveaFirstPage',
+  'SolveaKeyMetrics',
+  'SolveaLivePreview',
+  'SolveaHowItWorks',
+  'SolveaSolutionsOverview',
+  'SolveaIntegrationShowcase',
+  'SolveaInsightsView',
+  'SolveaValuePropositionGrid',
+  'SolveaIndustrySolutionsGrid',
+  'SolveaWaitlist',
+  'SolveaLivePreview',
+  'SolveaSubscribe',
+  'SolveaChannelConnect',
+  'HomeFirstBlock',
+  'HomeDiscordPopup',
+  'HomeTopBannerBlock',
+  'HomeTemplatesBlock',
+  'HomeEasyToUseBlock',
+  'HomeTestimonialsBlock',
+  'HomeIntegrationBlock',
+  'HomeHowItWorksBlock',
+  'HomeFAQBlock',
+  'HomeSetupBlock',
+];

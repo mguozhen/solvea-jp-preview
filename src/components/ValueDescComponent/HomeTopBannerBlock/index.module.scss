@@ -1,0 +1,347 @@
+$banner-mobile: 768px;
+$banner-mobileSm: 480px;
+
+.topBanner {
+  width: 100%;
+  background: #0f1629;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 48px;
+  padding-left: max(48px, env(safe-area-inset-left));
+  padding-right: max(48px, env(safe-area-inset-right));
+  font-family: "Helvetica Neue", sans-serif;
+
+  @media (max-width: 1720px) {
+    position: relative;
+    left: -14px;
+    width: calc(100% + max(14px, env(safe-area-inset-left)));
+    padding-left: max(24px, env(safe-area-inset-left));
+    padding-right: max(24px, env(safe-area-inset-right));
+    box-sizing: border-box;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(201, 107, 43, 0.08) 30%,
+        rgba(88, 101, 242, 0.1) 60%,
+        transparent 100%);
+    background-size: 200% 100%;
+    animation: bannerSheen 5s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+}
+
+@keyframes bannerSheen {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+.bannerInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+
+.bannerDesktopRow {
+  display: contents;
+}
+
+.bannerPillRow {
+  display: contents;
+}
+
+.bannerScrollChunk {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 0 8px;
+}
+
+.bannerPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(88, 101, 242, 0.18);
+  border: 1px solid rgba(88, 101, 242, 0.35);
+  color: #a5acff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pillDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a5acff;
+  animation: pulseDot 1.8s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.3;
+    transform: scale(0.5);
+  }
+}
+
+/* 桌面端单行文案 */
+.bannerTextDesktop {
+  display: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+
+  strong {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  @media (min-width: $banner-mobile + 1px) {
+    display: inline;
+  }
+}
+
+/* 移动端滚动区域 */
+.bannerTextScrollWrap {
+  display: none;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+
+  @media (max-width: $banner-mobile) {
+    display: block;
+    /* 左右边缘渐变，避免与 pill/按钮贴死，滚动更清晰 */
+    mask-image: linear-gradient(to right,
+        transparent 0,
+        black 20px,
+        black calc(100% - 20px),
+        transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,
+        transparent 0,
+        black 20px,
+        black calc(100% - 20px),
+        transparent 100%);
+  }
+}
+
+.bannerTextScrollTrack {
+  display: inline-flex;
+  gap: 2em;
+  animation: bannerTextScroll 25s linear infinite;
+  width: max-content;
+}
+
+@keyframes bannerTextScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.bannerText {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+
+  strong {
+    color: #fff;
+    font-weight: 700;
+  }
+}
+
+.bannerSep {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+.bannerCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #5865f2;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 5px 13px;
+  border-radius: 100px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.15s;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    background: #4752c4;
+    transform: scale(1.03);
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(88, 101, 242, 0.6);
+    outline-offset: 2px;
+  }
+
+  svg {
+    transition: transform 0.15s;
+  }
+
+  &:hover svg:last-of-type {
+    transform: translateX(2px);
+  }
+}
+
+.bannerMobileCta {
+  display: none;
+}
+
+/* 平板/手机：pill + 文案滚动，仅按钮固定右侧 */
+@media (max-width: $banner-mobile) {
+  .topBanner {
+    left: 0;
+    width: 100%;
+    padding: 12px 16px;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    min-height: 48px;
+  }
+
+  .bannerInner {
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+  }
+
+  .bannerDesktopRow {
+    display: none;
+  }
+
+  .bannerTextScrollWrap {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .bannerScrollChunk {
+    gap: 10px;
+  }
+
+  .bannerPill {
+    font-size: 10px;
+    padding: 4px 10px;
+    letter-spacing: 0.06em;
+  }
+
+  .bannerText {
+    font-size: 13px;
+    line-height: 1.42;
+  }
+
+  .bannerMobileCta {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    background: #5865f2;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 14px;
+    min-width: 44px;
+    border-radius: 100px;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+    justify-content: center;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba(88, 101, 242, 0.6);
+      outline-offset: 2px;
+    }
+  }
+}
+
+/* 小屏手机：布局同上，略收紧间距 */
+@media (max-width: $banner-mobileSm) {
+  .topBanner {
+    padding: 10px 12px;
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+
+  .bannerScrollChunk {
+    gap: 8px;
+  }
+
+  .bannerText {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .bannerPill {
+    padding: 3px 8px;
+    font-size: 9px;
+  }
+
+  .bannerScrollChunk .bannerSep {
+    display: none;
+  }
+
+  .bannerMobileCta {
+    font-size: 11px;
+    padding: 8px 12px;
+    min-width: 44px;
+
+    svg:first-of-type {
+      width: 11px;
+      height: 9px;
+    }
+  }
+}

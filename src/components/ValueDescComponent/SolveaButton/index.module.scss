@@ -1,0 +1,31 @@
+.button {
+  height: 51px;
+  width: 197px;
+}
+
+.whiteBtn {
+  svg {
+    color: white !important;
+  }
+  .buttonContent {
+    background-color: white !important;
+  }
+  .buttonText {
+    color: black !important;
+  }
+  .buttonArrow {
+    color: black !important;
+  }
+
+  &:hover {
+    .buttonContent {
+      background-color: #f78aff !important;
+    }
+    svg {
+      color: #f78aff !important;
+    }
+    .buttonArrow {
+      color: black !important;
+    }
+  }
+}

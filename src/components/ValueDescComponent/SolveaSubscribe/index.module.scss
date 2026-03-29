@@ -1,0 +1,292 @@
+@import '../_variables.scss';
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 112px 130px 27px;
+  box-sizing: border-box;
+
+  @media (max-width: 1720px) {
+    position: relative;
+    left: -14px;
+    width: calc(100% + 28px);
+  }
+
+  .title {
+    @include NormalBlockTitle();
+    white-space: pre-line;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .description {
+    @include BlockContent();
+    white-space: pre-line;
+    text-align: center;
+    line-height: 70px;
+    margin-bottom: 40px;
+  }
+
+  // 平板横向适配
+  @media (max-width: 1280px) {
+    padding: 96px 80px 27px;
+
+
+
+    .description {
+      line-height: 60px;
+      margin-bottom: 36px;
+    }
+  }
+
+  // 平板竖向适配
+  @media (max-width: 1024px) {
+    padding: 80px 60px 27px;
+
+    .title {
+      line-height: 1.4;
+      padding-bottom: 16px;
+    }
+
+    .description {
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+  }
+
+  .content {
+    background-color: white;
+    border-radius: 16px;
+    padding: 36px 120px 24px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    .packageList {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    // 平板横向适配
+    @media (max-width: 1280px) {
+      padding: 32px 60px 24px;
+
+      .packageList {
+        gap: 16px;
+      }
+    }
+
+    // 平板竖向适配
+    @media (max-width: 1024px) {
+      padding: 32px 40px 24px;
+
+      .packageList {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .packageList {
+        align-items: center;
+      }
+    }
+  }
+
+  .page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .header {
+      margin-bottom: 32px;
+    }
+
+    .main {
+      @media (max-width: 480px) {
+        width: 100%;
+      }
+    }
+
+    .pageContent {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .other {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      margin-top: 16px;
+
+      .billionBtn {
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fafbfc;
+        border: 1px solid #f0f1f2;
+        border-radius: 8px;
+        color: #131519;
+        font-weight: 500;
+        padding: 0 16px;
+        cursor: pointer;
+
+        .goIcon {
+          margin-left: 8px;
+          font-size: 16px;
+        }
+
+        &:hover {
+          border: 1px solid #f0f1f2 !important;
+          border-radius: 8px;
+          color: #131519 !important;
+          background: #fafbfc !important;
+          opacity: 0.9 !important;
+        }
+      }
+
+      .downgradeBtn {
+        margin-left: 16px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        color: #131519;
+        font-weight: 400;
+        padding: 0 16px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  // 移动端适配
+  @media (max-width: 768px) {
+    padding: 80px 20px 50px;
+    left: 0;
+    width: 100%;
+
+    .title {
+      line-height: 1.3;
+      padding: 0 16px 12px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .description {
+      height: auto;
+      line-height: 1.6;
+      padding: 0 16px;
+      margin-bottom: 32px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .content {
+      padding: 32px 20px 28px;
+      border-radius: 16px;
+      margin: 0;
+
+      .packageList {
+        // flex-direction: column;
+        gap: 16px;
+        width: 100%;
+      }
+    }
+
+    .page {
+      .header {
+        margin-bottom: 28px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .pageContent {
+        width: 100%;
+        align-items: center;
+      }
+
+      .other {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        align-items: stretch;
+        margin-top: 20px;
+
+        .billionBtn {
+          width: 100%;
+          height: 40px;
+          justify-content: center;
+          margin-left: 0;
+          font-size: 14px;
+        }
+
+        .downgradeBtn {
+          width: 100%;
+          height: 40px;
+          justify-content: center;
+          margin-left: 0;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 60px 16px 40px;
+
+    .title {
+      padding: 0 8px 8px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .description {
+      padding: 0 8px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .content {
+      padding: 24px 16px;
+      border-radius: 12px;
+
+      .packageList {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    .page {
+      .header {
+        margin-bottom: 20px;
+      }
+
+      .other {
+        margin-top: 16px;
+        gap: 10px;
+
+        .billionBtn {
+          height: 36px;
+          font-size: 13px;
+        }
+
+        .downgradeBtn {
+          height: 36px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

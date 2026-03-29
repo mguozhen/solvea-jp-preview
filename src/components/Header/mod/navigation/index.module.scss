@@ -1,0 +1,32 @@
+@import 'theme/index.scss';
+
+.iconContainer {
+  width: 40px;
+  height: 20px;
+  border-radius: 40px;
+  // background: #eff8ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+  }
+  .blueIcon {
+    path {
+      stroke: $primary-600;
+    }
+  }
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+}
+
+.iconSmall {
+  width: 24px;
+  height: 24px;
+}

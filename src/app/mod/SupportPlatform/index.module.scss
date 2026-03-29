@@ -1,0 +1,79 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 50px auto 112px;
+  text-align: center;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  .title {
+    font-size: 36px;
+    font-weight: 700;
+    padding: 0 40px;
+  }
+  .desc {
+    color: #909aa8;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0 40px;
+  }
+  .listBox {
+    margin: 40px 0;
+    & > div {
+      gap: 20px;
+    }
+  }
+}
+
+.itemBox {
+  height: 60px;
+  padding: 0 40px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-size: 24px;
+  font-weight: 500;
+  box-sizing: border-box;
+  &.itemBox0 {
+    border: 1px solid #000000;
+  }
+  &.itemBox1 {
+    background: #c5bfff;
+  }
+  &.itemBox2 {
+    background: #e7eaf1;
+  }
+  &.itemBox3 {
+    background: #000000;
+    color: #fff;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .itemBox {
+    height: 100px;
+    padding: 0 32px;
+    font-size: 22px;
+  }
+  .container {
+    .desc {
+      font-size: 18px;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .itemBox {
+    height: 80px;
+    padding: 0 28px;
+    font-size: 20px;
+  }
+  .container {
+    .desc {
+      font-size: 16px;
+    }
+    .listBox {
+      margin: 5px 0;
+    }
+  }
+}

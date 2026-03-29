@@ -1,0 +1,242 @@
+.container {
+  padding: 75px var(--insight-padding-x) 112px;
+
+  .header {
+    margin-left: 36px;
+    margin-bottom: 80px;
+  }
+
+  .realTimeData {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+
+    .dot {
+      width: 3px;
+      height: 3px;
+      background-color: #222;
+      border-radius: 50%;
+    }
+
+    span {
+      font-family: var(--font-family), monospace;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.495;
+      text-transform: uppercase;
+      color: #222222;
+    }
+  }
+
+  .title {
+    // font-family: var(--font-family-title);
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 68px;
+    line-height: 0.915;
+    color: #000000;
+    // margin: 0 0 40px 0;
+  }
+
+  .wrapper {
+    display: flex;
+    gap: 17px;
+
+    .box {
+      flex: 1;
+      width: 0;
+      flex-shrink: 0;
+      border: 1px solid #303030;
+      position: relative;
+
+      &:hover {
+        box-shadow: 0 28px 33px 0 #93939340;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 355px;
+          height: 355px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &:global(.i0) {
+        &:hover {
+          &::before {
+            background: radial-gradient(
+              44.23% 44.23% at 50% 50%,
+              rgba(240, 122, 249, 0.36) 0%,
+              rgba(238, 238, 238, 0.056) 100%
+            );
+          }
+        }
+      }
+
+      &:global(.i1) {
+        &:hover {
+          &::before {
+            background: radial-gradient(
+                44.23% 44.23% at 50% 50%,
+                rgba(101, 110, 206, 0.36) 0%,
+                rgba(238, 238, 238, 0.056) 100%
+              )
+              /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+          }
+        }
+      }
+
+      &:global(.i2) {
+        &:hover {
+          &::before {
+            background: radial-gradient(
+                44.23% 44.23% at 50% 50%,
+                rgba(87, 197, 100, 0.36) 0%,
+                rgba(238, 238, 238, 0.056) 100%
+              )
+              /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+          }
+        }
+      }
+
+      .first,
+      .item {
+        position: relative;
+      }
+
+      .first {
+        padding: 33px 29px;
+        min-height: 249px;
+        gap: 8px;
+        // font-family: var(--font-family2);
+        font-family: 'Helvetica Neue', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 28px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #303030;
+
+        .iconContainer {
+          display: flex;
+          align-items: start;
+          gap: 14px;
+
+          .icon {
+            height: 28px;
+            width: 20px;
+          }
+
+          span {
+            flex: 1;
+            width: 0;
+          }
+        }
+      }
+
+      .item {
+        padding: 19px 36px;
+
+        .title {
+          height: 21px;
+          color: #1f1f1f;
+          // font-family: var(--font-family);
+          font-family: 'Helvetica Neue', sans-serif;
+          font-weight: 500;
+          font-style: Medium;
+          font-size: 14px;
+          leading-trim: NONE;
+          line-height: 20.49px;
+          letter-spacing: 0%;
+          vertical-align: middle;
+        }
+
+        .desc {
+          margin-top: 10px;
+          // font-family: var(--font-family);
+          font-family: 'Helvetica Neue', sans-serif;
+          font-weight: 400;
+          font-style: Regular;
+          font-size: 14px;
+          leading-trim: NONE;
+          line-height: 20.49px;
+          letter-spacing: 0%;
+          vertical-align: middle;
+          height: 44px;
+          color: #151515;
+        }
+
+        &:nth-of-type(3) {
+          padding-bottom: 18px;
+        }
+
+        &:nth-of-type(4) {
+          padding-bottom: 30px;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid #303030;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .container {
+    .wrapper {
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+
+      .box {
+        width: 80%;
+        flex: none;
+
+        .first {
+          min-height: 160px;
+          font-size: 18px;
+        }
+
+        .item {
+          .title,
+          .desc {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    .header {
+      margin-left: 0;
+      margin-bottom: 53px;
+    }
+
+    .title {
+      font-size: 40px;
+    }
+
+    .wrapper {
+      flex-direction: column;
+      gap: 18px;
+
+      .box {
+        width: 100%;
+        flex: none;
+
+        .first {
+          min-height: auto;
+        }
+
+        .item {
+          padding: 30px 20px !important;
+        }
+      }
+    }
+  }
+}

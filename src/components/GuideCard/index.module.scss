@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  margin-bottom: 50px;
+  &.reviseContent {
+    flex-direction: row-reverse;
+  }
+  .content {
+    flex: 1;
+    padding: 40px;
+    .title {
+      font-size: 45px;
+      font-weight: 600;
+    }
+    .describtion {
+      font-size: 18px;
+      font-weight: 400;
+      color: #909aa8;
+      margin-top: 20px;
+    }
+    .list {
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      .item {
+        display: flex;
+        align-items: start;
+        gap: 12px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+        color: #909aa8;
+        .listItemIcon {
+          width: 20px;
+          margin-top: 4px;
+        }
+        .listContent {
+          flex: 1;
+        }
+      }
+    }
+  }
+  .imgBox {
+    flex: 1;
+    padding: 24px;
+    border-radius: 24px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 8px 4px #0000000a;
+
+    .img {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    .title {
+      font-size: 32px;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column !important;
+    .content {
+      .title {
+        font-size: 26px;
+        color: #0e0d17;
+      }
+      .describtion {
+        color: #909aa8;
+        line-height: 1.5;
+      }
+      .btn {
+        margin-top: 20px;
+        width: 100%;
+      }
+    }
+    .imgBox {
+      // display: none;
+    }
+  }
+}

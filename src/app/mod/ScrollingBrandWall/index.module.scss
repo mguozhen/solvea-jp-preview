@@ -1,0 +1,27 @@
+.container {
+  flex: 1;
+  overflow: hidden;
+  padding: 8px var(--insight-padding-x);
+  @media (max-width: 480px) {
+    padding: 0 var(--insight-padding-x);
+  }
+}
+
+.brandItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px; /* 品牌项宽度 */
+  height: 80px; /* 品牌项高度 */
+  padding: 10px;
+  box-sizing: border-box;
+  @media (max-width: 480px) {
+    padding: 0 10px;
+  }
+}
+
+.brandImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}

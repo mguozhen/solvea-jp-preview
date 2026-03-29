@@ -1,0 +1,341 @@
+// 整体的背景色
+$screenBackground: #f7f8fa;
+
+// 基础颜色
+$orange: #ff6633;
+$purple: #8833ff;
+$red: #ff6b8f;
+$yellow: #ffcb33;
+$green: #4be0bc;
+$blue: #33bfff;
+$pink: #e62e7b;
+$brown: #cc7429;
+$MintGreen: #2ee6ca;
+$black: #000;
+$white: #fff;
+// theme
+$primary: #4c6fff;
+$primary-50: #eff8ff;
+$primary-600: #1570ef;
+$shulex-primary: #3770ff;
+
+// 文字颜色
+$text-primary: #1d233f;
+$text-secondary: #535f78;
+$text-dark: #304162;
+$text-black: #101828;
+$text-gray: #667085;
+// $text-dark: #0a0b0d;
+
+// 不同gray颜色
+$gray-50: #f9fafb;
+$gray-100: #f2f4f7;
+$gray-200: #eaecf0;
+$gray-300: #d0d5dd;
+$gray-400: #98a2b3;
+$gray-500: #667085;
+$gray-600: #475467;
+$gray-700: #344054;
+
+$primary-blue: #2a85ff;
+$text-white-hover: rgb(177, 177, 177);
+
+// 通用
+$border-color: #e4e8f0;
+$border-color-hover: #c3cad9;
+
+$icon-background: #c3cad9;
+$icon-background-hover: $text-primary;
+$fill-color: #f2f3f5;
+
+$page-background: #040a4d;
+
+$table-box-shadow: inset 10px 0 8px -8px rgb(0 0 0 / 5%);
+
+// 组件高度（例如Input，Select，Button）
+$component-height-normal: 32px;
+$component-height-high: 40px;
+$component-radius-rounded: 99px; // 圆角
+$component-radius-square: 8px;
+
+// 老的工程的样式
+$form-height: 32px;
+$tag-backgroundV2: rgba(0, 0, 0, 0.08);
+
+/*
+单行文本点点点
+*/
+@mixin textDot {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 全局的卡片颜色
+.cardBackground0 {
+  background-image: linear-gradient(rgba(160, 191, 255, 0.4) 0, #fff 45%);
+}
+
+.cardBackground1 {
+  background-image: linear-gradient(rgba(183, 192, 224, 0.4) 0, #fff 45%);
+}
+
+.cardBackground2 {
+  background-image: linear-gradient(rgba(63, 214, 247, 0.4) 0, #fff 45%);
+}
+
+.cardBackground3 {
+  background-image: linear-gradient(rgba(160, 191, 255, 0.4) 0, #fff 45%);
+}
+
+.cardBackground4 {
+  background-image: linear-gradient(rgba(255, 206, 221, 0.4) 0, #fff 45%);
+}
+
+@mixin btnDisplay {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+@mixin btnDisable {
+  cursor: not-allowed;
+
+  &:hover {
+    opacity: 0.4;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+
+  opacity: 0.4;
+}
+
+// 下划线
+.underline {
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    content: '';
+    background: $primary;
+    height: 2px;
+    width: 100%;
+    bottom: 3px;
+    left: 0;
+  }
+
+  &:hover {
+    &::after {
+      // background: #425271;
+    }
+  }
+}
+
+// 居中
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alignItemsCenter {
+  display: flex;
+  align-items: center;
+}
+
+// 多行换行
+@mixin mulitiTextDot($line) {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}
+
+// 隐藏
+.displayNone {
+  display: none !important;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+$small-device-width: 800px;
+$middle-device-width: 1120px;
+$large-device-width: 1600px;
+
+// 小设备组件统一padding值
+$small-device-component-padding: 12px;
+// 中等设备组件统一padding值
+$middle-device-component-padding: 20px 20px;
+// 大设备组件统一padding值
+$large-device-component-padding: 30px 0;
+
+$mobile-width: 500px;
+$docs-mobile-width: 1000px;
+
+// 头版大标题
+@mixin FirstBlockTitle() {
+  font-family: '__NeueHelvetica_c9f98b', '__NeueHelvetica_Fallback_c9f98b', Helvetica, Arial,
+    sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #2b2b2b;
+  font-size: calc(4.25rem * var(--font-scale, 1));
+  @media (max-width: 1280px) {
+    font-size: calc(3rem * var(--font-scale, 1));
+  }
+  @media (max-width: 1024px) {
+    font-size: calc(2.5rem * var(--font-scale, 1));
+  }
+  @media (max-width: 768px) {
+    font-size: calc(3.5rem * var(--font-scale, 1));
+  }
+  @media (max-width: 480px) {
+    font-size: calc(3rem * var(--font-scale, 1));
+  }
+}
+
+// 普通大标题
+@mixin NormalBlockTitle() {
+  font-family: 'Helvetica Neue', 'sans-serif';
+  font-size: calc(4.25rem * var(--font-scale, 1));
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #2b2b2b;
+  @media (max-width: 1280px) {
+    font-size: calc(3rem * var(--font-scale, 1));
+  }
+  @media (max-width: 1024px) {
+    font-size: calc(2.5rem * var(--font-scale, 1));
+  }
+  @media (max-width: 768px) {
+    font-size: calc(3.5rem * var(--font-scale, 1));
+  }
+  @media (max-width: 480px) {
+    font-size: calc(3rem * var(--font-scale, 1));
+  }
+}
+
+// 块标题
+@mixin BlockTitle() {
+  font-family: 'Helvetica Neue', 'sans-serif';
+  font-size: calc(2.5rem * var(--font-scale, 1));
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #2b2b2b;
+  @media (max-width: 768px) {
+    font-size: calc(3rem * var(--font-scale, 1));
+  }
+  @media (max-width: 480px) {
+    font-size: calc(2.5rem * var(--font-scale, 1));
+  }
+}
+
+// 块副标题
+@mixin BlockSubTitle() {
+  font-family: '__NeueHelvetica_c9f98b', '__NeueHelvetica_Fallback_c9f98b', 'Helvetica', 'Arial',
+    'sans-serif';
+  font-size: calc(2rem * var(--font-scale, 1));
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #2b2b2b;
+}
+
+// 块内容
+@mixin BlockContent() {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: calc(1rem * var(--font-scale, 1));
+  @media (max-width: 1280px) {
+    font-size: calc(0.875rem * var(--font-scale, 1));
+  }
+
+  @media (max-width: 768px) {
+    font-size: calc(2rem * var(--font-scale, 1));
+  }
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #2b2b2b;
+}
+
+// 解释性文本
+@mixin ExplanationText($fontSize: 0.875rem) {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  font-size: calc($fontSize * var(--font-scale, 1));
+  @media (max-width: 768px) {
+    font-size: calc(1.667rem * var(--font-scale, 1));
+  }
+  line-height: 1.3188;
+  text-transform: uppercase;
+  color: #2b2b2b;
+}
+
+// 板块label
+@mixin BlockLabel() {
+  font-family: '__RobotoMon_349780', '__RobotoMon_Fallback_349780', 'monospace';
+  font-weight: 400;
+  font-size: calc(0.875rem * var(--font-scale, 1));
+  @media (max-width: 768px) {
+    font-size: calc(1.667rem * var(--font-scale, 1));
+  }
+  line-height: 1.3188;
+  text-transform: uppercase;
+  color: #2b2b2b;
+}
+
+// 次要内容标题
+@mixin SecondaryContentTitle($fontSize: 0.778rem) {
+  font-family: 'Helvetica Neue', 'sans-serif';
+  font-size: calc($fontSize * var(--font-scale, 1));
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+  @media (max-width: 768px) {
+    font-size: calc(2.5rem * var(--font-scale, 1));
+  }
+}
+
+// 次要内容文本
+@mixin SecondaryContentText($fontSize: 0.778rem) {
+  font-family: 'Helvetica Neue', 'sans-serif';
+  font-size: calc($fontSize * var(--font-scale, 1));
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  @media (max-width: 768px) {
+    font-size: calc(1.667rem * var(--font-scale, 1));
+  }
+}
+
+// 标签
+@mixin Tag() {
+  font-family: 'Helvetica Neue', 'sans-serif';
+  font-weight: 500;
+  font-size: calc(1.25rem * var(--font-scale, 1));
+  @media (max-width: 768px) {
+    font-size: calc(2rem * var(--font-scale, 1));
+  }
+  line-height: 1.5;
+  text-transform: uppercase;
+}

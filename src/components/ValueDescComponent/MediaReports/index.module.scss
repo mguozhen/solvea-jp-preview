@@ -1,0 +1,529 @@
+@import '../_variables.scss';
+
+.container {
+  width: 100%;
+  padding: 100px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  background: transparent;
+  position: relative;
+  box-sizing: border-box;
+
+  @media (max-width: 1720px) {
+    padding: 100px 0;
+  }
+
+  .titleContainer {
+    width: 100%;
+    padding-bottom: 107px;
+    box-sizing: border-box;
+    @media (max-width: 1024px) and (min-width: 769px) {
+      padding-bottom: 88px;
+    }
+    @media (max-width: 768px) {
+      padding-bottom: 56px;
+    }
+    @media (max-width: 480px) {
+      padding-bottom: 36px;
+    }
+    .partLabel {
+      margin-bottom: 25px;
+    }
+
+    .title {
+      max-width: 60%;
+      @include NormalBlockTitle();
+      white-space: pre-line;
+    }
+  }
+
+  // @media (max-width: 1720px) {
+  //   position: relative;
+  //   left: -14px;
+  //   width: calc(100% + 28px);
+  // }
+
+  // 平板适配 (769px - 1024px)
+  @media (max-width: 1024px) and (min-width: 769px) {
+    padding: 50px 0 50px;
+  }
+
+  // 移动端适配 (≤768px)
+  @media (max-width: 768px) {
+    padding: 40px 0 60px;
+    left: 0;
+    width: 100%;
+  }
+  .carouselContainer {
+    position: relative;
+  }
+
+  // 图片容器
+  .logoWrapper {
+    height: 40px;
+
+    // 平板适配
+    @media (max-width: 1024px) and (min-width: 769px) {
+      height: 36px;
+    }
+
+    // 移动端适配
+    @media (max-width: 768px) {
+      height: 32px;
+    }
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // 幻灯片容器
+  .carousel {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+
+    :global {
+      // 轨道容器
+      .slick-track {
+        // width: 100% !important;
+        display: flex !important;
+        align-items: center;
+      }
+
+      // 所有幻灯片
+      .slick-slide {
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+        opacity: 1;
+        padding: 0 10px; // 左右各10px，总共20px间距
+        box-sizing: border-box; // 确保 padding 包含在宽度内
+        @media (max-width: 768px) {
+          padding: 0;
+          // 移动端强制每个幻灯片占满宽度
+          // width: 100% !important;
+          // min-width: 100% !important;
+          // max-width: 100% !important;
+        }
+
+        // 中间激活的幻灯片
+        &.slick-center {
+          opacity: 1;
+          transform: scale(1);
+          z-index: 2;
+          pointer-events: auto;
+        }
+
+        // 幻灯片内容
+        > div {
+          outline: none;
+        }
+      }
+
+      // 左右箭头隐藏
+      .slick-arrow {
+        display: none !important;
+      }
+
+      // 限制可见区域
+      .slick-list {
+        overflow: hidden !important;
+      }
+
+      // 移动端强制只显示一个幻灯片
+      // @media (max-width: 768px) {
+      //   .slick-slide {
+      //     width: 100% !important;
+      //     min-width: 100% !important;
+      //     max-width: 100% !important;
+      //   }
+      // }
+    }
+  }
+
+  // 幻灯片包装
+  .slideWrapper {
+    padding: 0;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    user-select: none;
+    box-sizing: border-box; // 确保 padding 包含在宽度内
+    width: 100%; // 确保占满父容器宽度
+
+    // 平板适配
+    @media (max-width: 1024px) and (min-width: 769px) {
+      padding: 0 10px;
+    }
+
+    // 移动端适配
+    @media (max-width: 768px) {
+      padding: 0 5px;
+    }
+
+    // 幻灯片内容卡片
+    .slideContent {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #e8e8e8;
+      padding: 30px 25px 35px;
+      min-height: 350px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      box-shadow: 0px 28px 27.1px 0px rgba(0, 0, 0, 0.02);
+      position: relative;
+      overflow: hidden;
+
+      border-bottom: oklch(0.968 0.007 247.896) 1px solid;
+
+      .reportTime {
+        position: absolute;
+        bottom: 10px;
+        right: 30px;
+        text-align: right;
+        width: 100%;
+        color: #2b2b2b;
+        opacity: 0.7;
+        @include SecondaryContentText(1rem);
+      }
+
+      // 平板适配
+      @media (max-width: 1024px) and (min-width: 769px) {
+        padding: 25px 20px 30px;
+        min-height: 320px;
+
+        &::after {
+          bottom: 25px;
+          left: 20px;
+          width: calc(100% - 40px);
+        }
+      }
+
+      // 移动端适配
+      @media (max-width: 768px) {
+        padding: 20px 16px 25px;
+        min-height: 280px;
+
+        &::after {
+          bottom: 20px;
+          left: 16px;
+          width: calc(100% - 32px);
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 40px;
+        left: 25px;
+        width: calc(100% - 50px);
+        height: 1px;
+        background: oklch(0.968 0.007 247.896);
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: #2b2b2b;
+
+        // 移动端适配
+        @media (max-width: 768px) {
+          height: 3px;
+        }
+      }
+    }
+
+    // 图片 + 引号图标
+    .headerWrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      // 移动端适配
+      @media (max-width: 768px) {
+        gap: 8px;
+      }
+
+      // 引号图标  // 引号图标
+      .quoteIcon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        flex-shrink: 0;
+
+        // 平板适配
+        @media (max-width: 1024px) and (min-width: 769px) {
+          width: 36px;
+          height: 36px;
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        // 移动端适配
+        @media (max-width: 768px) {
+          width: 32px;
+          height: 32px;
+
+          svg {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+
+    // 副标题 + 正文
+    .contentWrapper {
+      margin-top: 20px;
+
+      // 平板适配
+      @media (max-width: 1024px) and (min-width: 769px) {
+        margin-top: 18px;
+      }
+
+      // 移动端适配
+      @media (max-width: 768px) {
+        margin-top: 16px;
+      }
+
+      // 副标题
+      .subTitle {
+        @include SecondaryContentText(1rem);
+        display: inline-block;
+        padding: 6px 16px;
+        background: #2b2b2b;
+        color: #fff;
+        text-decoration: none;
+        z-index: 1;
+        transition: all 0.3s ease;
+        white-space: pre-line;
+
+        // 平板适配
+        @media (max-width: 1024px) and (min-width: 769px) {
+          padding: 5px 14px;
+        }
+
+        // 移动端适配
+        @media (max-width: 768px) {
+          @include SecondaryContentText(2rem);
+          padding: 4px 12px;
+        }
+
+        // &:hover {
+        //   background: #e8e8e8;
+        //   color: #2b2b2b;
+        // }
+      }
+
+      // 正文
+      .description {
+        @include SecondaryContentText(1rem);
+        margin-top: 20px;
+        margin-bottom: 30px;
+        color: rgba(43, 43, 43, 0.7);
+        font-style: italic;
+        line-height: 1.6;
+        width: 100%;
+        box-sizing: border-box;
+        white-space: pre-line;
+
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        // 平板适配
+        @media (max-width: 1024px) and (min-width: 769px) {
+          margin-top: 18px;
+          margin-bottom: 25px;
+          line-height: 1.5;
+        }
+
+        // 移动端适配
+        @media (max-width: 768px) {
+          @include SecondaryContentText(2rem);
+          margin-top: 16px;
+          margin-bottom: 20px;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  // 自定义分页器
+  .customDots {
+    z-index: auto;
+    bottom: -50px !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+
+    // 平板适配
+    @media (max-width: 1024px) and (min-width: 769px) {
+      bottom: -30px !important;
+    }
+
+    // 移动端适配
+    @media (max-width: 768px) {
+      bottom: -40px !important;
+    }
+
+    :global {
+      .slick-active {
+        width: 20px !important;
+        &:after {
+          display: none !important;
+        }
+      }
+      li {
+        width: 10px !important;
+        height: 10px !important;
+        margin: 0 4px;
+
+        button {
+          width: 10px !important;
+          height: 10px !important;
+          border-radius: 50%;
+          background: #d0d0d0 !important;
+          opacity: 1 !important;
+          border: none;
+          padding: 0;
+          transition: all 0.3s ease;
+
+          &::before {
+            display: none !important;
+          }
+
+          &:hover {
+            background: #b0b0b0 !important;
+          }
+        }
+
+        &.slick-active button {
+          background: #2b2b2b !important;
+          width: 20px !important;
+          height: 10px !important;
+          border-radius: 6px !important;
+        }
+      }
+    }
+  }
+
+  // 导航按钮
+  .navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+
+    &:hover {
+      // background: #f5f5f5;
+      // border-color: #d0d0d0;
+      // box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    // 平板适配
+    @media (max-width: 1024px) and (min-width: 769px) {
+      width: 36px;
+      height: 36px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    // 移动端适配
+    @media (max-width: 768px) {
+      width: 32px;
+      height: 32px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      &:hover {
+        transform: translateY(-50%) scale(1.05);
+      }
+    }
+  }
+
+  // 左侧导航按钮
+  .navButtonLeft {
+    left: -10px;
+    z-index: 12;
+
+    // // 平板适配
+    // @media (max-width: 1024px) and (min-width: 769px) {
+    //   left: -10px;
+    // }
+
+    // // 移动端适配
+    // @media (max-width: 768px) {
+    //   left: 10px;
+    // }
+  }
+
+  // 右侧导航按钮
+  .navButtonRight {
+    right: -10px;
+    z-index: 12;
+    // // 平板适配
+    // @media (max-width: 1024px) and (min-width: 769px) {
+    //   right: -10px;
+    // }
+
+    // // 移动端适配
+    // @media (max-width: 768px) {
+    //   right: 10px;
+    // }
+  }
+}

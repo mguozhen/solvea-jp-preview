@@ -1,0 +1,46 @@
+.btnBox {
+  background: #0e0d17;
+  border-radius: 100px;
+  height: 60px;
+  padding: 0 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  gap: 16px;
+
+  .arrowIcon {
+    width: 24px;
+  }
+}
+
+.link {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.demoBtn {
+  display: inline-flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 32px;
+  border-radius: 100px;
+  background: #8056dc;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  &.black {
+    background: #000;
+  }
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+  }
+}

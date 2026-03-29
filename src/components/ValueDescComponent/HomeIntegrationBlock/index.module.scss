@@ -1,0 +1,101 @@
+.container {
+    display: flex;
+    padding: 64px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 66px;
+    background: #FFF;
+
+    @media (max-width: 1720px) {
+        position: relative;
+        left: -14px;
+        width: calc(100% + 28px);
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 32px 24px;
+        gap: 32px;
+    }
+
+    .left {
+        flex: 1;
+        text-align: right;
+        /* 预留宽高比，防止图片加载导致 CLS */
+        min-height: 200px;
+
+        @media (max-width: 768px) {
+            text-align: center;
+            width: 100%;
+        }
+
+        .img {
+            max-width: 580px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            vertical-align: middle;
+
+            @media (max-width: 768px) {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    .right {
+        flex: 1;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+
+        .label {
+            width: 90px;
+
+            @media (max-width: 768px) {
+                margin: 12px auto;
+            }
+        }
+
+        .title {
+            margin-bottom: 23px;
+            white-space: pre-line;
+            color: #111827;
+            font-family: "Helvetica Neue";
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 38.4px;
+
+            @media (max-width: 768px) {
+                font-size: 20px;
+                line-height: 28px;
+                text-align: center;
+            }
+        }
+
+        .desc {
+            margin-bottom: 32px;
+            white-space: pre-line;
+            color: #6B7280;
+            font-family: "Helvetica Neue";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 25.6px;
+
+            @media (max-width: 768px) {
+                font-size: 14px;
+                line-height: 22px;
+            }
+        }
+
+        .button {
+            width: 'auto';
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+    }
+}

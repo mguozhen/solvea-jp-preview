@@ -1,0 +1,107 @@
+@import 'theme/index.scss';
+
+.loginLink {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-height: 40px;
+  height: 40px;
+  cursor: pointer;
+  .blurBack {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background: linear-gradient(
+      106deg,
+      #575757 0%,
+      #4648ff 65.07%,
+      #c376ff 100%
+    );
+    transition: all 0.2s ease-in-out;
+    height: 60px;
+    padding: 3px;
+    &:hover {
+      transform: translateY(-3%);
+      text-decoration: none;
+    }
+  }
+  .btn,
+  .btnLogin {
+    height: 100%;
+    min-width: 100px;
+    width: fit-content;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding: 0 16px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    color: #fff;
+    margin-left: 0;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .btnLogin {
+    height: 48px;
+    background-color: #fff;
+    &:hover {
+      transform: translateY(-3%);
+      text-decoration: none;
+      // background-color: #040A4D;
+    }
+  }
+
+  .login {
+    white-space: nowrap;
+    // margin-right: 20px;
+  }
+  .loginTitle {
+    color: $text-black !important;
+  }
+
+  .signUp {
+    width: 135px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    padding: 0 24px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    color: #1d2129;
+    font-size: 14px;
+    line-height: 22px;
+    text-decoration: none;
+    transition-duration: 200ms;
+    white-space: nowrap;
+
+    &:hover {
+      color: #4080ff;
+    }
+  }
+}
+
+@media only screen and (max-width: $small-device-width) {
+  .loginLink {
+    gap: 10px;
+    .btnLogin,
+    .blurBack {
+      height: 46px;
+      box-sizing: border-box;
+    }
+    .btn {
+      height: 40px;
+    }
+  }
+}

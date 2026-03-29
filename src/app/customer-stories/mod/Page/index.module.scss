@@ -1,0 +1,135 @@
+.main {
+  position: relative;
+
+  .paginationItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .leftIcon {
+      margin-right: 8px;
+    }
+
+    .rightIcon {
+      margin-left: 8px;
+    }
+  }
+
+  .paginationContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    padding: 0 calc(var(--insight-padding-x) + 25px);
+
+    :global(.ant-pagination) {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      :global(.ant-pagination-item) {
+        border: none;
+        border-radius: 4px;
+        min-width: 40px;
+        height: 40px;
+        line-height: 40px;
+        background-color: transparent;
+        font-size: 18px;
+        font-weight: 500;
+
+        a {
+          color: #6b7280;
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+
+        &:hover {
+          background-color: #f78aff;
+
+          a {
+            color: #fff;
+          }
+        }
+      }
+
+      :global(.ant-pagination-item-active) {
+        background-color: #f78aff;
+        border: none;
+
+        a {
+          color: #fff;
+          font-weight: 600;
+        }
+
+        &:hover {
+          background-color: #f78aff;
+
+          a {
+            color: #fff;
+          }
+        }
+      }
+
+      :global(.ant-pagination-prev),
+      :global(.ant-pagination-next) {
+        border: none;
+        min-width: auto;
+        height: 40px;
+        line-height: 40px;
+        background-color: transparent;
+
+        .ant-pagination-item-link {
+          border: none;
+          background-color: transparent;
+          color: #6b7280;
+          font-size: 16px;
+        }
+
+        &:hover {
+          .ant-pagination-item-link {
+            color: #374151;
+          }
+        }
+
+        &:global(.ant-pagination-disabled) {
+          .ant-pagination-item-link {
+            color: #d1d5db;
+          }
+        }
+      }
+
+      :global(.ant-pagination-jump-prev),
+      :global(.ant-pagination-jump-next) {
+        border: none;
+        min-width: 40px;
+        height: 40px;
+        line-height: 40px;
+
+        .ant-pagination-item-link {
+          border: none;
+          background-color: transparent;
+        }
+
+        .ant-pagination-item-ellipsis {
+          color: #6b7280;
+        }
+      }
+
+      :global(.ant-pagination-total-text) {
+        display: none;
+      }
+    }
+  }
+}
+
+.loadMoreContainer {
+  display: flex;
+  justify-content: flex-end;
+
+  .button {
+    height: 51px;
+    margin-bottom: 80px;
+    margin-right: 39px;
+  }
+}

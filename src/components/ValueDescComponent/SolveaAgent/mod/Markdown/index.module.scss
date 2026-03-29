@@ -1,0 +1,100 @@
+.markBox {
+  overflow: hidden;
+  pre {
+    background: #fff !important ;
+    white-space: pre-wrap;
+  }
+  p,
+  li {
+    margin: 0;
+    line-height: 28px;
+  }
+  blockquote {
+    border-left: 2px solid #ccc; /* 左边框样式 */
+    padding-left: 10px; /* 左边距 */
+    margin: 10px 0; /* 上下边距 */
+    line-height: 16px;
+  }
+  img {
+    max-width: 350px;
+    width: auto;
+    border-radius: 8px;
+    margin: 4px 0;
+    display: block;
+    & + img {
+      margin-top: 10px;
+    }
+  }
+  ul {
+    padding-left: 24px;
+    list-style: disc;
+  }
+  ol {
+    list-style: auto;
+    padding-left: 24px;
+  }
+  a {
+    color: rgb(22, 119, 255);
+  }
+  div,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  li,
+  table,
+  blockquote,
+  pre,
+  section,
+  article,
+  header,
+  footer,
+  nav,
+  aside,
+  figure,
+  figcaption {
+    margin-bottom: 12px !important;
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  :global {
+    .ant-image {
+      display: block;
+      margin: 4px 0 !important;
+      img {
+        margin: 0;
+      }
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  table {
+    img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+    :global {
+      .ant-image {
+        height: auto !important;
+        width: auto !important;
+      }
+    }
+  }
+}
+
+.hide img {
+  // display: none;
+}

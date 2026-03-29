@@ -1,0 +1,222 @@
+@import '../_variables.scss';
+.colorInput {
+  width: 30px;
+  height: 30px;
+}
+.hidePlaceholder::placeholder {
+  color: transparent !important;
+}
+.container {
+  // margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  .wordcloud {
+    width: 100%;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    .title {
+      margin: 0;
+      color: inherit;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 130%; /* 46.8px */
+    }
+    .subTitle {
+      color: #e0e0e0;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 32px;
+      letter-spacing: -0.4px;
+    }
+  }
+  .left,
+  .right {
+    flex: 1;
+    width: 100%;
+  }
+
+  .left {
+    box-sizing: border-box;
+    // padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    // border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    // background: var(--gray-100, #f2f4f7);
+    .topText {
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+  }
+
+  .minh {
+    min-height: 250px;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    .tabsContainer {
+      border: 1px solid #ccc;
+    }
+    .tabs {
+      width: 100%;
+      .btn {
+        margin-top: 12px;
+        display: flex;
+        box-sizing: border-box;
+        height: 44px;
+        padding: 10px 18px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px !important;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        border: 1px solid inherit;
+        background: inherit;
+      }
+      .tip {
+        color: gray;
+        line-height: 24px;
+        margin-top: 10px;
+      }
+
+      .link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        a {
+          white-space: nowrap;
+          // height: 50px;
+          // line-height: 50px;
+          display: block;
+        }
+      }
+      .outer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        pointer-events: none;
+      }
+      .tag {
+        font-size: 12px;
+        pointer-events: none;
+        color: #ff6969;
+        position: absolute;
+        top: -10%;
+        background: #ffd0d0;
+        border-radius: 4px;
+        padding: 0 4px;
+        line-height: 20px;
+        height: 20px;
+        right: -10px;
+      }
+      .linkTab {
+        // background-color: #fafafa;
+        color: inherit;
+      }
+      :global {
+        .ant-tabs-tab {
+          padding-top: 0;
+        }
+        .ant-tabs-nav {
+          margin-bottom: 16px !important;
+        }
+        .ant-upload-wrapper .ant-upload-drag {
+          height: 186px;
+          display: flex;
+          align-items: center;
+        }
+        .ant-select-selector {
+          min-width: 95px;
+        }
+      }
+    }
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+    path {
+      fill: #000;
+    }
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    .form {
+      width: 100%;
+
+      .slider {
+        margin: 0px 20px 12px 0;
+      }
+      :global {
+        .ant-form-item {
+          margin-bottom: 12px;
+        }
+        .ant-slider-handle {
+          width: 24px;
+          height: 24px;
+          &::after {
+            box-shadow: none;
+            border: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            inset-inline-start: 0px;
+            inset-block-start: 0px;
+          }
+        }
+      }
+    }
+
+    .inputnumber {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 10px;
+    }
+  }
+  .nowrap {
+    white-space: nowrap;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: $small-device-width) {
+  .container {
+    flex-direction: column;
+    .icon {
+      transform: rotate(90deg);
+    }
+  }
+}

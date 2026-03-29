@@ -1,0 +1,119 @@
+@import '../_variables.scss';
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: clamp(24px, 2.396vw, 46px) clamp(16px, 4.688vw, 90px);
+
+  @media (max-width: 1720px) {
+    position: relative;
+    left: -14px;
+    width: calc(100% + 28px);
+    padding: clamp(24px, 2.396vw, 40px) clamp(16px, 3.5vw, 60px);
+  }
+
+  .content {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    min-height: fit-content;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .titleContainer {
+      flex: 1;
+      display: flex;
+      min-height: clamp(80px, 6.51vw, 125px);
+      align-items: center;
+      padding-right: clamp(16px, 2.552vw, 49px);
+
+      @media (max-width: 1024px) {
+        min-height: clamp(70px, 6.836vw, 100px);
+        padding-right: clamp(16px, 2.5vw, 32px);
+      }
+
+      @media (max-width: 800px) {
+        min-height: auto;
+        padding: clamp(20px, 3.177vw, 40px) 0;
+        padding-bottom: clamp(20px, 3.177vw, 40px);
+        border-bottom: 0.5px solid #000000;
+        padding-right: 0;
+      }
+
+      @media (max-width: 480px) {
+        padding: clamp(16px, 3.333vw, 24px) 0;
+        padding-bottom: clamp(16px, 3.333vw, 24px);
+      }
+
+      .title {
+        @include BlockTitle();
+        white-space: pre-line;
+        margin: 0;
+        text-align: left;
+      }
+    }
+
+    .metricsContainer {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      min-height: clamp(80px, 6.51vw, 125px);
+      justify-content: space-around;
+      gap: 122px;
+
+      @media (max-width: 1280px) {
+        gap: 90px;
+      }
+
+      @media (max-width: 1024px) {
+        min-height: clamp(70px, 6.836vw, 100px);
+        gap: 48px;
+      }
+
+      @media (max-width: 800px) {
+        min-height: auto;
+        padding: clamp(20px, 3.177vw, 40px) 0;
+        gap: clamp(24px, 3vw, 48px);
+      }
+
+      @media (max-width: 480px) {
+        flex-direction: column;
+        padding: clamp(16px, 3.333vw, 24px) 0;
+        gap: clamp(20px, 4.167vw, 32px);
+      }
+
+      .metricItem {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+
+        .metricValue {
+          @include BlockTitle();
+          margin-bottom: clamp(4px, 0.313vw, 6px);
+
+          @media (max-width: 768px) {
+            margin-bottom: clamp(4px, 0.521vw, 6px);
+          }
+
+          @media (max-width: 480px) {
+            margin-bottom: 4px;
+            align-self: center;
+          }
+        }
+
+        .metricTitle {
+          @include SecondaryContentText();
+          color: #000;
+          opacity: 0.8;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}

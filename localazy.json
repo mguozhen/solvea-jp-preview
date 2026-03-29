@@ -1,0 +1,32 @@
+{
+  "writeKey": "a7875409986640567376-925dbdaa6e3d93d414b3141e20ba4525511a2ddccb0f6cd9f49199965d836fa5",
+  "readKey": "a7875409986640567376-86a963b3271cba06591d3409dd1a7901ff3c21dac224e5f050077a6cf4e94413",
+  "upload": {
+    "filterSource": false,
+    "files": [
+      {
+        "pattern": "/src/locales/en-US/*.ts",
+        "excludes": ["src/locales/*/index.ts"],
+        "lang": "inherited",
+        "type": "js"
+      },
+      {
+        "group": "existing",
+        "pattern": "src/locales/en-US/*.ts",
+        "excludes": ["src/locales/zh-CN/*.ts"],
+        "lang": "${autodetectLang}",
+        "type": "js"
+      }
+    ]
+  },
+  "download": {
+    "files": "/src/locales/${lang}/${file}",
+    "langAliases": {
+      "en": "en-US",
+      "ja": "ja-JP",
+      "zh-Hans": "zh-CN"
+    },
+    "includeSourceLang": true
+  },
+  "transformations": []
+}

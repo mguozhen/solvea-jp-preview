@@ -1,0 +1,489 @@
+.setupSection {
+  width: 100%;
+  background: #f8f9fb;
+  padding: 80px 48px;
+  display: flex;
+  justify-content: center;
+  font-family: "Helvetica Neue" !important;
+
+  @media (max-width: 1720px) {
+    position: relative;
+    left: -14px;
+    width: calc(100% + 28px);
+  }
+}
+
+.setupLeft {
+  flex: 1;
+}
+
+
+
+.setupInner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.setupLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  // letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 18px;
+}
+
+.setupLabelDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c96b2b;
+}
+
+.setupHeadline {
+  font-family: "Helvetica Neue" !important;
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 800;
+  line-height: 1.15;
+  // letter-spacing: -0.02em;
+  color: #0f1629;
+  margin-bottom: 14px;
+  white-space: pre-wrap;
+}
+
+.setupHeadlineOrange,
+.setupHeadline :global(.orange) {
+  color: #c96b2b;
+}
+
+/* Credit stack (new) */
+.creditStack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 22px;
+  background: #fff;
+  border: 1px solid #e8eaef;
+  border-radius: 14px;
+  padding: 16px 18px;
+  max-width: 380px;
+}
+
+.creditRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+
+  .crLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+  }
+
+  .crAmount {
+    font-weight: 700;
+    color: #0f1629;
+  }
+}
+
+.crTagBase {
+  font-size: 10px;
+  font-weight: 600;
+  // letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 100px;
+  background: #f0f1f4;
+  color: #888;
+  border: 1px solid #e2e4e9;
+}
+
+.crTagBonus {
+  font-size: 10px;
+  font-weight: 600;
+  // letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 100px;
+  background: #fff5ef;
+  color: #c96b2b;
+  border: 1px solid #f5ddd0;
+}
+
+.creditDivider {
+  height: 1px;
+  background: #f0f1f4;
+  margin: 6px 0;
+}
+
+.creditRowTotal {
+  .crLabel {
+    color: #0f1629;
+    font-weight: 600;
+  }
+
+  .crAmount {
+    color: #c96b2b;
+    font-size: 15px;
+  }
+}
+
+.setupBody {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #555;
+  max-width: 460px;
+  margin-bottom: 22px;
+}
+
+.onlineBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #3ba55c;
+  background: #f0faf4;
+  border: 1px solid #c3e8d0;
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+}
+
+.onlineDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3ba55c;
+  animation: pulseDot 1.6s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.6);
+  }
+}
+
+.btnGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .btnPrimary {
+    width: 80%;
+  }
+
+  @media (max-width: 768px) {
+    .btnPrimary {
+      width: 100%;
+    }
+  }
+
+}
+
+.setupPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #444;
+  background: #fff;
+  border: 1px solid #e2e4e9;
+  padding: 6px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
+
+  svg {
+    color: #c96b2b;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.setupCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0f1629;
+  color: #fff;
+  font-size: 14.5px;
+  font-weight: 600;
+  padding: 14px 26px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  // letter-spacing: -0.01em;
+
+  &:hover {
+    background: #1e2c50;
+    transform: translateY(-1px);
+  }
+
+  svg {
+    transition: transform 0.2s;
+  }
+
+  &:hover svg {
+    transform: translateX(3px);
+  }
+}
+
+.setupCard {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e8eaef;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* New card: dark header + steps (no padding on card root) */
+.setupCard:has(.cardHeaderNew) {
+  padding: 0;
+}
+
+.cardHeaderNew {
+  background: #0f1629;
+  padding: 28px 32px 24px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: -24px;
+    top: -24px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: rgba(201, 107, 43, 0.15);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 24px;
+    bottom: -36px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(201, 107, 43, 0.08);
+  }
+}
+
+.chTop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.chDiscordLogo {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chName {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.chSub {
+  font-size: 10.5px;
+  opacity: 0.5;
+  margin-top: 1px;
+}
+
+.chCredits {
+  font-size: 34px;
+  font-weight: 800;
+  // letter-spacing: -0.03em;
+  line-height: 1;
+  color: #c96b2b;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.chCreditsSub {
+  font-size: 13px;
+  opacity: 0.65;
+  position: relative;
+  z-index: 1;
+}
+
+.cardBody {
+  padding: 28px 32px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f0f1f4;
+}
+
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #fff5ef;
+  border: 1px solid #f5ddd0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c96b2b;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f1629;
+  line-height: 1.3;
+}
+
+.cardSubtitle {
+  font-size: 12.5px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.cardSpots {
+  margin-bottom: 28px;
+}
+
+.spotsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.spotsLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f1629;
+}
+
+.spotsCount {
+  font-size: 12px;
+  color: #888;
+}
+
+.spotsTrack {
+  display: flex;
+  gap: 6px;
+}
+
+.spotBlock {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+
+  &.filled {
+    background: #e8eaef;
+  }
+
+  &.open {
+    background: #c96b2b;
+  }
+}
+
+.cardSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.stepRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.stepNum {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f2f3f6;
+  font-size: 11px;
+  font-weight: 700;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.cardBody .stepNum {
+  background: #fff5ef;
+  border: 1px solid #f5ddd0;
+  color: #c96b2b;
+}
+
+.stepText {
+  font-size: 13.5px;
+  color: #555;
+  line-height: 1.55;
+
+  strong {
+    color: #0f1629;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 900px) {
+  .setupInner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .setupSection {
+    padding: 40px 24px;
+  }
+}

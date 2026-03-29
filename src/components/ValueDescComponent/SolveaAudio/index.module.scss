@@ -1,0 +1,288 @@
+@import '../_variables.scss';
+
+.container {
+  width: 100%;
+  padding: 82px 30px 159px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  @media (max-width: 1720px) {
+    padding: 82px 0 159px;
+  }
+  .title {
+    @include NormalBlockTitle();
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  .audioList {
+    .audioColWrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .audioItem {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: #eeeeee;
+      border: 1px solid #969696;
+      overflow: hidden;
+
+      .audioItemAvatar {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 30px 24px 0;
+        box-sizing: border-box;
+        gap: 20px;
+
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 20px;
+          content: '';
+          width: calc(100% - 40px);
+          height: 1px;
+          background-color: #2b2b2b;
+          margin-top: 10px;
+        }
+
+        img {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          border-radius: 0;
+          margin-bottom: 0;
+          flex-shrink: 0;
+        }
+      }
+
+      .audioItemName {
+        @include BlockContent();
+        margin-bottom: 0;
+      }
+
+      .audioItemContent {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 30px 24px;
+        box-sizing: border-box;
+        gap: 20px;
+
+        .audioItemAudio {
+          width: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-shrink: 0;
+
+          .playButton {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #1a1a1a;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.3s ease;
+
+            &::after {
+              content: '';
+              width: 0;
+              height: 0;
+              border-left: 14px solid gray;
+              border-top: 9px solid transparent;
+              border-bottom: 9px solid transparent;
+              margin-left: 3px;
+            }
+
+            &:hover {
+              background-color: #333333;
+              transform: scale(1.05);
+            }
+
+            &.playing {
+              background-color: #333333;
+
+              &::after {
+                content: '';
+                width: 2px;
+                height: 18px;
+                background-color: gray;
+                border: none;
+                margin-left: -5px;
+                border-radius: 2px;
+                box-shadow: 6px 0 0 0 gray;
+              }
+            }
+
+            &.loading {
+              cursor: wait;
+
+              &::after {
+                content: '';
+                width: 20px;
+                height: 20px;
+                border: 2px solid gray;
+                border-top-color: transparent;
+                border-radius: 50%;
+                margin-left: 0;
+                animation: spin 0.8s linear infinite;
+              }
+            }
+
+            &:disabled {
+              cursor: wait;
+            }
+          }
+
+          @keyframes spin {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+          audio {
+            display: none;
+          }
+        }
+
+        .audioItemDesc {
+          @include BlockContent();
+          text-align: left;
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  // 平板适配 (1024px 以下)
+  @media (max-width: 1024px) {
+    .title {
+      margin-bottom: 70px;
+    }
+
+    .audioList {
+      .audioItem {
+        .audioItemContent {
+          gap: 16px;
+        }
+      }
+    }
+  }
+
+  // 移动端适配 (768px 以下)
+  @media (max-width: 768px) {
+    .title {
+      margin-bottom: 48px;
+    }
+
+    .audioList {
+      .audioItem {
+        gap: 0;
+
+        .audioItemAvatar {
+          padding: 20px 16px 0 16px;
+          gap: 12px;
+
+          img {
+            width: 64px;
+            height: 64px;
+          }
+
+          &::after {
+            left: 12px;
+            width: calc(100% - 24px);
+          }
+        }
+
+        .audioItemContent {
+          padding: 16px;
+          gap: 12px;
+
+          .audioItemAudio .playButton {
+            width: 48px;
+            height: 48px;
+
+            &::after {
+              border-left: 10px solid gray;
+              border-top: 7px solid transparent;
+              border-bottom: 7px solid transparent;
+            }
+
+            &.playing::after {
+              width: 2px;
+              height: 14px;
+              box-shadow: 4px 0 0 0 gray;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 小屏移动端适配 (480px 以下)
+  @media (max-width: 480px) {
+    .title {
+      margin-bottom: 32px;
+    }
+
+    .audioList {
+      .audioItem {
+        .audioItemAvatar {
+          padding: 16px 12px 0 12px;
+          gap: 10px;
+
+          img {
+            width: 56px;
+            height: 56px;
+          }
+
+          &::after {
+            left: 10px;
+            width: calc(100% - 20px);
+          }
+        }
+
+        .audioItemContent {
+          padding: 12px;
+          gap: 10px;
+
+          .audioItemAudio .playButton {
+            width: 40px;
+            height: 40px;
+
+            &::after {
+              border-left: 8px solid gray;
+              border-top: 6px solid transparent;
+              border-bottom: 6px solid transparent;
+            }
+
+            &.playing::after {
+              width: 1.5px;
+              height: 12px;
+              box-shadow: 3px 0 0 0 gray;
+            }
+          }
+        }
+      }
+    }
+  }
+}

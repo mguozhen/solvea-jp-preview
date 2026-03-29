@@ -1,0 +1,119 @@
+@import '../_variables.scss';
+
+.top {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  .text {
+    flex: 1;
+    .title {
+      color: #ffffff;
+      font-size: 32px;
+      margin-top: 0;
+      margin-bottom: 24px;
+      &.hTitle {
+        font-size: 48px;
+      }
+    }
+
+    .bigTitle {
+      font-size: 64px;
+    }
+
+    .content {
+      color: #ffffff;
+      line-height: 28px;
+      font-size: 20px;
+      font-weight: 400;
+
+      ul {
+        margin-top: 20px;
+        padding-left: 16px;
+      }
+    }
+  }
+
+  .imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 244px;
+    border-radius: 20px;
+    overflow: hidden;
+    // margin-left: 20px;
+
+    &.isQR {
+      width: unset;
+      height: unset;
+    }
+
+    .qrCodeContainer {
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      color: #3d3d3d;
+      padding: 20px;
+
+      .qrCode {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    .img {
+      width: 100%;
+    }
+  }
+  .fillImage {
+    flex: 1;
+    height: auto;
+  }
+}
+.fillWidth {
+  width: 100%;
+}
+
+.btnBox {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media only screen and (max-width: 800px) {
+  .top {
+    .imgContainer {
+      display: none;
+      .img {
+        display: none;
+      }
+    }
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    li {
+      text-align: left;
+    }
+    .text {
+      .title {
+        font-size: 28px;
+        &.hTitle {
+          font-size: 32px;
+        }
+      }
+      .bigTitle {
+        font-size: 32px;
+      }
+    }
+    .btnBox {
+      justify-content: center;
+    }
+  }
+}

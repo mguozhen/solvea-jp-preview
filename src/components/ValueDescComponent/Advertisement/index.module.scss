@@ -1,0 +1,56 @@
+@import '../_variables.scss';
+
+.container {
+  max-width: 360px;
+  min-width: 340px;
+  flex: 1;
+  border-radius: 10px;
+  background: inherit;
+  align-self: flex-start;
+  padding: 24px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0px;
+
+  p {
+    margin: 0;
+  }
+
+  .title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.48px;
+    margin-bottom: 16px;
+  }
+  .desc {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.28px;
+    margin-bottom: 16px;
+    line-height: 22px;
+  }
+  .actionBtn {
+    a {
+      width: 100%;
+      border-radius: 8px;
+      font-size: 14px;
+      height: 40px;
+      box-sizing: border-box;
+      margin: 12px 0 8px;
+    }
+  }
+  .tip {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.28px;
+  }
+}
+
+@media screen and (max-width: $small-device-width) {
+  .container {
+    display: none;
+  }
+}

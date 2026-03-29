@@ -1,0 +1,95 @@
+.button {
+    display: inline-flex;
+    width: fit-content;
+    padding: 8.5px 24px;
+    justify-content: center;
+    align-items: center;
+    color: #0F0F0F;
+    font-family: "Helvetica Neue";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    gap: 8px;
+    border-radius: 90px;
+    border: 1px solid #E4EDF7;
+    background: #FFF;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: rgba(255, 255, 255, 0.2);
+        opacity: 0;
+        transition: opacity 0.25s ease;
+    }
+
+    @media (max-width: 768px) {
+        padding: 8px 20px;
+        font-size: 12px;
+        line-height: 18px;
+        width: 100%;
+    }
+
+    &:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &:active {
+        transform: translateY(0) scale(0.98);
+        transition: all 0.1s;
+    }
+}
+
+.black {
+    background: linear-gradient(135deg, #111111 0%, #0B0B0B 100%);
+    color: #FFF;
+    border: none;
+    border-radius: 24.5px;
+    box-shadow: 0 2px 8px rgba(15, 15, 15, 0.2);
+    position: relative;
+    z-index: 0;
+    overflow: visible;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: 24.5px;
+        padding: 2px;
+        background: linear-gradient(135deg, #FF6666 0%, #DBFF8E 43.344%, #636CF1 100%);
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    &::before {
+        background: rgba(255, 255, 255, 0.12);
+        z-index: 1;
+    }
+
+    &:hover {
+        box-shadow: 0 6px 20px rgba(15, 15, 15, 0.3);
+
+        &::before {
+            opacity: 1;
+        }
+    }
+}

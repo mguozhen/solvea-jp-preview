@@ -1,0 +1,18 @@
+.title {
+  color: #0e0d17;
+  font-size: 70px;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .title {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .title {
+    font-size: 40px;
+  }
+}

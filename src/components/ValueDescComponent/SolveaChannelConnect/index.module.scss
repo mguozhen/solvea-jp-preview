@@ -1,0 +1,655 @@
+@import '../_variables.scss';
+
+.container {
+  width: 100%;
+  padding: 0px 130px 27px;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", sans-serif;
+
+  @media (max-width: 1720px) {
+    position: relative;
+    left: -14px;
+    width: calc(100% + 28px);
+  }
+
+  @media (max-width: 1440px) {
+    padding: 0px 80px 27px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0px 40px 24px;
+    left: 0;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0px 20px 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0px 16px 16px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 64px;
+
+    .title {
+      @include BlockTitle();
+      margin-bottom: 16px;
+      color: #2b2b2b;
+    }
+
+    .description {
+      @include BlockContent();
+      color: #6b7280;
+      max-width: 672px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      margin-bottom: 48px;
+
+      .title {
+        font-size: 36px;
+      }
+
+      .description {
+        font-size: 16px;
+        padding: 0 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 40px;
+
+      .title {
+        font-size: 32px;
+        line-height: 1.2;
+      }
+
+      .description {
+        font-size: 15px;
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      margin-bottom: 32px;
+
+      .title {
+        font-size: 28px;
+      }
+
+      .description {
+        font-size: 14px;
+        padding: 0;
+      }
+    }
+  }
+
+  .channelGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+
+    @media (max-width: 1024px) {
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 480px) {
+      gap: 16px;
+    }
+  }
+
+  .channelCard {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+
+    .iconWrapper {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+
+      .icon {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .channelName {
+      font-size: 20px;
+      font-weight: 600;
+      color: #131519;
+      margin-bottom: 12px;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    .channelDesc {
+      color: #6b7280;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+  }
+
+  // CTA Section - Ready to Transform Your Sales
+  .ctaSection {
+    padding-top: 80px;
+
+    @media (max-width: 1024px) {
+      padding-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      padding-top: 48px;
+    }
+
+    @media (max-width: 480px) {
+      padding-top: 32px;
+      margin-top: 12px;
+    }
+  }
+
+  .ctaCard {
+    background: linear-gradient(to right,
+        #ff9a8b 0%,
+        #ff6a88 20%,
+        #c471ed 40%,
+        #8b7cf6 60%,
+        #6ba3f7 80%,
+        #4fd1c5 100%);
+    background-image:
+      linear-gradient(to right,
+        rgba(255, 154, 139, 0.95) 0%,
+        rgba(255, 106, 136, 0.95) 20%,
+        rgba(196, 113, 237, 0.95) 40%,
+        rgba(139, 124, 246, 0.95) 60%,
+        rgba(107, 163, 247, 0.95) 80%,
+        rgba(79, 209, 197, 0.95) 100%),
+      url('https://solveaprice-hgibmol7.manus.space/images/blob-pattern.png');
+    background-size: cover, 300%;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-blend-mode: normal, overlay;
+    border-radius: 32px;
+    padding: 60px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow:
+      0 20px 40px -15px rgba(196, 113, 237, 0.3),
+      0 10px 20px -10px rgba(139, 124, 246, 0.2);
+    position: relative;
+    overflow: hidden;
+
+    // 添加一个伪元素增强纹理效果
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://solveaprice-hgibmol7.manus.space/images/blob-pattern.png');
+      background-size: 250%;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.06;
+      z-index: 0;
+    }
+
+    .ctaContent {
+      color: white;
+      position: relative;
+      z-index: 1;
+
+      .ctaTitle {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 24px;
+        margin-top: 0;
+        line-height: 1.1;
+        font-family: 'Helvetica Neue', sans-serif;
+        letter-spacing: -0.02em;
+        white-space: pre-wrap;
+      }
+
+      .ctaDescription {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        opacity: 0.95;
+        font-weight: 400;
+        white-space: pre-wrap;
+      }
+
+      .ctaButtons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .ctaButtonPrimary {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 16px 36px;
+          background: white;
+          color: #000;
+          font-size: 17px;
+          font-weight: 500;
+          border-radius: 12px;
+          text-decoration: none;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+          letter-spacing: -0.01em;
+
+          .arrowIcon {
+            font-size: 16px;
+            margin-left: 16px;
+          }
+
+          &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+            background: #fafafa;
+          }
+
+          &:active {
+            transform: translateY(-1px);
+          }
+        }
+
+        .ctaButtonSecondary {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 16px 36px;
+          background: transparent;
+          color: white;
+          font-size: 17px;
+          font-weight: 600;
+          border: 2px solid rgba(255, 255, 255, 0.4);
+          border-radius: 12px;
+          text-decoration: none;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          letter-spacing: -0.01em;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+          }
+
+          &:active {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+
+    // 响应式适配
+    @media (max-width: 1024px) {
+      padding: 56px 48px;
+      border-radius: 28px;
+
+      .ctaContent {
+        .ctaTitle {
+          font-size: 32px;
+          margin-bottom: 20px;
+        }
+
+        .ctaDescription {
+          font-size: 15px;
+          margin-bottom: 32px;
+        }
+
+        .ctaButtons {
+          gap: 12px;
+
+          .ctaButtonPrimary,
+          .ctaButtonSecondary {
+            padding: 14px 32px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 48px 32px;
+      border-radius: 24px;
+
+      .ctaContent {
+        .ctaTitle {
+          font-size: 28px;
+          margin-bottom: 16px;
+        }
+
+        .ctaDescription {
+          font-size: 14px;
+          margin-bottom: 28px;
+        }
+
+        .ctaButtons {
+          flex-direction: column;
+          gap: 10px;
+
+          .ctaButtonPrimary,
+          .ctaButtonSecondary {
+            width: 100%;
+            padding: 14px 28px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 480px) {
+      padding: 40px 24px;
+      border-radius: 20px;
+
+      &::before {
+        background-size: 200%;
+      }
+
+      .ctaContent {
+        .ctaTitle {
+          font-size: 24px;
+          margin-bottom: 12px;
+        }
+
+        .ctaDescription {
+          font-size: 13px;
+          margin-bottom: 24px;
+        }
+
+        .ctaButtons {
+          gap: 8px;
+
+          .ctaButtonPrimary,
+          .ctaButtonSecondary {
+            padding: 12px 24px;
+            font-size: 14px;
+          }
+
+          .arrowIcon {
+            font-size: 14px;
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  // 平板端响应式设计 (768px-1024px)
+  @media (max-width: 1024px) and (min-width: 769px) {
+    padding: 80px 40px 60px;
+
+    .header {
+      margin-bottom: 48px;
+    }
+
+    .channelGrid {
+      gap: 24px;
+    }
+
+    .channelCard {
+      padding: 28px;
+
+      .iconWrapper {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 20px;
+
+        .icon {
+          width: 26px;
+          height: 26px;
+        }
+      }
+
+      .channelName {
+        font-size: 18px;
+      }
+
+      .channelDesc {
+        font-size: 14px;
+      }
+    }
+
+    .ctaSection {
+      margin-top: 64px;
+      padding-top: 60px;
+    }
+
+    .ctaCard {
+      padding: 64px 48px;
+      border-radius: 28px;
+
+      .ctaContent {
+        .ctaTitle {
+          font-size: 44px;
+        }
+
+        .ctaDescription {
+          font-size: 18px;
+          margin-bottom: 36px;
+        }
+
+        .ctaButtons {
+
+          .ctaButtonPrimary,
+          .ctaButtonSecondary {
+            padding: 14px 32px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  // 手机端响应式设计 (481px-768px)
+  @media (max-width: 768px) {
+    padding: 80px 20px 50px;
+    left: 0;
+    width: 100%;
+
+    .header {
+      margin-bottom: 40px;
+
+      .title {
+        font-size: 28px;
+        margin-bottom: 12px;
+      }
+
+      .description {
+        font-size: 15px;
+        padding: 0 10px;
+      }
+    }
+
+    .channelGrid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .channelCard {
+      padding: 24px;
+
+      .iconWrapper {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 20px;
+
+        .icon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      .channelName {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .channelDesc {
+        font-size: 14px;
+      }
+    }
+
+    .ctaSection {
+      margin-top: 48px;
+      padding-top: 40px;
+    }
+
+    .ctaCard {
+      padding: 56px 32px;
+      border-radius: 24px;
+
+      .ctaContent {
+        .ctaTitle {
+          font-size: 36px;
+          margin-bottom: 20px;
+        }
+
+        .ctaDescription {
+          font-size: 17px;
+          margin-bottom: 32px;
+        }
+
+        .ctaButtons {
+          flex-direction: column;
+          gap: 12px;
+
+          .ctaButtonPrimary,
+          .ctaButtonSecondary {
+            width: 100%;
+            padding: 14px 28px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  // 超小屏幕适配 (小于480px)
+  @media (max-width: 480px) {
+    padding: 0 0px 40px;
+
+    .header {
+      margin-bottom: 32px;
+
+      .title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .description {
+        font-size: 14px;
+        padding: 0;
+      }
+    }
+
+    .channelGrid {
+      gap: 16px;
+    }
+
+    .channelCard {
+      padding: 20px;
+      border-radius: 12px;
+
+      .iconWrapper {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+
+        .icon {
+          width: 22px;
+          height: 22px;
+        }
+      }
+
+      .channelName {
+        font-size: 17px;
+        margin-bottom: 8px;
+      }
+
+      .channelDesc {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+    }
+
+    .ctaSection {
+      margin-top: 12px;
+      padding-top: 32px;
+    }
+
+    .ctaCard {
+      padding: 48px 24px;
+      border-radius: 20px;
+
+      &::before {
+        background-size: 200px 200px;
+      }
+
+      .ctaContent {
+        .ctaTitle {
+          font-size: 32px;
+          margin-bottom: 16px;
+        }
+
+        .ctaDescription {
+          font-size: 16px;
+          margin-bottom: 28px;
+        }
+
+        .ctaButtons {
+          flex-direction: column;
+          gap: 10px;
+
+          .ctaButtonPrimary,
+          .ctaButtonSecondary {
+            width: 100%;
+            padding: 13px 24px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}

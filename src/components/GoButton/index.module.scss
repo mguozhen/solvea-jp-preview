@@ -1,0 +1,33 @@
+.moreBtn {
+  height: 60px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0e0d17;
+  border-radius: 100px;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+
+  .goIcon {
+    height: 24px;
+    width: 24px;
+    margin-left: 16px;
+  }
+  &.white {
+    background: #fff;
+    color: #0e0d17;
+    &:focus {
+      color: unset;
+    }
+
+    .goIcon {
+      path {
+        stroke: #0e0d17;
+      }
+    }
+  }
+}

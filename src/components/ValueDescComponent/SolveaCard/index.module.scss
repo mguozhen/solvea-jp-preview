@@ -1,0 +1,122 @@
+@import '../_variables.scss';
+
+.allowIcon {
+  width: 26px;
+  height: 26px;
+  margin-bottom: 64px;
+}
+
+// 手机端响应式设计
+@media (max-width: 768px) {
+  .allowIcon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 30px; // 进一步减少图标下边距
+  }
+}
+
+// 超小屏幕适配 (小于480px)
+@media (max-width: 480px) {
+  .allowIcon {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 25px;
+  }
+}
+
+.themeTwo {
+  margin-bottom: 10px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  @media (max-width: 1720px) {
+    padding: 40px 0;
+  }
+  .allowIcon {
+    width: 26px;
+    height: 26px;
+    margin-bottom: 64px;
+  }
+
+  .titleContainer {
+    width: 100%;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+    .partLabel {
+      margin-bottom: 25px;
+    }
+
+    .title {
+      @include NormalBlockTitle();
+      white-space: pre-line;
+    }
+  }
+
+  .cardList {
+    padding: 0;
+  }
+
+  // 平板端响应式设计 (768px-1024px)
+  @media (max-width: 1024px) and (min-width: 769px) {
+    padding: 36px 0;
+
+    .allowIcon {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 56px;
+    }
+
+    .titleContainer {
+      padding-bottom: 60px;
+    }
+
+    .cardList {
+      padding: 0;
+    }
+  }
+
+  // 手机端响应式设计 (481px-768px)
+  @media (max-width: 768px) {
+    padding: 28px 0;
+
+    .allowIcon {
+      width: 18px;
+      height: 18px;
+      margin-bottom: 28px;
+    }
+
+    .titleContainer {
+      padding-bottom: 40px;
+    }
+
+    .cardList {
+      padding: 0;
+    }
+  }
+
+  // 超小屏幕适配 (小于480px)
+  @media (max-width: 480px) {
+    padding: 14px 0;
+
+    .allowIcon {
+      width: 14px;
+      height: 14px;
+      margin-bottom: 20px;
+    }
+
+    .titleContainer {
+      padding-bottom: 28px;
+    }
+
+    .cardList {
+      padding: 0;
+    }
+  }
+}

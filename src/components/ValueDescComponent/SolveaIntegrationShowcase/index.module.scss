@@ -1,0 +1,298 @@
+@import '../_variables.scss';
+
+.container {
+  width: 100%;
+  padding: 120px 30px 86px;
+  box-sizing: border-box;
+  border-bottom: 0.5px solid #000000;
+  background: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 1720px) {
+    position: relative;
+    left: -14px;
+    width: calc(100% + 28px);
+  }
+
+  @media (max-width: 1280px) {
+    padding: 80px 20px 60px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 60px 20px 40px;
+  }
+
+  @media (max-width: 800px) {
+    padding: 60px 20px 40px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 16px 30px;
+  }
+
+  .title {
+    @include NormalBlockTitle();
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin-bottom: 24px;
+    white-space: pre-line;
+
+    @media (max-width: 800px) {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 480px) {
+      margin-bottom: 16px;
+    }
+  }
+  .description {
+    @include BlockContent();
+    width: 100%;
+    text-align: center;
+    color: white;
+    opacity: 0.56;
+    line-height: 1.2;
+    margin-bottom: 120px;
+    white-space: pre-line;
+    @media (max-width: 1280px) {
+      margin-bottom: 80px;
+    }
+
+    @media (max-width: 1024px) {
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 800px) {
+      margin-bottom: 50px;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 480px) {
+      margin-bottom: 40px;
+      padding: 0 16px;
+    }
+  }
+  .content {
+    width: 100%;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+    padding: 0 53px;
+    color: white;
+    gap: 105px;
+
+    @media (max-width: 1280px) {
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+
+    @media (max-width: 1024px) {
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 50px;
+      margin-bottom: 50px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 480px) {
+      gap: 40px;
+      margin-bottom: 40px;
+      padding: 0;
+    }
+
+    .cardList {
+      // width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 112px;
+
+      @media (max-width: 1280px) {
+        gap: 80px;
+      }
+
+      @media (max-width: 1024px) {
+        gap: 60px;
+      }
+
+      @media (max-width: 800px) {
+        width: 100%;
+        gap: 50px;
+        order: 2;
+      }
+
+      @media (max-width: 768px) {
+        gap: 50px;
+      }
+
+      @media (max-width: 480px) {
+        gap: 40px;
+      }
+
+      .cardItem {
+        display: flex;
+        flex-direction: column;
+
+        .cardTitle {
+          @include SecondaryContentTitle(1.75rem);
+          margin-bottom: 24px;
+          white-space: pre-line;
+          @media (max-width: 1024px) {
+            margin-bottom: 20px;
+          }
+
+          @media (max-width: 800px) {
+            margin-bottom: 16px;
+          }
+
+          @media (max-width: 480px) {
+            margin-bottom: 12px;
+          }
+        }
+        .cardDescription {
+          @include SecondaryContentText(0.875rem);
+          white-space: pre-line;
+        }
+      }
+    }
+    .cardDescriptionText {
+      @include SecondaryContentText(1.25rem);
+      font-weight: 500;
+      line-height: 1.4;
+      white-space: pre-wrap;
+
+      @media (max-width: 800px) {
+        white-space: normal;
+        text-align: center;
+      }
+    }
+    .img {
+      width: 45.6%;
+      object-fit: contain;
+
+      @media (max-width: 800px) {
+        width: 100%;
+        max-width: 500px;
+        order: 1;
+      }
+
+      @media (max-width: 480px) {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.brandGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 95px);
+  grid-template-rows: repeat(5, 95px);
+  gap: 14px;
+  width: 577px;
+  height: 565px;
+  margin-left: auto;
+  padding: 24px 24px 24px 24px;
+  box-sizing: border-box;
+  justify-content: flex-end;
+  background-color: rgba(238, 238, 238, 1);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(5, 75px);
+    grid-template-rows: repeat(5, 75px);
+    gap: 10px;
+    width: 450px;
+    height: 450px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: clamp(6px, 1.5vw, 12px);
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin-left: 0;
+    padding: clamp(12px, 3vw, 20px);
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    gap: clamp(4px, 1.2vw, 8px);
+    padding: clamp(10px, 2.5vw, 16px);
+  }
+
+  .brandCard {
+    border: 0.5px solid #282828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+
+    &.none {
+      border: none;
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    &:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+      background: #f07af9;
+      .svg {
+        color: #000;
+      }
+      &:global(.tiktok),
+      &:global(.whatsapp),
+      &:global(.facebook),
+      &:global(.amazon) {
+        background: #656ece;
+        .svg {
+          color: #fff;
+        }
+      }
+      &:global(.zendesk),
+      &:global(.servicenow),
+      &:global(.outlook),
+      &:global(.shopify),
+      &:global(.microsoft) {
+        background: #57c564;
+      }
+    }
+
+    .svg {
+      font-size: 70px;
+      color: #575757;
+      display: block;
+
+      @media (max-width: 1024px) {
+        font-size: 60px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 60px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 50px;
+      }
+    }
+
+    .emptyCard {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

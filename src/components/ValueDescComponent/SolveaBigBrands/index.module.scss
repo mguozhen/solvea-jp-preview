@@ -1,0 +1,21 @@
+@import '../_variables.scss';
+
+.container {
+  margin: 0 auto;
+}
+
+.brandWall {
+  padding: 0 !important;
+}
+
+@media (min-width: $middle-device-width) {
+  .container {
+    max-width: $middle-device-width;
+  }
+}
+
+@media (min-width: $large-device-width) {
+  .container {
+    max-width: $large-device-width;
+  }
+}

@@ -1,0 +1,118 @@
+.container {
+  min-height: 100vh;
+  background-color: #EEEEEE;
+
+  &,
+  * {
+    box-sizing: border-box;
+  }
+
+  &:global(.solvea-root) {
+    --insight-padding-x: 14PX;
+    --insight-padding-y: 80PX;
+
+    @media (min-width: 1720PX) {
+      --insight-padding-x: calc(50vw - 820PX);
+
+      :global {
+        .side-fade {
+
+          /* 左侧渐变遮罩 */
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: var(--insight-padding-x);
+            height: 100%;
+            background: linear-gradient(to right, #EEEEEE 50%, transparent 100%);
+            z-index: 1;
+          }
+
+          /* 右侧渐变遮罩 */
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: var(--insight-padding-x);
+            height: 100%;
+            right: 0;
+            background: linear-gradient(to left, #EEEEEE 50%, transparent 100%);
+            z-index: 1;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1080px) {
+      --insight-padding-x: 14PX;
+    }
+  }
+
+  :global {
+    h1 {
+      margin: 0;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      outline: 0;
+    }
+
+    [data-hover-action] {
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-3%);
+      }
+    }
+
+    @media (min-width: 480px) {
+      .only-mobile {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 479.9px) {
+      .only-pc {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.header {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #eee;
+
+  .headerContent {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .headerActions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerContent {
+    padding: 0 1rem;
+  }
+}
+
+.main {
+  margin: 0 auto;
+}

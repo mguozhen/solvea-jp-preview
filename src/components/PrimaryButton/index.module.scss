@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background: linear-gradient(106deg, #575757 0%, #4648ff 65.07%, #c376ff 100%);
+  transition: all 0.2s ease-in-out;
+  height: 60px;
+  box-sizing: border-box;
+  padding: 3px;
+  cursor: pointer;
+  width: fit-content;
+  &:hover {
+    transform: translateY(-3%);
+    text-decoration: none;
+  }
+  .inner {
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 50px;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    background-color: #000;
+    color: #fff;
+  }
+}

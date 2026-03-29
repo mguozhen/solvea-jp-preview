@@ -1,0 +1,67 @@
+@import 'theme/index.scss';
+.light {
+  .item {
+    color: #fff;
+  }
+  a {
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+.dark {
+  .item {
+    color: $text-black;
+  }
+  a {
+    &:hover {
+      color: #4080ff;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  font-size: 14px;
+  // padding-bottom: 20px;
+  display: flex;
+  box-sizing: border-box;
+  ol {
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+  }
+  .item {
+    // color: @text-black;
+    white-space: nowrap;
+    line-height: 24px;
+
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .separator {
+      margin: 0 12px;
+      color: #c0c4cc;
+    }
+  }
+
+  .last {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    color: #4080ff;
+  }
+}
+
+@media only screen and (max-width: $small-device-width) {
+  .container {
+    font-size: 12px;
+  }
+}

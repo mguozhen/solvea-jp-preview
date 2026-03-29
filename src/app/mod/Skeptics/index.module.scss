@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 900px;
+  color: #000;
+  position: relative;
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px var(--insight-padding-x) 23px;
+  }
+  .mbg {
+    position: absolute;
+    top: 0;
+    //left: var(--insight-padding-x);
+    //width: calc(100% - var(--insight-padding-x) * 2);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0.5px solid #000000;
+    .b1 {
+      position: absolute;
+      left: 0;
+      top: 17px;
+      width: 10px;
+      height: 31px;
+      background: #f07af9;
+    }
+    .b2 {
+      position: absolute;
+      right: 0;
+      bottom: 158px;
+      width: 10px;
+      height: 31px;
+      background: #f07af9;
+    }
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-family2);
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    leading-trim: NONE;
+    line-height: 28px;
+    margin-bottom: 40px;
+
+    > div {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .title {
+    width: 490px;
+    font-family: var(--font-family-title);
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 32px;
+    leading-trim: NONE;
+    line-height: 120%;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 60px;
+    white-space: pre-wrap;
+  }
+  .btn {
+    button {
+      min-width: 197px;
+      height: 51px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    height: 677px;
+    width: calc(100% - var(--insight-padding-x) * 2);
+    margin: 40px auto;
+    .title {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .btn {
+      position: absolute;
+      width: calc(100% - 20px);
+      left: 10px;
+      bottom: 14px;
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@import '../../../_variables.scss';
+.container {
+  :global {
+    .ant-modal-content {
+      padding: 0 !important;
+      height: 500px;
+      border-radius: 16px !important;
+      background-color: #000 !important;
+    }
+    .ant-modal-body {
+      height: 100%;
+    }
+    .ant-modal-close{
+    color: #fff !important;
+    }
+  }
+
+  .modalInner {
+    display: flex;
+    height: 100%;
+
+    .left,
+    .right {
+      flex: 1;
+    }
+
+    .left {
+      background-color: #00284a;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+      border-radius: 16px 0 0 16px;
+
+      .logo {
+        margin: 16px 24px;
+        width: 150px;
+        height: 40px;
+      }
+
+      .item {
+        padding: 8px 24px;
+        font-size: 18px;
+        line-height: 20px;
+        color: #fff;
+      }
+
+      .img {
+        max-width: 400px;
+        height: 300px;
+        object-fit: contain;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      flex-direction: column;
+      gap: 24px;
+      border-radius: 0 16px 16px 0;
+      background-color: #2d3436;
+
+      .text {
+        font-size: 36px;
+        line-height: 40px;
+        font-weight: 600;
+        color: #fff;
+        text-align: left;
+      }
+
+      .text2 {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 40px;
+        color: #fff;
+      }
+      .btn {
+        padding: 0;
+        a {
+          max-width: 120px;
+          height: 48px;
+        }
+      }
+    }
+  }
+}
