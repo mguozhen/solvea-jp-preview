@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solvea JP Localization Preview</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; background: #f5f5f7; color: #1d1d1f; }
+
+    .page-title { text-align: center; padding: 40px 20px 10px; font-size: 28px; font-weight: 700; }
+    .page-sub { text-align: center; padding: 8px 20px 32px; color: #666; font-size: 14px; }
+
+    /* ---- HEADER ---- */
+    .header { background: #fff; border-bottom: 1px solid #e5e5e5; padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .header .logo { font-weight: 800; font-size: 20px; color: #6C63FF; }
+    .header .nav { display: flex; gap: 24px; font-size: 14px; color: #444; }
+    .header .btns { display: flex; gap: 10px; }
+    .btn-login { border: 1px solid #6C63FF; color: #6C63FF; padding: 7px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; }
+    .btn-signup { background: #6C63FF; color: #fff; padding: 7px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; }
+
+    /* ---- CYCLE SWITCH ---- */
+    .section { max-width: 900px; margin: 0 auto 40px; padding: 0 20px; }
+    .section-label { font-size: 13px; color: #999; margin-bottom: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .cycle-switch { display: inline-flex; background: #f0f0f5; border-radius: 30px; padding: 4px; }
+    .cycle-item { padding: 8px 22px; border-radius: 26px; font-size: 14px; cursor: pointer; transition: all .2s; color: #555; }
+    .cycle-item.selected { background: #fff; color: #6C63FF; font-weight: 600; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+    .cycle-item strong { color: #22a06b; font-size: 12px; margin-left: 4px; }
+
+    /* ---- PRICING CARDS ---- */
+    .cards { display: flex; gap: 20px; }
+    .card { background: #fff; border-radius: 16px; padding: 28px 24px; flex: 1; border: 1.5px solid #e8e8ed; }
+    .card.highlight { border-color: #6C63FF; box-shadow: 0 0 0 3px rgba(108,99,255,.08); }
+    .card-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+    .card-desc { font-size: 13px; color: #888; margin-bottom: 20px; }
+    .price-row { display: flex; align-items: flex-end; gap: 4px; margin-bottom: 6px; }
+    .price-num { font-size: 36px; font-weight: 800; }
+    .price-unit { font-size: 14px; color: #888; padding-bottom: 6px; }
+    .credits-badge { display: inline-block; background: #f0f0f5; border-radius: 20px; padding: 5px 14px; font-size: 13px; color: #555; margin-bottom: 20px; }
+    .btn-free { display: block; text-align: center; background: #f0f0f5; color: #333; padding: 11px; border-radius: 8px; font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+    .btn-upgrade { display: block; text-align: center; background: #6C63FF; color: #fff; padding: 11px; border-radius: 8px; font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+    .no-card { text-align: center; font-size: 12px; color: #aaa; margin-bottom: 20px; }
+    .divider { border: none; border-top: 1px solid #f0f0f0; margin: 16px 0; }
+    .feature-label { font-size: 12px; color: #aaa; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 10px; }
+    .feature-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #444; margin-bottom: 8px; }
+    .check { color: #6C63FF; font-size: 12px; }
+
+    /* ---- DIFF TABLE ---- */
+    .diff-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; }
+    .diff-table th { background: #6C63FF; color: #fff; padding: 12px 16px; font-size: 13px; text-align: left; }
+    .diff-table td { padding: 11px 16px; font-size: 13px; border-bottom: 1px solid #f0f0f0; }
+    .diff-table tr:last-child td { border-bottom: none; }
+    .tag-en { background: #ffeaea; color: #d32f2f; padding: 2px 8px; border-radius: 4px; font-size: 12px; }
+    .tag-jp { background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 4px; font-size: 12px; }
+
+    @media (max-width: 640px) { .cards { flex-direction: column; } .header .nav { display: none; } }
+  </style>
+</head>
+<body>
+
+<p class="page-title">Solvea JP 本地化プレビュー</p>
+<p class="page-sub">修正前後の対比 — コードは <a href="https://github.com/mguozhen/solvea-jp-preview">mguozhen/solvea-jp-preview</a></p>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">Solvea</div>
+  <div class="nav">
+    <span>機能</span><span>料金</span><span>お客様事例</span><span>ブログ</span>
+  </div>
+  <div class="btns">
+    <span>Solveaを試す</span> &nbsp;
+    <button class="btn-login">ログイン</button>
+    <button class="btn-signup">無料登録</button>
+  </div>
+</div>
+
+<br>
+
+<!-- PRICING -->
+<div class="section">
+  <div class="section-label">料金プラン — 請求サイクル切替</div>
+  <div class="cycle-switch">
+    <div class="cycle-item selected">マンスリー</div>
+    <div class="cycle-item">年次ごとに <strong>(20%オフ)</strong></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">料金カード</div>
+  <div class="cards">
+    <!-- FREE -->
+    <div class="card">
+      <div class="card-title">無料</div>
+      <div class="card-desc">個人向け</div>
+      <div class="price-row">
+        <span class="price-num">$0</span>
+        <span class="price-unit">/月</span>
+      </div>
+      <div class="credits-badge">2K クレジット/月</div>
+      <a class="btn-free" href="#">無料で始める</a>
+      <div class="no-card">クレジットカード不要</div>
+      <hr class="divider">
+      <div class="feature-label">インテグレーション</div>
+      <div class="feature-item"><span class="check">✓</span> 1つの無料電話番号</div>
+      <div class="feature-item"><span class="check">✓</span> メール</div>
+      <div class="feature-item"><span class="check">✓</span> ライブチャット</div>
+      <div class="feature-item"><span class="check">✓</span> ボイス</div>
+    </div>
+    <!-- BASIC -->
+    <div class="card highlight">
+      <div class="card-title">ベーシック</div>
+      <div class="card-desc">中小企業向け</div>
+      <div class="price-row">
+        <span class="price-num">$29</span>
+        <span class="price-unit">/月</span>
+      </div>
+      <div class="credits-badge">50K クレジット/月</div>
+      <a class="btn-upgrade" href="#">アップグレード</a>
+      <div class="no-card">&nbsp;</div>
+      <hr class="divider">
+      <div class="feature-label">インテグレーション</div>
+      <div class="feature-item"><span class="check">✓</span> 複数の電話回線</div>
+      <div class="feature-item"><span class="check">✓</span> WhatsApp</div>
+      <div class="feature-item"><span class="check">✓</span> Shopify</div>
+      <div class="feature-item"><span class="check">✓</span> Googleカレンダーとスプレッドシート</div>
+    </div>
+  </div>
+</div>
+
+<!-- DIFF TABLE -->
+<div class="section">
+  <div class="section-label">修正対比一覧</div>
+  <table class="diff-table">
+    <thead>
+      <tr>
+        <th>場所</th>
+        <th>修正前 (EN)</th>
+        <th>修正後 (JP)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Header ボタン</td><td><span class="tag-en">Try Solvea</span></td><td><span class="tag-jp">Solveaを試す</span></td></tr>
+      <tr><td>Header ボタン</td><td><span class="tag-en">LOGIN</span></td><td><span class="tag-jp">ログイン</span></td></tr>
+      <tr><td>Header ボタン</td><td><span class="tag-en">SIGNUP FREE</span></td><td><span class="tag-jp">無料登録</span></td></tr>
+      <tr><td>Header ボタン</td><td><span class="tag-en">My Account</span></td><td><span class="tag-jp">マイアカウント</span></td></tr>
+      <tr><td>請求サイクル</td><td><span class="tag-en">Monthly</span></td><td><span class="tag-jp">マンスリー</span></td></tr>
+      <tr><td>請求サイクル</td><td><span class="tag-en">Annually</span></td><td><span class="tag-jp">年次ごとに</span></td></tr>
+      <tr><td>請求サイクル</td><td><span class="tag-en">(20% Off)</span></td><td><span class="tag-jp">(20%オフ)</span></td></tr>
+      <tr><td>料金カード</td><td><span class="tag-en">Custom</span></td><td><span class="tag-jp">カスタム</span></td></tr>
+      <tr><td>料金カード</td><td><span class="tag-en">/month</span></td><td><span class="tag-jp">/月</span></td></tr>
+      <tr><td>料金カード</td><td><span class="tag-en">/year</span></td><td><span class="tag-jp">/年</span></td></tr>
+      <tr><td>料金カード</td><td><span class="tag-en">Upgrade now</span></td><td><span class="tag-jp">アップグレード</span></td></tr>
+      <tr><td>料金カード</td><td><span class="tag-en">Start for Free</span></td><td><span class="tag-jp">無料で始める</span></td></tr>
+      <tr><td>料金カード</td><td><span class="tag-en">no credit card required</span></td><td><span class="tag-jp">クレジットカード不要</span></td></tr>
+      <tr><td>料金カード</td><td><span class="tag-en">Integrations</span></td><td><span class="tag-jp">インテグレーション</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
